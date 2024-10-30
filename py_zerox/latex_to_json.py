@@ -1,8 +1,9 @@
-HIERARCHY = ['document', 'section', 'subsection', 'subsubsection', 'paragraph', 'subparagraph']
-LEAF_NODES = ['itemize', 'table', 'enumerate']
-MAX_TEXT_LENGTH = 1500000
-
+import json
 from TexSoup import TexSoup as TS
+
+HIERARCHY = ['document', 'section', 'subsection', 'subsubsection', 'paragraph', 'subparagraph']
+LEAF_NODES = ['itemize', 'table' , 'enumerate']
+MAX_TEXT_LENGTH = 15
 
 def tex_soup_to_json(tex_content):
     doc_index = 0
@@ -12,7 +13,7 @@ def tex_soup_to_json(tex_content):
         if not isinstance(tex_content.contents[i], str) and tex_content.contents[i].name == 'document':
             doc_index = i
             break
-
+ 
     document_content = tex_content.contents[doc_index]
     node_id = 0
     node_stack = [{'id': node_id, 'name': 'document', 'level': 0, 'type': 'document', 'children': []}]
@@ -20,20 +21,31 @@ def tex_soup_to_json(tex_content):
 
     for element in document_content:
         if isinstance(element, str):
+            # Truncate text to fit within MAX_TEXT_LENGTH
             text_length = len(element)
             truncated_text = element[:min(MAX_TEXT_LENGTH, text_length)]
-            node_stack[-1]['children'].append(truncated_text)
+            
+            # Create a new node with the text as a hierarchy element
+            text_node = {
+                'id': node_id,
+                'name': truncated_text,
+                'type': 'text',
+                'level': node_stack[-1]['level'] + 1,
+                'children': []
+            }
+            node_stack[-1]['children'].append(text_node)
+            node_id += 1
 
         elif element.name in HIERARCHY:
             element_depth = HIERARCHY.index(element.name)
-            
+
             while element_depth <= HIERARCHY.index(node_stack[-1]['type']) and len(node_stack) > 1:
                 node_stack.pop()
 
             if element_depth - 1 == HIERARCHY.index(node_stack[-1]['type']):
                 new_node = {
                     'id': node_id,
-                    'name': element.contents[0],
+                    'name': element.contents[0] if element.contents else '',
                     'type': element.name,
                     'children': [],
                     'level': node_stack[-1]['level'] + 1
@@ -47,27 +59,50 @@ def tex_soup_to_json(tex_content):
         elif element.name in LEAF_NODES:
 
             children = []
-            if element.name != 'table':
-                children = [item.contents[0] for item in element.contents]
+            if element.name == 'enumerate' or element.name == 'itemize':
+                # edit the count of the children and their level
+                for item in element.contents:
+                    text_node = {
+                        'id': node_id,
+                        'name': item.contents[0] ,
+                        'type': 'text',
+                        'level': node_stack[-1]['level'] + 2, ##
+                        'children': []
+                                }
+                    children.append(text_node)                    
+                    node_id+=1##                    
+                    
 
 
             leaf_node = {
                 'id': node_id,
                 'name': element.name,
                 'level': node_stack[-1]['level'] + 1,
-                'type': 'leaf',
+                'type': element.name,
                 'children': children
             }
+        
+        
             node_stack[-1]['children'].append(leaf_node)
             node_id += 1
 
-
     return node_stack[0]
 
-def tex_file_to_json(file_path = None, tex_data = None):
-    if tex_data == None:
-        with open(file_path) as file:
-            tex_data = file.read()
+def tex_file_to_json(file_path):
+    # Read the .tex file content
+    with open(file_path) as file:
+        tex_data = file.read()
+    
+    # Parse the TeX content to JSON structure
     tex_soup = TS(tex_data)
+    json_data = tex_soup_to_json(tex_soup)
+    
+    # Save the JSON output to a file with the same name as the input but with .json extension
+    json_file_path = file_path.rsplit('.', 1)[0] + '.json'
+    with open(json_file_path, 'w') as json_file:
+        json.dump(json_data, json_file, indent=4)
+    
+    print(f"JSON output saved to {json_file_path}")
 
-    return tex_soup_to_json(tex_soup)
+# Example usage
+# tex_file_to_json('example.tex')
