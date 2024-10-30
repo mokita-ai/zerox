@@ -143,4 +143,5 @@ def tex_file_to_json(file_path):
     print(f"JSON output saved to {json_file_path}")
 
 # Example usage
+
 # tex_file_to_json('t.tex')
