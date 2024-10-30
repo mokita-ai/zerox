@@ -5,6 +5,40 @@ HIERARCHY = ['document', 'section', 'subsection', 'subsubsection', 'paragraph', 
 LEAF_NODES = ['itemize', 'table' , 'enumerate']
 MAX_TEXT_LENGTH = 15
 
+def table_signiture(soup):
+    index = -1
+    content_count = len(soup.contents)
+
+    for i in range(content_count):
+        if not isinstance(soup.contents[i], str) and soup.contents[i].name == 'tabular':
+            index = i
+            break
+
+    if index == -1:
+        raise Exception("not a valid table")
+    
+    tabular_text = str(soup.contents[index])
+    tabular_text = tabular_text.replace('\$', "")
+
+
+    soup = TS(tabular_text)
+
+    cells = []
+
+    for element in soup.contents[0].contents:
+        if not isinstance(element, str) and  isinstance(element.contents, list) and len(element.contents):
+            element = str(element.contents[0])
+        else:    
+            if '&' not in element:
+                continue
+            
+        for cell in str(element).split('&'):
+            striped = cell.strip()
+            if (len(striped.replace('\\', ""))):
+                cells.append(striped)
+
+    return ' '.join(cells)
+
 def tex_soup_to_json(tex_content):
     doc_index = 0
     content_count = len(tex_content.contents)
@@ -57,9 +91,9 @@ def tex_soup_to_json(tex_content):
                 raise Exception("Document is not structured with proper hierarchy")
         
         elif element.name in LEAF_NODES:
-
+            
             children = []
-            if element.name == 'enumerate' or element.name == 'itemize':
+            if element.name != 'table':
                 # edit the count of the children and their level
                 for item in element.contents:
                     text_node = {
@@ -70,13 +104,17 @@ def tex_soup_to_json(tex_content):
                         'children': []
                                 }
                     children.append(text_node)                    
-                    node_id+=1##                    
-                    
+                    node_id+=1##  
+
+                name = element.name                  
+            else: 
+                name = table_signiture(element) 
+                  
 
 
             leaf_node = {
                 'id': node_id,
-                'name': element.name,
+                'name': name,
                 'level': node_stack[-1]['level'] + 1,
                 'type': element.name,
                 'children': children
@@ -105,4 +143,4 @@ def tex_file_to_json(file_path):
     print(f"JSON output saved to {json_file_path}")
 
 # Example usage
-# tex_file_to_json('example.tex')
+# tex_file_to_json('t.tex')
