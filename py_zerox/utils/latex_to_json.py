@@ -19,11 +19,12 @@ def table_signiture(soup):
     
     tabular_text = str(soup.contents[tabular_index])
 
-    # tabular_text =  re.sub(re.escape("&"), "SPACE_TOKEN&SPACE_TOKEN", tabular_text)
+    tabular_text =  re.sub(re.escape("&"), "SPACE_TOKEN&SPACE_TOKEN", tabular_text)
+    tabular_text = remove_unnecessary_space_token(tabular_text)
     # tabular_text = re.sub(r"&\s*SPACE_TOKEN\s*\{", "& {", tabular_text)
     # tabular_text = re.sub(r"\\\\\s*SPACE_TOKEN\s*&", r"\\ &", tabular_text)
 
-
+    print(tabular_text)
     soup = TS(tabular_text)
 
     cells = []
@@ -60,7 +61,6 @@ def table_signiture(soup):
             if '&' not in element:
                 continue
         
-        print(str(element).split('&'))    
         for cell in str(element).split('&'):
             striped = cell.strip()
             if (len(striped.replace('\\', ""))):
@@ -89,7 +89,7 @@ def table_signiture(soup):
     n_rows = i + 1
     
 
-    cells_grid = [['' for _ in range(n_columns+3)] for _ in range(n_rows+3)]
+    cells_grid = [['' for _ in range(n_columns)] for _ in range(n_rows)]
 
     for (row, col), value in vis.items():
         cells_grid[row][col] =  restore_special_chars(value)

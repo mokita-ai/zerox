@@ -24,3 +24,17 @@ def restore_special_chars(text):
         text =  re.sub(re.escape("SPACE_TOKEN"), "", text)
     return text
 
+
+
+def remove_unnecessary_space_token(text):
+    # Step 1: Remove SPACE_TOKEN in "text } SPACE_TOKEN & text"
+    pattern1 = r"(\})\s*SPACE_TOKEN\s*&"
+    replacement1 = r"\1 &"
+    text = re.sub(pattern1, replacement1, text)
+
+    # Step 2: Remove SPACE_TOKEN in "text & SPACE_TOKEN \ text"
+    pattern2 = r"(&)\s*SPACE_TOKEN\s*\\"
+    replacement2 = r"\1 \\"
+    text = re.sub(pattern2, replacement2, text)
+
+    return text
