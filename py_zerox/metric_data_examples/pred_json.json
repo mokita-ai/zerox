@@ -1,0 +1,53 @@
+{
+    "id": 0,
+    "name": "document",
+    "level": 0,
+    "type": "document",
+    "children": [
+        {
+            "id": 1,
+            "name": "item1-Business",
+            "type": "section",
+            "children": [
+                {
+                    "id": 2,
+                    "name": "Business visions (a)",
+                    "type": "subsection",
+                    "children": [
+                        {
+                            "id": 3,
+                            "name": "Goals",
+                            "type": "subsubsection",
+                            "children": [],
+                            "level": 3
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 4,
+                    "name": "Risk assessment",
+                    "type": "subsection",
+                    "children": [
+                        {
+                            "id": 5,
+                            "name": " - Strategy",
+                            "type": "subsubsection",
+                            "children": [],
+                            "level": 3
+                        }
+                    ],
+                    "level": 2
+                }
+            ],
+            "level": 1
+        },
+        {
+            "id": 6,
+            "name": " - item 2 (a)- Risk",
+            "type": "section",
+            "children": [],
+            "level": 1
+        }
+    ]
+}

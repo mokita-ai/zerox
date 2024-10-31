@@ -5,7 +5,7 @@
 \subsection{ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES}
 
 \subsection{Price Range of Our Common Stock and Preferred Stock}
-Our common stock is traded actively...
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
 
 
 \subsubsection{Dividends}
