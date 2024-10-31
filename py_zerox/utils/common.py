@@ -15,6 +15,14 @@ SPECIAL_CHAR_TOKENS = {
 def replace_special_chars(text):
     for latex_char, token in SPECIAL_CHAR_TOKENS.items():
         text = re.sub(re.escape(latex_char), token, text)
+
+    
+    
+    ##todo
+    text = re.sub(r'$', 'DOLLAR', text)
+    text = re.sub(r'%', 'PERCENT', text)
+
+
     return text
 
 def restore_special_chars(text):
@@ -22,3 +30,9 @@ def restore_special_chars(text):
         text = re.sub(re.escape(token), latex_char, text)
     return text
 
+
+def make_sure_one_document(text):
+    text = re.sub(r'\\begin{document}', '', text)
+    text = re.sub(r'\\end{document}', '', text)
+
+    return '\\begin{document}\n'  + text + '\n\\end{document}'

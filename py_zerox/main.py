@@ -5,10 +5,17 @@ from typing import List, Optional
 from pathlib import Path
 import uuid
 import os
+import json
+import aioshutil
 import nest_asyncio
 from pyzerox import zerox
 from prompt import PROMPT
-from latex_to_json import tex_file_to_json
+from utils.latex_to_json import tex_file_to_json
+
+from dotenv import load_dotenv
+load_dotenv()
+
+
 
 # Apply nest_asyncio
 nest_asyncio.apply()
@@ -100,3 +107,36 @@ async def parse_pages(
 
     # Return a list of dictionaries with both the `text` and `as_dict` representations
     return [page.to_dict() for page in pages_data]
+
+
+@app.post("/metrics-evaluation")
+async def metrics_evaluation(
+    prompt: str = Query(...)
+):
+    metric_data_files = Path("metric_data_examples")
+
+    for file_location in metric_data_files.iterdir():
+        if file_location.suffix == ".pdf":
+            predicted_latex = await zerox(file_path=str(file_location), model=model, output_dir="./output_test",
+                                          custom_system_prompt=PROMPT )
+
+            GT_latex_file = file_location.with_suffix(".tex")
+            with open(GT_latex_file) as f:
+                GT_latex = f.read()
+
+
+            predicted_json = tex_file_to_json(tex_data = predicted_latex)
+            GT_json = tex_file_to_json(tex_data= GT_latex)
+
+
+            predicted_json_file = file_location.with_suffix(".predicted.json")
+            with open(predicted_json_file, 'w') as json_file:
+                json.dump(predicted_json, json_file, indent=4)
+
+            GT_json_file = file_location.with_suffix(".GT.json")
+            with open(GT_json_file, 'w') as json_file:
+                json.dump(GT_json, json_file, indent=4)
+   
+   
+
+

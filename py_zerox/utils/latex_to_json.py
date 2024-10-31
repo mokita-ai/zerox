@@ -187,27 +187,19 @@ def tex_soup_to_json(tex_content):
 
     return node_stack[0]
 
-def tex_file_to_json(file_path):
-    # Read the .tex file content
-    with open(file_path) as file:
-        tex_data = file.read()
+def tex_file_to_json(file_path = None, tex_data = None):
+    if tex_data is None:
+        with open(file_path) as file:
+            tex_data = file.read()
 
-    # print(tex_data)
     tex_data = replace_special_chars(tex_data)
-    # print(tex_data)
-
-
+    tex_data = make_sure_one_document(tex_data)
 
     # Parse the TeX content to JSON structure
     tex_soup = TS(tex_data)
     json_data = tex_soup_to_json(tex_soup)
     
-    # Save the JSON output to a file with the same name as the input but with .json extension
-    json_file_path = file_path.rsplit('.', 1)[0] + '.json'
-    with open(json_file_path, 'w') as json_file:
-        json.dump(json_data, json_file, indent=4)
-    
-    print(f"JSON output saved to {json_file_path}")
+    return json_data
 
 # Example usage
 # tex_file_to_json('t.tex')

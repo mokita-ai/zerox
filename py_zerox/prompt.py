@@ -23,7 +23,6 @@ COMMON_ISSUES = """
 - You mistake tables for sections and subsections. Make sure to identify tables and sections separately.
 - Some two-column texts have line-wide tables, and vice versa. Do not be confused by it. 
 - Avoid removing an entire column and pretend that is doesn't exist
-- Avoid forgetting   begin documt and end document latex tags 
 """
 
 PROMPT = """
