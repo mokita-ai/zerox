@@ -1,0 +1,215 @@
+{
+    "file_name": "test.md",
+    "file_size": 2192,
+    "timestamp": "2024-10-31T08:53:13.083969",
+    "output_data": {
+        "id": 0,
+        "name": "document",
+        "level": 0,
+        "type": "document",
+        "children": [
+            {
+                "id": 1,
+                "level": 1,
+                "name": "PART II",
+                "type": "section",
+                "children": [
+                    {
+                        "id": 2,
+                        "level": 2,
+                        "name": "ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES",
+                        "type": "subsection",
+                        "children": []
+                    },
+                    {
+                        "id": 3,
+                        "level": 2,
+                        "name": "Price Range of Our Common Stock and Preferred Stock",
+                        "type": "subsection",
+                        "children": [
+                            {
+                                "id": 4,
+                                "level": 3,
+                                "name": "\nOur common stock is traded actively Our common stock is traded actively Our common stock is traded actively \n\n\n",
+                                "type": "text",
+                                "children": []
+                            },
+                            {
+                                "id": 5,
+                                "level": 3,
+                                "name": "Dividends",
+                                "type": "subsubsection",
+                                "children": [
+                                    {
+                                        "id": 6,
+                                        "level": 4,
+                                        "name": "\nWe have not declared dividends on our common stock...\n\n",
+                                        "type": "text",
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 7,
+                                        "level": 4,
+                                        "name": "Shareholder Information",
+                                        "type": "paragraph",
+                                        "children": [
+                                            {
+                                                "id": 8,
+                                                "level": 5,
+                                                "name": "\nOur shareholders are primarily based in the U.S...\n\n",
+                                                "type": "text",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 9,
+                        "level": 2,
+                        "name": "ITEM 6. SELECTED FINANCIAL DATA",
+                        "type": "subsection",
+                        "children": [
+                            {
+                                "id": 10,
+                                "level": 3,
+                                "name": "Overview",
+                                "type": "subsubsection",
+                                "children": [
+                                    {
+                                        "id": 11,
+                                        "level": 4,
+                                        "name": "\nThe following table summarizes key financial data...\n\n",
+                                        "type": "text",
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 12,
+                                        "level": 4,
+                                        "name": "Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \\$  45,752 \\$ - \\$  45,752 (\\$ 95) \\$  45,657    U.S. Treasury Notes \\$  46,760 \\$ - \\$  46,760 (\\$ 71) \\$  46,689    Commercial Paper 121,077 \\$ - \\$ 121,077 \\$ 2 \\$ 121,079    Total \\$ 213,589 \\$ - \\$ 213,589 (\\$ 164) \\$ 213,425                              ",
+                                        "type": "table",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 13,
+                                "level": 3,
+                                "name": "Financial Highlights",
+                                "type": "subsubsection",
+                                "children": [
+                                    {
+                                        "id": 14,
+                                        "level": 4,
+                                        "name": "\n2019 saw an increase in revenue by 15\\%...\n\nOur profit margins remained consistent with prior years...\n\n",
+                                        "type": "text",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 15,
+                "level": 1,
+                "name": "PART III",
+                "type": "section",
+                "children": [
+                    {
+                        "id": 16,
+                        "level": 2,
+                        "name": "ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE",
+                        "type": "subsection",
+                        "children": []
+                    },
+                    {
+                        "id": 17,
+                        "level": 2,
+                        "name": "Executive Officers",
+                        "type": "subsection",
+                        "children": [
+                            {
+                                "id": 18,
+                                "level": 3,
+                                "name": "\nThe company\u2019s leadership team consists of seasoned professionals...\n\n",
+                                "type": "text",
+                                "children": []
+                            },
+                            {
+                                "id": 19,
+                                "level": 3,
+                                "name": "Governance Practices",
+                                "type": "subsubsection",
+                                "children": [
+                                    {
+                                        "id": 20,
+                                        "level": 4,
+                                        "name": "\nOur governance practices are designed to ensure compliance...\n\n",
+                                        "type": "text",
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 21,
+                                        "level": 4,
+                                        "name": "Compliance and Risk Monitoring",
+                                        "type": "paragraph",
+                                        "children": [
+                                            {
+                                                "id": 25,
+                                                "level": 5,
+                                                "name": "itemize",
+                                                "type": "itemize",
+                                                "children": [
+                                                    {
+                                                        "id": 22,
+                                                        "level": 6,
+                                                        "name": " Ensure compliance with all relevant regulations.\n    ",
+                                                        "type": "text",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 23,
+                                                        "level": 6,
+                                                        "name": " Monitor industry trends for emerging risks.\n    ",
+                                                        "type": "text",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 24,
+                                                        "level": 6,
+                                                        "name": " Engage with stakeholders to gather insights on potential threats.\n",
+                                                        "type": "text",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 26,
+                                "level": 3,
+                                "name": "Governance ",
+                                "type": "subsubsection",
+                                "children": [
+                                    {
+                                        "id": 27,
+                                        "level": 4,
+                                        "name": "\nwe do imp things to ensure compliance...\n\n\n\n",
+                                        "type": "text",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

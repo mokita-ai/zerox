@@ -1,6 +1,13 @@
 import json
 from typing import Dict, List, Set, Tuple
 from collections import defaultdict
+import logging
+from typing import Tuple, Dict, Set
+import json
+
+# Configure logging
+logging.basicConfig(filename='logs.txt', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 class RelationType:
     PARENT_CHILD = "parent_child"
@@ -173,86 +180,76 @@ def calculate_metrics_by_type(gt_relations: Set[Tuple[int, int]],
         }
     }
 
-def print_relation(relation: Tuple[int, int], node_map: Dict[int, NodeInfo]):
-    """Print a relation with both IDs and names"""
+
+def log_relation(relation: Tuple[int, int], node_map: Dict[int, NodeInfo]):
+    """Log a relation with both IDs and names."""
     try:
         source = node_map[relation[0]]
         target = node_map[relation[1]]
-        print(f"  {source} → {target}")
+        logger.info(f"  {source} → {target}")
     except KeyError as e:
-        print(f"Error: Could not find node with ID {e} in node map")
+        logger.error(f"Error: Could not find node with ID {e} in node map")
 
-def print_scores(metrics: Dict[str, Dict[str, float]]):
-    """Print scores for all relation types."""
-    print("\n=== EVALUATION SCORES ===\n")
+def log_scores(metrics: Dict[str, Dict[str, float]]):
+    """Log scores for all relation types."""
+    logger.info("\n=== EVALUATION SCORES ===\n")
     
     for relation_type in [RelationType.PARENT_CHILD, RelationType.SIBLING, RelationType.COMBINED]:
-        print(f"\n{relation_type.upper()} SCORES:")
-        print("-" * (len(relation_type) + 8))
+        logger.info(f"\n{relation_type.upper()} SCORES:")
+        logger.info("-" * (len(relation_type) + 8))
         for metric, value in metrics[relation_type].items():
             if metric != 'details':
-                print(f"{metric}: {value:.3f}")
+                logger.info(f"{metric}: {value:.3f}")
 
-def print_relation_analysis(gt_relations: Dict[str, Set[Tuple[int, int]]], 
+def log_relation_analysis(gt_relations: Dict[str, Set[Tuple[int, int]]], 
                           pred_relations: Dict[str, Set[Tuple[int, int]]], 
                           metrics: Dict[str, Dict[str, float]],
                           gt_node_map: Dict[int, NodeInfo],
                           pred_node_map: Dict[int, NodeInfo]):
-    """Print detailed analysis of relations and metrics."""
-    print("\n=== DETAILED RELATION ANALYSIS ===\n")
+    """Log detailed analysis of relations and metrics."""
+    logger.info("\n=== DETAILED RELATION ANALYSIS ===\n")
     
     for relation_type in [RelationType.PARENT_CHILD, RelationType.SIBLING, RelationType.COMBINED]:
-        print(f"\n{relation_type.upper()} RELATIONS:")
-        print("=" * (len(relation_type) + 10))
+        logger.info(f"\n{relation_type.upper()} RELATIONS:")
+        logger.info("=" * (len(relation_type) + 10))
         
         if relation_type != RelationType.COMBINED:
-            print("\nGround Truth Relations:")
-            print("-" * 20)
+            logger.info("\nGround Truth Relations:")
+            logger.info("-" * 20)
             for relation in sorted(gt_relations[relation_type]):
-                print_relation(relation, gt_node_map)
+                log_relation(relation, gt_node_map)
             
-            print("\nPredicted Relations:")
-            print("-" * 19)
+            logger.info("\nPredicted Relations:")
+            logger.info("-" * 19)
             for relation in sorted(pred_relations[relation_type]):
-                print_relation(relation, pred_node_map)
+                log_relation(relation, pred_node_map)
         
         details = metrics[relation_type]['details']
         
-        print("\nCorrect Predictions (True Positives):")
-        print("-" * 35)
+        logger.info("\nCorrect Predictions (True Positives):")
+        logger.info("-" * 35)
         for relation in sorted(details['true_positives']):
-            print_relation(relation, gt_node_map)
+            log_relation(relation, gt_node_map)
         
-        print("\nMissed Relations (False Negatives):")
-        print("-" * 33)
+        logger.info("\nMissed Relations (False Negatives):")
+        logger.info("-" * 33)
         for relation in sorted(details['false_negatives']):
-            print_relation(relation, gt_node_map)
+            log_relation(relation, gt_node_map)
         
-        print("\nIncorrect Predictions (False Positives):")
-        print("-" * 37)
+        logger.info("\nIncorrect Predictions (False Positives):")
+        logger.info("-" * 37)
         for relation in sorted(details['false_positives']):
-            print_relation(relation, pred_node_map)
+            log_relation(relation, pred_node_map)
         
-        print("\n" + "="*50)
+        logger.info("\n" + "="*50)
 
 
-
-
-
-def evaluate_hierarchy(gt_file: str, pred_file: str, print_details: bool = False) -> Dict[str, Dict[str, float]]:
+def evaluate_hierarchy(gt_json, pred_json) -> Dict[str, Dict[str, float]]:
     """
     Evaluate predicted heading hierarchy against ground truth using different relation types.
+    Returns a dictionary with calculated metrics excluding detailed analysis.
     """
     try:
-        # Load JSON files
-        with open(gt_file, 'r') as f:
-            gt_json = json.load(f)
-            print("Ground truth JSON loaded successfully")
-        
-        with open(pred_file, 'r') as f:
-            pred_json = json.load(f)
-            print("Predicted JSON loaded successfully")
-        
         # Validate root structure
         if not isinstance(gt_json, dict) or not isinstance(pred_json, dict):
             raise ValueError("Both ground truth and predicted JSON must be dictionaries")
@@ -288,24 +285,28 @@ def evaluate_hierarchy(gt_file: str, pred_file: str, print_details: bool = False
         combined_pred = pred_relations[RelationType.PARENT_CHILD].union(pred_relations[RelationType.SIBLING])
         metrics[RelationType.COMBINED] = calculate_metrics_by_type(combined_gt, combined_pred)
         
-        # Always print scores
-        print_scores(metrics)
+        # Log scores
+        log_scores(metrics)
         
-        # Print detailed analysis if requested
-        if print_details:
-            print_relation_analysis(gt_relations, pred_relations, metrics, gt_node_map, pred_node_map)
+        log_relation_analysis(gt_relations, pred_relations, metrics, gt_node_map, pred_node_map)
         
-        return metrics
+        # Prepare return value with only main metrics, excluding 'details'
+        summary_metrics = {
+            relation_type: {metric: value for metric, value in metrics[relation_type].items() if metric != 'details'}
+            for relation_type in metrics
+        }
+        
+        return summary_metrics
     
     except FileNotFoundError as e:
-        print(f"File not found: {e}")
+        logger.error(f"File not found: {e}")
         raise
     except json.JSONDecodeError as e:
-        print(f"Invalid JSON format: {e}")
+        logger.error(f"Invalid JSON format: {e}")
         raise
     except ValueError as e:
-        print(f"Validation error: {e}")
+        logger.error(f"Validation error: {e}")
         raise
     except Exception as e:
-        print(f"Unexpected error: {e}")
+        logger.error(f"Unexpected error: {e}")
         raise

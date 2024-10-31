@@ -2,7 +2,8 @@
 
 import json
 from TexSoup import TexSoup as TS
-
+import os
+from datetime import datetime
 from utils.common import *
 
 def table_signiture(soup):
@@ -187,27 +188,50 @@ def tex_soup_to_json(tex_content):
 
     return node_stack[0]
 
-def tex_file_to_json(file_path):
+def tex_file_to_json(file_path, log_path="logs.txt"):
+    """
+    Converts the content of a .tex file into a JSON structure and appends a log entry in text format.
+
+    Parameters:
+    ----------
+    file_path : str
+        The path to the .tex file to be read and converted.
+    log_path : str, optional
+        The path to save the log file in text format (default is 'logs.txt').
+
+    Returns:
+    -------
+    json_data : dict
+        A JSON representation of the .tex file content after parsing and processing.
+
+    Example Usage:
+    --------------
+    json_output = tex_file_to_json("path/to/your/file.tex", "path/to/logs.txt")
+    """
+    
     # Read the .tex file content
     with open(file_path) as file:
         tex_data = file.read()
 
-    # print(tex_data)
+    # Replace special characters in TeX content
     tex_data = replace_special_chars(tex_data)
-    # print(tex_data)
-
-
 
     # Parse the TeX content to JSON structure
     tex_soup = TS(tex_data)
     json_data = tex_soup_to_json(tex_soup)
-    
-    # Save the JSON output to a file with the same name as the input but with .json extension
-    json_file_path = file_path.rsplit('.', 1)[0] + '.json'
-    with open(json_file_path, 'w') as json_file:
-        json.dump(json_data, json_file, indent=4)
-    
-    print(f"JSON output saved to {json_file_path}")
 
-# Example usage
-# tex_file_to_json('t.tex')
+    # Prepare log entry as text
+    file_stats = os.stat(file_path)
+    log_text = (
+        "TeX File to JSON Conversion Log\n"
+        f"Timestamp: {datetime.now().isoformat()}\n"
+        f"File Name: {os.path.basename(file_path)}\n"
+        f"File Size: {file_stats.st_size} bytes\n"
+        "-" * 50 + "\n"
+    )
+
+    # Append the log entry to the specified log file path
+    with open(log_path, "a") as log_file:
+        log_file.write(log_text + "\n")
+
+    return json_data

@@ -1,0 +1,2065 @@
+Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-Matching Values Log
+Timestamp: 2024-10-31T09:05:12.879621
+-
+Matching Values:
+('\nOur shareholde', '\nOur shareholder base and engagement efforts have expanded, reflecting positive growth.')
+('\nWe have not de', '\nNo dividends have been declared for this year, but the policy remains under consideration.')
+('\nwe do imp thin', '\nEthical standards and governance principles are a top priority within our operations.')
+('\nOur governance', '\nOur governance practices are aligned with industry standards and regulatory requirements.')
+('\nOur common sto', '\nOur common stock and preferred shares maintained a steady range throughout the fiscal period.')
+('\nThe company’s ', '\nOur leadership team comprises seasoned professionals with diverse industry backgrounds.')
+(' Ensure compliance with all relevant regulations.\n Monitor industry trends for emerging risks.\n Engage with stakeholders to gather insights on potential threats.', 'Ensure adherence to all applicable regulations.\n Monitor industry trends to preemptively address risks.\n Engage with stakeholders to stay informed on potential industry shifts.')
+('\nThe following ', '')
+('\n2019 saw an in\\%...\n\nOur profit', '')
+('', '\nIn 2019, we observed an increase in profits by 10%... \n\nOur financial standing strengthened.')
+('', 'Ensure compliance with all updated regulatory requirements.\n Stay informed on industry developments and trends.\n Engage stakeholders to proactively identify potential threats.')
+('', '\nThe company has increased efforts in community engagement and environmental responsibility.')
+('', '\nThe following overview summarizes key annual achievements and financial performance.')
+--------------------------------------------------
+
+2024-10-31 09:31:12,613 - INFO - 
+=== EVALUATION SCORES ===
+
+2024-10-31 09:31:12,702 - INFO - 
+PARENT_CHILD SCORES:
+2024-10-31 09:31:12,708 - INFO - --------------------
+2024-10-31 09:31:12,719 - INFO - precision: 1.000
+2024-10-31 09:31:12,725 - INFO - recall: 1.000
+2024-10-31 09:31:12,731 - INFO - f1: 1.000
+2024-10-31 09:31:12,737 - INFO - accuracy: 1.000
+2024-10-31 09:31:12,743 - INFO - 
+SIBLING SCORES:
+2024-10-31 09:31:12,748 - INFO - ---------------
+2024-10-31 09:31:12,754 - INFO - precision: 1.000
+2024-10-31 09:31:12,760 - INFO - recall: 1.000
+2024-10-31 09:31:12,770 - INFO - f1: 1.000
+2024-10-31 09:31:12,786 - INFO - accuracy: 1.000
+2024-10-31 09:31:12,792 - INFO - 
+COMBINED SCORES:
+2024-10-31 09:31:12,805 - INFO - ----------------
+2024-10-31 09:31:12,813 - INFO - precision: 1.000
+2024-10-31 09:31:12,819 - INFO - recall: 1.000
+2024-10-31 09:31:12,830 - INFO - f1: 1.000
+2024-10-31 09:31:12,836 - INFO - accuracy: 1.000
+2024-10-31 09:31:12,845 - INFO - 
+=== DETAILED RELATION ANALYSIS ===
+
+2024-10-31 09:31:12,851 - INFO - 
+PARENT_CHILD RELATIONS:
+2024-10-31 09:31:12,860 - INFO - ======================
+2024-10-31 09:31:12,868 - INFO - 
+Ground Truth Relations:
+2024-10-31 09:31:12,877 - INFO - --------------------
+2024-10-31 09:31:12,885 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:31:12,894 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:31:12,903 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:31:12,910 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:31:12,915 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,924 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:31:12,929 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:31:12,934 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:31:12,940 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:31:12,945 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:31:12,950 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:31:12,955 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:31:12,960 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:31:12,965 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:31:12,970 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:31:12,983 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,983 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:31:12,983 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:31:12,983 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:31:12,983 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:31:12,983 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:31:12,983 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:31:12,983 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:31:12,983 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:31:12,984 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,984 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:31:12,984 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:31:12,984 - INFO - 
+Predicted Relations:
+2024-10-31 09:31:12,984 - INFO - -------------------
+2024-10-31 09:31:12,984 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:31:12,984 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:31:12,984 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:31:12,984 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:31:12,984 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,984 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:31:12,984 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:31:12,984 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:31:12,985 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:31:12,985 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:31:12,985 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:31:12,985 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:31:12,985 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:31:12,985 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:31:12,985 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:31:12,985 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,985 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:31:12,985 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:31:12,985 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:31:12,985 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:31:12,985 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:31:12,985 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:31:12,985 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:31:12,985 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:31:12,985 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,986 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:31:12,986 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:31:12,986 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:31:12,986 - INFO - -----------------------------------
+2024-10-31 09:31:12,986 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:31:12,986 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:31:12,986 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:31:12,986 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:31:12,986 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,986 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:31:12,986 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:31:12,986 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:31:12,986 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:31:12,986 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:31:12,986 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:31:12,986 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:31:12,986 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:31:12,987 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:31:12,987 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:31:12,987 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,987 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:31:12,987 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:31:12,987 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:31:12,987 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:31:12,987 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:31:12,987 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:31:12,987 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:31:12,987 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:31:12,987 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,987 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:31:12,987 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:31:12,987 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:31:12,987 - INFO - ---------------------------------
+2024-10-31 09:31:12,987 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:31:12,987 - INFO - -------------------------------------
+2024-10-31 09:31:12,987 - INFO - 
+==================================================
+2024-10-31 09:31:12,988 - INFO - 
+SIBLING RELATIONS:
+2024-10-31 09:31:12,988 - INFO - =================
+2024-10-31 09:31:12,988 - INFO - 
+Ground Truth Relations:
+2024-10-31 09:31:12,988 - INFO - --------------------
+2024-10-31 09:31:12,988 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:31:12,988 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:31:12,988 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,988 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:31:12,988 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:31:12,988 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:31:12,988 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,988 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:31:12,988 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,988 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,988 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:31:12,988 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,988 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:31:12,988 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:31:12,989 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:31:12,989 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,989 - INFO - 
+Predicted Relations:
+2024-10-31 09:31:12,989 - INFO - -------------------
+2024-10-31 09:31:12,989 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:31:12,989 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:31:12,989 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,989 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:31:12,989 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:31:12,989 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:31:12,989 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,989 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:31:12,989 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,989 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,989 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:31:12,989 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,990 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:31:12,990 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:31:12,990 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:31:12,990 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,990 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:31:12,990 - INFO - -----------------------------------
+2024-10-31 09:31:12,990 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:31:12,990 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:31:12,990 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,990 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:31:12,990 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:31:12,990 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:31:12,990 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,990 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:31:12,990 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,990 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,990 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:31:12,990 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,991 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:31:12,991 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:31:12,991 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:31:12,991 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,991 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:31:12,991 - INFO - ---------------------------------
+2024-10-31 09:31:12,991 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:31:12,991 - INFO - -------------------------------------
+2024-10-31 09:31:12,991 - INFO - 
+==================================================
+2024-10-31 09:31:12,991 - INFO - 
+COMBINED RELATIONS:
+2024-10-31 09:31:12,991 - INFO - ==================
+2024-10-31 09:31:12,991 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:31:12,991 - INFO - -----------------------------------
+2024-10-31 09:31:12,991 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:31:12,991 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:31:12,991 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,992 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:31:12,992 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:31:12,992 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:31:12,992 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,992 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:31:12,992 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,992 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:31:12,992 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:31:12,992 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:31:12,992 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:31:12,992 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,992 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:31:12,992 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:31:12,992 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:31:12,992 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:31:12,992 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:31:12,992 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:31:12,993 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:31:12,993 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,993 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:31:12,993 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:31:12,993 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:31:12,993 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:31:12,993 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:31:12,993 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:31:12,993 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:31:12,993 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,993 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:31:12,993 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:31:12,993 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:31:12,993 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:31:12,993 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:31:12,993 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:31:12,993 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:31:12,993 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:31:12,994 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:31:12,994 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:31:12,994 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:31:12,994 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:31:12,994 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:31:12,994 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:31:12,994 - INFO - ---------------------------------
+2024-10-31 09:31:12,994 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:31:12,994 - INFO - -------------------------------------
+2024-10-31 09:31:12,994 - INFO - 
+==================================================
+2024-10-31 09:34:51,971 - INFO - 
+=== EVALUATION SCORES ===
+
+2024-10-31 09:34:51,973 - INFO - 
+PARENT_CHILD SCORES:
+2024-10-31 09:34:51,973 - INFO - --------------------
+2024-10-31 09:34:51,973 - INFO - precision: 1.000
+2024-10-31 09:34:51,973 - INFO - recall: 1.000
+2024-10-31 09:34:51,973 - INFO - f1: 1.000
+2024-10-31 09:34:51,973 - INFO - accuracy: 1.000
+2024-10-31 09:34:51,973 - INFO - 
+SIBLING SCORES:
+2024-10-31 09:34:51,973 - INFO - ---------------
+2024-10-31 09:34:51,973 - INFO - precision: 1.000
+2024-10-31 09:34:51,974 - INFO - recall: 1.000
+2024-10-31 09:34:51,974 - INFO - f1: 1.000
+2024-10-31 09:34:51,974 - INFO - accuracy: 1.000
+2024-10-31 09:34:51,974 - INFO - 
+COMBINED SCORES:
+2024-10-31 09:34:51,974 - INFO - ----------------
+2024-10-31 09:34:51,974 - INFO - precision: 1.000
+2024-10-31 09:34:51,974 - INFO - recall: 1.000
+2024-10-31 09:34:51,974 - INFO - f1: 1.000
+2024-10-31 09:34:51,974 - INFO - accuracy: 1.000
+2024-10-31 09:34:51,974 - INFO - 
+=== DETAILED RELATION ANALYSIS ===
+
+2024-10-31 09:34:51,974 - INFO - 
+PARENT_CHILD RELATIONS:
+2024-10-31 09:34:51,974 - INFO - ======================
+2024-10-31 09:34:51,974 - INFO - 
+Ground Truth Relations:
+2024-10-31 09:34:51,974 - INFO - --------------------
+2024-10-31 09:34:51,975 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:34:51,975 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:34:51,975 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:34:51,975 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:34:51,975 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:34:51,975 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:34:51,975 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:34:51,975 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:34:51,975 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:34:51,977 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:34:51,977 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:34:51,983 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:34:51,984 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:34:51,984 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:34:51,984 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:34:51,984 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:51,984 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:34:51,984 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:34:51,984 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:34:51,984 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:34:51,984 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:34:51,984 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:34:51,985 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:34:51,985 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:34:51,985 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:51,985 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:34:51,985 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:34:51,985 - INFO - 
+Predicted Relations:
+2024-10-31 09:34:51,985 - INFO - -------------------
+2024-10-31 09:34:51,985 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:34:51,985 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:34:51,985 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:34:51,985 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:34:51,985 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:34:51,985 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:34:51,985 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:34:51,986 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:34:51,986 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:34:51,986 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:34:51,986 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:34:51,986 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:34:51,987 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:34:51,987 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:34:51,987 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:34:51,987 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:51,988 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:34:51,988 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:34:51,988 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:34:51,988 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:34:51,988 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:34:51,989 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:34:51,989 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:34:51,989 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:34:51,990 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:51,990 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:34:51,990 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:34:51,990 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:34:51,990 - INFO - -----------------------------------
+2024-10-31 09:34:51,990 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:34:51,990 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:34:51,990 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:34:51,990 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:34:51,990 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:34:51,991 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:34:51,991 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:34:51,991 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:34:51,991 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:34:51,991 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:34:51,991 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:34:51,991 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:34:51,991 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:34:51,991 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:34:51,991 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:34:51,992 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:51,992 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:34:51,992 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:34:51,992 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:34:51,992 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:34:51,992 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:34:51,992 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:34:51,992 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:34:51,992 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:34:51,992 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:51,992 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:34:51,992 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:34:51,992 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:34:51,992 - INFO - ---------------------------------
+2024-10-31 09:34:51,992 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:34:51,992 - INFO - -------------------------------------
+2024-10-31 09:34:51,992 - INFO - 
+==================================================
+2024-10-31 09:34:51,992 - INFO - 
+SIBLING RELATIONS:
+2024-10-31 09:34:51,992 - INFO - =================
+2024-10-31 09:34:51,993 - INFO - 
+Ground Truth Relations:
+2024-10-31 09:34:51,993 - INFO - --------------------
+2024-10-31 09:34:51,993 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:34:51,993 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:34:51,993 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:34:51,993 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:34:51,993 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:34:51,993 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:34:51,993 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:51,993 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:34:51,993 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:51,993 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:34:51,993 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:34:51,993 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:51,993 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:34:51,993 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:34:51,993 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:34:51,994 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:51,994 - INFO - 
+Predicted Relations:
+2024-10-31 09:34:51,994 - INFO - -------------------
+2024-10-31 09:34:51,994 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:34:51,994 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:34:51,994 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:34:51,994 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:34:51,994 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:34:51,994 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:34:51,994 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:51,994 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:34:51,994 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:51,994 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:34:51,994 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:34:51,994 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:51,995 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:34:51,998 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:34:51,998 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:34:51,998 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:51,998 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:34:51,998 - INFO - -----------------------------------
+2024-10-31 09:34:51,998 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:34:51,999 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:34:51,999 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:34:51,999 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:34:51,999 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:34:51,999 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:34:51,999 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:51,999 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:34:51,999 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:51,999 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:34:51,999 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:34:51,999 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:51,999 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:34:51,999 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:34:51,999 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:34:52,000 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:52,000 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:34:52,000 - INFO - ---------------------------------
+2024-10-31 09:34:52,000 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:34:52,000 - INFO - -------------------------------------
+2024-10-31 09:34:52,000 - INFO - 
+==================================================
+2024-10-31 09:34:52,000 - INFO - 
+COMBINED RELATIONS:
+2024-10-31 09:34:52,000 - INFO - ==================
+2024-10-31 09:34:52,000 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:34:52,000 - INFO - -----------------------------------
+2024-10-31 09:34:52,000 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:34:52,000 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:34:52,000 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:34:52,001 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:34:52,001 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:34:52,001 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:34:52,001 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:52,001 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:34:52,001 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:52,001 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:34:52,001 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:34:52,001 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:34:52,001 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:34:52,001 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:34:52,001 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:34:52,001 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:34:52,001 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:34:52,002 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:34:52,002 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:34:52,002 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:34:52,002 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:34:52,002 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:52,002 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:34:52,002 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:34:52,002 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:34:52,002 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:34:52,002 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:34:52,002 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:34:52,002 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:34:52,002 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:52,002 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:34:52,002 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:34:52,002 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:34:52,002 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:34:52,002 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:34:52,003 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:34:52,003 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:34:52,003 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:34:52,003 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:34:52,003 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:34:52,003 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:34:52,003 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:34:52,003 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:34:52,003 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:34:52,003 - INFO - ---------------------------------
+2024-10-31 09:34:52,003 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:34:52,003 - INFO - -------------------------------------
+2024-10-31 09:34:52,003 - INFO - 
+==================================================
+2024-10-31 09:35:56,504 - INFO - 
+=== EVALUATION SCORES ===
+
+2024-10-31 09:35:56,506 - INFO - 
+PARENT_CHILD SCORES:
+2024-10-31 09:35:56,507 - INFO - --------------------
+2024-10-31 09:35:56,507 - INFO - precision: 1.000
+2024-10-31 09:35:56,507 - INFO - recall: 1.000
+2024-10-31 09:35:56,508 - INFO - f1: 1.000
+2024-10-31 09:35:56,508 - INFO - accuracy: 1.000
+2024-10-31 09:35:56,509 - INFO - 
+SIBLING SCORES:
+2024-10-31 09:35:56,509 - INFO - ---------------
+2024-10-31 09:35:56,509 - INFO - precision: 1.000
+2024-10-31 09:35:56,510 - INFO - recall: 1.000
+2024-10-31 09:35:56,510 - INFO - f1: 1.000
+2024-10-31 09:35:56,511 - INFO - accuracy: 1.000
+2024-10-31 09:35:56,511 - INFO - 
+COMBINED SCORES:
+2024-10-31 09:35:56,511 - INFO - ----------------
+2024-10-31 09:35:56,519 - INFO - precision: 1.000
+2024-10-31 09:35:56,522 - INFO - recall: 1.000
+2024-10-31 09:35:56,523 - INFO - f1: 1.000
+2024-10-31 09:35:56,523 - INFO - accuracy: 1.000
+2024-10-31 09:36:18,382 - INFO - 
+=== EVALUATION SCORES ===
+
+2024-10-31 09:36:18,384 - INFO - 
+PARENT_CHILD SCORES:
+2024-10-31 09:36:18,384 - INFO - --------------------
+2024-10-31 09:36:18,385 - INFO - precision: 1.000
+2024-10-31 09:36:18,385 - INFO - recall: 1.000
+2024-10-31 09:36:18,385 - INFO - f1: 1.000
+2024-10-31 09:36:18,386 - INFO - accuracy: 1.000
+2024-10-31 09:36:18,386 - INFO - 
+SIBLING SCORES:
+2024-10-31 09:36:18,387 - INFO - ---------------
+2024-10-31 09:36:18,387 - INFO - precision: 1.000
+2024-10-31 09:36:18,388 - INFO - recall: 1.000
+2024-10-31 09:36:18,388 - INFO - f1: 1.000
+2024-10-31 09:36:18,388 - INFO - accuracy: 1.000
+2024-10-31 09:36:18,389 - INFO - 
+COMBINED SCORES:
+2024-10-31 09:36:18,389 - INFO - ----------------
+2024-10-31 09:36:18,390 - INFO - precision: 1.000
+2024-10-31 09:36:18,390 - INFO - recall: 1.000
+2024-10-31 09:36:18,390 - INFO - f1: 1.000
+2024-10-31 09:36:18,391 - INFO - accuracy: 1.000
+2024-10-31 09:36:18,391 - INFO - 
+=== DETAILED RELATION ANALYSIS ===
+
+2024-10-31 09:36:18,392 - INFO - 
+PARENT_CHILD RELATIONS:
+2024-10-31 09:36:18,392 - INFO - ======================
+2024-10-31 09:36:18,392 - INFO - 
+Ground Truth Relations:
+2024-10-31 09:36:18,392 - INFO - --------------------
+2024-10-31 09:36:18,392 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:36:18,392 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:36:18,392 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:36:18,392 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:36:18,392 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,392 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:36:18,392 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:36:18,392 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:36:18,393 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:36:18,393 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:36:18,393 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:36:18,393 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:36:18,393 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:36:18,393 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:36:18,393 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:36:18,393 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,393 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:36:18,393 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:36:18,393 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:36:18,394 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:36:18,394 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:36:18,395 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:36:18,395 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:36:18,396 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:36:18,396 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,397 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:36:18,397 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:36:18,397 - INFO - 
+Predicted Relations:
+2024-10-31 09:36:18,398 - INFO - -------------------
+2024-10-31 09:36:18,398 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:36:18,399 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:36:18,400 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:36:18,400 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:36:18,401 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,402 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:36:18,402 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:36:18,402 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:36:18,402 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:36:18,402 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:36:18,403 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:36:18,403 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:36:18,404 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:36:18,404 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:36:18,404 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:36:18,404 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,404 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:36:18,404 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:36:18,405 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:36:18,405 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:36:18,405 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:36:18,405 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:36:18,406 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:36:18,406 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:36:18,406 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,406 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:36:18,406 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:36:18,406 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:36:18,406 - INFO - -----------------------------------
+2024-10-31 09:36:18,406 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:36:18,406 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:36:18,407 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:36:18,407 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:36:18,407 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,407 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:36:18,407 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:36:18,407 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:36:18,407 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:36:18,407 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:36:18,407 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:36:18,407 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:36:18,407 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:36:18,407 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:36:18,407 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:36:18,408 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,408 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:36:18,408 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:36:18,408 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:36:18,408 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:36:18,408 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:36:18,408 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:36:18,408 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:36:18,408 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:36:18,408 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,408 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:36:18,408 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:36:18,408 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:36:18,408 - INFO - ---------------------------------
+2024-10-31 09:36:18,408 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:36:18,409 - INFO - -------------------------------------
+2024-10-31 09:36:18,409 - INFO - 
+==================================================
+2024-10-31 09:36:18,409 - INFO - 
+SIBLING RELATIONS:
+2024-10-31 09:36:18,409 - INFO - =================
+2024-10-31 09:36:18,409 - INFO - 
+Ground Truth Relations:
+2024-10-31 09:36:18,409 - INFO - --------------------
+2024-10-31 09:36:18,409 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:36:18,409 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:36:18,409 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,409 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:36:18,409 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:36:18,409 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:36:18,409 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,409 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:36:18,409 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,410 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,410 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:36:18,410 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,410 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:36:18,410 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:36:18,410 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:36:18,410 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,410 - INFO - 
+Predicted Relations:
+2024-10-31 09:36:18,410 - INFO - -------------------
+2024-10-31 09:36:18,410 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:36:18,410 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:36:18,410 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,410 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:36:18,410 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:36:18,411 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:36:18,411 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,411 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:36:18,411 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,411 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,411 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:36:18,411 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,411 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:36:18,411 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:36:18,411 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:36:18,411 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,411 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:36:18,411 - INFO - -----------------------------------
+2024-10-31 09:36:18,412 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:36:18,412 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:36:18,412 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,412 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:36:18,412 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:36:18,412 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:36:18,412 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,412 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:36:18,412 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,413 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,413 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:36:18,414 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,414 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:36:18,415 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:36:18,415 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:36:18,416 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,416 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:36:18,417 - INFO - ---------------------------------
+2024-10-31 09:36:18,417 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:36:18,417 - INFO - -------------------------------------
+2024-10-31 09:36:18,418 - INFO - 
+==================================================
+2024-10-31 09:36:18,418 - INFO - 
+COMBINED RELATIONS:
+2024-10-31 09:36:18,419 - INFO - ==================
+2024-10-31 09:36:18,419 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:36:18,419 - INFO - -----------------------------------
+2024-10-31 09:36:18,420 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:36:18,420 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:36:18,421 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,421 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:36:18,422 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:36:18,422 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:36:18,423 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,423 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:36:18,423 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,424 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:36:18,424 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:36:18,425 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:36:18,425 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:36:18,425 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,426 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:36:18,426 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:36:18,426 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:36:18,426 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:36:18,426 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:36:18,426 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:36:18,426 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:36:18,426 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,426 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:36:18,426 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:36:18,426 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:36:18,426 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:36:18,427 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:36:18,427 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:36:18,427 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:36:18,428 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,428 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:36:18,429 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:36:18,429 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:36:18,429 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:36:18,429 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:36:18,429 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:36:18,430 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:36:18,430 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:36:18,430 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:36:18,430 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:36:18,430 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:36:18,430 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:36:18,430 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:36:18,430 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:36:18,430 - INFO - ---------------------------------
+2024-10-31 09:36:18,431 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:36:18,431 - INFO - -------------------------------------
+2024-10-31 09:36:18,431 - INFO - 
+==================================================
+2024-10-31 09:39:35,993 - INFO - 
+=== EVALUATION SCORES ===
+
+2024-10-31 09:39:36,000 - INFO - 
+PARENT_CHILD SCORES:
+2024-10-31 09:39:36,009 - INFO - --------------------
+2024-10-31 09:39:36,017 - INFO - precision: 1.000
+2024-10-31 09:39:36,026 - INFO - recall: 1.000
+2024-10-31 09:39:36,031 - INFO - f1: 1.000
+2024-10-31 09:39:36,036 - INFO - accuracy: 1.000
+2024-10-31 09:39:36,041 - INFO - 
+SIBLING SCORES:
+2024-10-31 09:39:36,047 - INFO - ---------------
+2024-10-31 09:39:36,053 - INFO - precision: 1.000
+2024-10-31 09:39:36,059 - INFO - recall: 1.000
+2024-10-31 09:39:36,065 - INFO - f1: 1.000
+2024-10-31 09:39:36,071 - INFO - accuracy: 1.000
+2024-10-31 09:39:36,094 - INFO - 
+COMBINED SCORES:
+2024-10-31 09:39:36,101 - INFO - ----------------
+2024-10-31 09:39:36,108 - INFO - precision: 1.000
+2024-10-31 09:39:36,112 - INFO - recall: 1.000
+2024-10-31 09:39:36,118 - INFO - f1: 1.000
+2024-10-31 09:39:36,126 - INFO - accuracy: 1.000
+2024-10-31 09:39:36,134 - INFO - 
+=== DETAILED RELATION ANALYSIS ===
+
+2024-10-31 09:39:36,146 - INFO - 
+PARENT_CHILD RELATIONS:
+2024-10-31 09:39:36,151 - INFO - ======================
+2024-10-31 09:39:36,157 - INFO - 
+Ground Truth Relations:
+2024-10-31 09:39:36,163 - INFO - --------------------
+2024-10-31 09:39:36,169 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:39:36,178 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:39:36,193 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:39:36,207 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:39:36,217 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,229 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:39:36,239 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:39:36,239 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:39:36,239 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:39:36,239 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:39:36,239 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:39:36,239 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:39:36,239 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:39:36,239 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:39:36,239 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:39:36,239 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,239 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:39:36,240 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:39:36,240 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:39:36,240 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:39:36,240 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:39:36,240 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:39:36,240 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:39:36,240 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:39:36,240 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,240 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:39:36,240 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:39:36,241 - INFO - 
+Predicted Relations:
+2024-10-31 09:39:36,241 - INFO - -------------------
+2024-10-31 09:39:36,241 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:39:36,241 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:39:36,241 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:39:36,241 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:39:36,241 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,241 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:39:36,241 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:39:36,241 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:39:36,241 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:39:36,241 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:39:36,241 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:39:36,241 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:39:36,242 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:39:36,242 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:39:36,242 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:39:36,242 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,242 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:39:36,242 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:39:36,242 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:39:36,242 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:39:36,242 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:39:36,242 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:39:36,242 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:39:36,242 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:39:36,242 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,242 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:39:36,242 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:39:36,242 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:39:36,243 - INFO - -----------------------------------
+2024-10-31 09:39:36,243 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:39:36,243 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:39:36,243 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:39:36,243 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:39:36,243 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,243 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:39:36,243 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:39:36,243 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:39:36,243 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:39:36,243 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:39:36,243 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:39:36,243 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:39:36,243 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:39:36,243 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:39:36,243 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:39:36,243 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,244 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:39:36,244 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:39:36,244 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:39:36,244 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:39:36,244 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:39:36,244 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:39:36,244 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:39:36,244 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:39:36,244 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,244 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:39:36,244 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:39:36,244 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:39:36,244 - INFO - ---------------------------------
+2024-10-31 09:39:36,244 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:39:36,245 - INFO - -------------------------------------
+2024-10-31 09:39:36,245 - INFO - 
+==================================================
+2024-10-31 09:39:36,245 - INFO - 
+SIBLING RELATIONS:
+2024-10-31 09:39:36,245 - INFO - =================
+2024-10-31 09:39:36,245 - INFO - 
+Ground Truth Relations:
+2024-10-31 09:39:36,245 - INFO - --------------------
+2024-10-31 09:39:36,245 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:39:36,245 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:39:36,245 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,245 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:39:36,245 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:39:36,245 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:39:36,245 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,245 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:39:36,245 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,246 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,246 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:39:36,246 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,246 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:39:36,246 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:39:36,246 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:39:36,246 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,246 - INFO - 
+Predicted Relations:
+2024-10-31 09:39:36,246 - INFO - -------------------
+2024-10-31 09:39:36,246 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:39:36,246 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:39:36,246 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,246 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:39:36,246 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:39:36,246 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:39:36,246 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,246 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:39:36,247 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,247 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,247 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:39:36,247 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,247 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:39:36,247 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:39:36,247 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:39:36,247 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,247 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:39:36,247 - INFO - -----------------------------------
+2024-10-31 09:39:36,247 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:39:36,247 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:39:36,247 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,247 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:39:36,247 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:39:36,247 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:39:36,247 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,247 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:39:36,248 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,248 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,248 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:39:36,248 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,248 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:39:36,248 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:39:36,248 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:39:36,248 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,248 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:39:36,248 - INFO - ---------------------------------
+2024-10-31 09:39:36,248 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:39:36,248 - INFO - -------------------------------------
+2024-10-31 09:39:36,248 - INFO - 
+==================================================
+2024-10-31 09:39:36,248 - INFO - 
+COMBINED RELATIONS:
+2024-10-31 09:39:36,248 - INFO - ==================
+2024-10-31 09:39:36,248 - INFO - 
+Correct Predictions (True Positives):
+2024-10-31 09:39:36,248 - INFO - -----------------------------------
+2024-10-31 09:39:36,249 - INFO -   
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text) → Dividends (Type: subsubsection)
+2024-10-31 09:39:36,249 - INFO -   
+Our governance practices are designed to ensure compliance...
+
+ (Type: text) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:39:36,249 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,249 - INFO -   
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text) → Governance Practices (Type: subsubsection)
+2024-10-31 09:39:36,249 - INFO -   
+The following table summarizes key financial data...
+
+ (Type: text) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:39:36,249 - INFO -   
+We have not declared dividends on our common stock...
+
+ (Type: text) → Shareholder Information (Type: paragraph)
+2024-10-31 09:39:36,249 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,249 - INFO -    Ensure compliance with all relevant regulations.
+     (Type: text) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:39:36,249 - INFO -    Monitor industry trends for emerging risks.
+     (Type: text) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,249 - INFO -   Compliance and Risk Monitoring (Type: paragraph) → itemize (Type: itemize)
+2024-10-31 09:39:36,249 - INFO -   Dividends (Type: subsubsection) → 
+We have not declared dividends on our common stock...
+
+ (Type: text)
+2024-10-31 09:39:36,249 - INFO -   Dividends (Type: subsubsection) → Shareholder Information (Type: paragraph)
+2024-10-31 09:39:36,249 - INFO -   Executive Officers (Type: subsection) → 
+The company’s leadership team consists of seasoned professionals...
+
+ (Type: text)
+2024-10-31 09:39:36,250 - INFO -   Executive Officers (Type: subsection) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,250 - INFO -   Executive Officers (Type: subsection) → Governance Practices (Type: subsubsection)
+2024-10-31 09:39:36,250 - INFO -   Financial Highlights (Type: subsubsection) → 
+2019 saw an increase in revenue by 15\%...
+
+Our profit margins remained consistent with prior years...
+
+ (Type: text)
+2024-10-31 09:39:36,250 - INFO -   Governance  (Type: subsubsection) → 
+we do imp things to ensure compliance...
+
+
+
+ (Type: text)
+2024-10-31 09:39:36,250 - INFO -   Governance Practices (Type: subsubsection) → 
+Our governance practices are designed to ensure compliance...
+
+ (Type: text)
+2024-10-31 09:39:36,250 - INFO -   Governance Practices (Type: subsubsection) → Compliance and Risk Monitoring (Type: paragraph)
+2024-10-31 09:39:36,250 - INFO -   Governance Practices (Type: subsubsection) → Governance  (Type: subsubsection)
+2024-10-31 09:39:36,250 - INFO -   ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection) → Executive Officers (Type: subsection)
+2024-10-31 09:39:36,250 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,250 - INFO -   ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:39:36,250 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:39:36,250 - INFO -   ITEM 6. SELECTED FINANCIAL DATA (Type: subsection) → Overview (Type: subsubsection)
+2024-10-31 09:39:36,250 - INFO -   Overview (Type: subsubsection) → 
+The following table summarizes key financial data...
+
+ (Type: text)
+2024-10-31 09:39:36,250 - INFO -   Overview (Type: subsubsection) → Class of Instrument Amortized Cost Allowance for Credit Losses Net Carrying Amount Gross Unrealized Gains (Losses) Fair Value    Corporate Bonds \$  45,752 \$ - \$  45,752 (\$ 95) \$  45,657    U.S. Treasury Notes \$  46,760 \$ - \$  46,760 (\$ 71) \$  46,689    Commercial Paper 121,077 \$ - \$ 121,077 \$ 2 \$ 121,079    Total \$ 213,589 \$ - \$ 213,589 (\$ 164) \$ 213,425                               (Type: table)
+2024-10-31 09:39:36,250 - INFO -   Overview (Type: subsubsection) → Financial Highlights (Type: subsubsection)
+2024-10-31 09:39:36,250 - INFO -   PART II (Type: section) → ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES (Type: subsection)
+2024-10-31 09:39:36,250 - INFO -   PART II (Type: section) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,251 - INFO -   PART II (Type: section) → PART III (Type: section)
+2024-10-31 09:39:36,251 - INFO -   PART II (Type: section) → Price Range of Our Common Stock and Preferred Stock (Type: subsection)
+2024-10-31 09:39:36,251 - INFO -   PART III (Type: section) → Executive Officers (Type: subsection)
+2024-10-31 09:39:36,251 - INFO -   PART III (Type: section) → ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE (Type: subsection)
+2024-10-31 09:39:36,251 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → 
+Our common stock is traded actively Our common stock is traded actively Our common stock is traded actively 
+
+
+ (Type: text)
+2024-10-31 09:39:36,251 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → Dividends (Type: subsubsection)
+2024-10-31 09:39:36,251 - INFO -   Price Range of Our Common Stock and Preferred Stock (Type: subsection) → ITEM 6. SELECTED FINANCIAL DATA (Type: subsection)
+2024-10-31 09:39:36,251 - INFO -   Shareholder Information (Type: paragraph) → 
+Our shareholders are primarily based in the U.S...
+
+ (Type: text)
+2024-10-31 09:39:36,251 - INFO -   document (Type: document) → PART II (Type: section)
+2024-10-31 09:39:36,251 - INFO -   document (Type: document) → PART III (Type: section)
+2024-10-31 09:39:36,251 - INFO -   itemize (Type: itemize) →  Engage with stakeholders to gather insights on potential threats.
+ (Type: text)
+2024-10-31 09:39:36,251 - INFO -   itemize (Type: itemize) →  Ensure compliance with all relevant regulations.
+     (Type: text)
+2024-10-31 09:39:36,251 - INFO -   itemize (Type: itemize) →  Monitor industry trends for emerging risks.
+     (Type: text)
+2024-10-31 09:39:36,251 - INFO - 
+Missed Relations (False Negatives):
+2024-10-31 09:39:36,251 - INFO - ---------------------------------
+2024-10-31 09:39:36,252 - INFO - 
+Incorrect Predictions (False Positives):
+2024-10-31 09:39:36,252 - INFO - -------------------------------------
+2024-10-31 09:39:36,252 - INFO - 
+==================================================
