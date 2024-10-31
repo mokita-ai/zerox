@@ -8,11 +8,16 @@ import os
 import json
 import aioshutil
 import nest_asyncio
+from evaluation_metrics.text_similarity import calculate_rouge_metrics
+from evaluation_metrics.text_similarity import calculate_bleu_metrics
 from pyzerox import zerox
 from prompt import PROMPT
 from utils.latex_to_json import tex_file_to_json
-
+from evaluation_metrics.DAR import evaluate_hierarchy
+from utils.heading_normalizer import  normalize_headings
 from dotenv import load_dotenv
+from utils.textblock_extractor import extract_text
+from utils.textblock_extractor import find_and_matching_values
 load_dotenv()
 
 
@@ -52,7 +57,7 @@ class PageTextResponse(BaseModel):
 
     @property
     def as_dict(self) -> dict:
-        print(self.text)
+        # print(self.text)
         return tex_file_to_json(tex_data=self.text)
 
     def to_dict(self) -> dict:
@@ -109,34 +114,72 @@ async def parse_pages(
     return [page.to_dict() for page in pages_data]
 
 
+
+class MetricsEvaluationRequest(BaseModel):
+    prompt: str
+
 @app.post("/metrics-evaluation")
-async def metrics_evaluation(
-    prompt: str = Query(...)
-):
+async def metrics_evaluation(request: MetricsEvaluationRequest):
+    prompt = request.prompt
     metric_data_files = Path("metric_data_examples")
 
     for file_location in metric_data_files.iterdir():
         if file_location.suffix == ".pdf":
             predicted_latex = await zerox(file_path=str(file_location), model=model, output_dir="./output_test",
-                                          custom_system_prompt=PROMPT )
+                                          custom_system_prompt=prompt )
 
             GT_latex_file = file_location.with_suffix(".tex")
             with open(GT_latex_file) as f:
                 GT_latex = f.read()
-
+                
 
             predicted_json = tex_file_to_json(tex_data = predicted_latex)
             GT_json = tex_file_to_json(tex_data= GT_latex)
 
 
+            # ##save GT_json
+            GT_json_file = file_location.with_suffix(".GT.json")
+            with open(GT_json_file, 'w') as json_file:
+                json.dump(GT_json, json_file, indent=4)
+
+            ##save predicted_json
             predicted_json_file = file_location.with_suffix(".predicted.json")
             with open(predicted_json_file, 'w') as json_file:
                 json.dump(predicted_json, json_file, indent=4)
 
-            GT_json_file = file_location.with_suffix(".GT.json")
-            with open(GT_json_file, 'w') as json_file:
-                json.dump(GT_json, json_file, indent=4)
-   
-   
+
+            updated_pred_json, _ = normalize_headings(predicted_json, GT_json, "logs.txt")
+
+            ##save updated_pred_json
+            updated_pred_json_file = file_location.with_suffix(".updated_pred.json")
+            with open(updated_pred_json_file, 'w') as json_file:
+                json.dump(updated_pred_json, json_file, indent=4)
+
+
+            # Get the list of dictionaries with headings and concatenated text
+            pred_text_map = extract_text(updated_pred_json)
+            GT_text_map = extract_text(GT_json)
+
+            matching_values = find_and_matching_values(pred_text_map, GT_text_map)
+
+
+            rouge_values = calculate_rouge_metrics(matching_values)
+            bleu_values = calculate_bleu_metrics(matching_values)
+
+
+
+            try:
+                metrics = evaluate_hierarchy(GT_json, updated_pred_json )
+            except Exception as e:
+                print(f"Error during evaluation: {e}")
+
+
+
+            response = {
+                "rouge_values": rouge_values,
+                "bleu_values": bleu_values,
+                "hierarchy_metrics": metrics
+            }
+            return response
 
 

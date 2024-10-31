@@ -21,8 +21,8 @@ def table_signiture(soup):
     tabular_text = str(soup.contents[tabular_index])
 
     # tabular_text =  re.sub(re.escape("&"), "SPACE_TOKEN&SPACE_TOKEN", tabular_text)
-    # tabular_text = re.sub(r"&\s*SPACE_TOKEN\s*\{", "& {", tabular_text)
-    # tabular_text = re.sub(r"\\\\\s*SPACE_TOKEN\s*&", r"\\ &", tabular_text)
+    # tabular_text = remove_unnecessary_space_token(tabular_text)
+
 
 
     soup = TS(tabular_text)
@@ -188,7 +188,8 @@ def tex_soup_to_json(tex_content):
 
     return node_stack[0]
 
-def tex_file_to_json(file_path = None, tex_data = None):
+
+def tex_file_to_json(file_path = None, tex_data = None, log_path="logs.txt"):
     if tex_data is None:
         with open(file_path) as file:
             tex_data = file.read()
@@ -196,10 +197,27 @@ def tex_file_to_json(file_path = None, tex_data = None):
     tex_data = replace_special_chars(tex_data)
     tex_data = make_sure_one_document(tex_data)
 
+    # print(tex_data)
+
     # Parse the TeX content to JSON structure
     tex_soup = TS(tex_data)
     json_data = tex_soup_to_json(tex_soup)
     
+
+    # Prepare log entry as text
+    log_text = (
+        "TeX File to JSON Conversion Log\n"
+        f"Timestamp: {datetime.now().isoformat()}\n"
+        "-" * 50 + "\n "
+         "converted json: "
+        + str(json_data)
+    )
+
+    # # Append the log entry to the specified log file path
+    # with open(log_path, "a") as log_file:
+    #     log_file.write(log_text + "\n")
+
+
     return json_data
 
 # Example usage

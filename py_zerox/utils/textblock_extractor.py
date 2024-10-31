@@ -41,17 +41,17 @@ def extract_text(data, current_heading=None, result=None, log_path="logs.txt", l
                     result[current_heading] += text
                 else:
                     result[current_heading] = text
-                log_text.append(f"Extracted text under heading '{current_heading}': {text}")
+                # log_text.append(f"Extracted text under heading '{current_heading}': {text}")
                     
             # Recursively process the remaining children
             else:
                 extract_text(child, current_heading, result, log_path, log_text)
     
     # Only write to the log file on the initial call (when the function completes all recursive calls)
-    if current_heading is None:
-        log_text.append("-" * 50 + "\n\n")
-        with open(log_path, "a") as log_file:
-            log_file.write("\n".join(log_text))
+    # if current_heading is None:
+    #     log_text.append("-" * 50 + "\n\n")
+    #     with open(log_path, "a") as log_file:
+    #         log_file.write("\n".join(log_text))
 
     return result
 
@@ -110,5 +110,5 @@ def find_and_matching_values(dict1, dict2, log_path="logs.txt"):
     with open(log_path, "a") as log_file:
         log_file.write(log_text)
 
-    print(matching_values)
+    # print(matching_values)
     return matching_values
