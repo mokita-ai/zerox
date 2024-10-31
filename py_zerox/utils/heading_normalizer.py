@@ -1,55 +1,16 @@
-import re
 from difflib import SequenceMatcher
 import copy
 import json
-
-
-import json
-
-def load_and_validate_json(file_path):
-    """
-    Load a JSON file and validate that it contains the expected structure
-    with a 'children' field at the root level.
-
-    Parameters:
-        file_path (str): The path to the JSON file.
-
-    Returns:
-        dict: The loaded JSON data.
-
-    Raises:
-        ValueError: If the JSON does not have the expected structure.
-    """
-    # Load JSON file
-    with open(file_path, 'r') as f:
-        json_data = json.load(f)
-        print(f"JSON file '{file_path}' loaded successfully")
-
-    # Validate JSON structure
-    if not isinstance(json_data, dict):
-        raise ValueError(f"The JSON file '{file_path}' must be a dictionary at the root level.")
-    
-    if 'children' not in json_data:
-        raise ValueError(f"The JSON file '{file_path}' must contain a 'children' field at the root level.")
-    
-    return json_data
-
-# Example usage:
-# gt_json = load_and_validate_json('ground_truth.json')
-# pred_json = load_and_validate_json('prediction.json')
-
-
+from datetime import datetime
+import re
+import os
 
 
 def normalize_text(text):
     """Normalize text for comparison by removing special characters and standardizing spacing."""
-    # Convert to lowercase
     text = text.lower()
-    # Replace special characters with spaces
     text = re.sub(r'[.,(){}[\]\'\"#]', ' ', text)
-    # Replace multiple spaces with single space
     text = re.sub(r'\s+', ' ', text)
-    # Strip leading/trailing whitespace
     return text.strip()
 
 def calculate_similarity(text1, text2):
@@ -76,7 +37,6 @@ def find_matching_headings(pred_json, gt_json, similarity_threshold=0.75):
     collect_headings(pred_json, pred_headings)
     collect_headings(gt_json, gt_headings)
     
-    # Find matches without type constraint
     for pred_heading in pred_headings:
         best_match = None
         best_similarity = similarity_threshold
@@ -116,10 +76,59 @@ def update_json_headings(json_data, matches):
     update_node(updated_json)
     return updated_json
 
-def normalize_headings(pred_json, gt_json):
-    """Main function to normalize headings in predicted JSON based on ground truth."""
+import re
+from difflib import SequenceMatcher
+import copy
+from datetime import datetime
+import os
+
+def normalize_headings(pred_json, gt_json, log_path="logs.txt"):
+    """
+    Normalize headings in predicted JSON based on ground truth, logging changes to a text file.
+
+    Parameters:
+    ----------
+    pred_json : dict
+        The predicted JSON structure with headings to normalize.
+    gt_json : dict
+        The ground truth JSON structure for reference.
+    log_path : str, optional
+        Path to the log file (default is 'logs.txt').
+
+    Returns:
+    -------
+    updated_json : dict
+        The updated JSON structure with normalized headings.
+    changes : list
+        A list of changes made during normalization.
+
+    Workflow:
+    --------
+    1. Finds matching headings in predicted and ground truth JSON based on similarity.
+    2. Updates predicted JSON with matched headings from ground truth.
+    3. Logs a formatted report of changes along with metadata for traceability.
+    """
     matches, changes = find_matching_headings(pred_json, gt_json)
     updated_json = update_json_headings(pred_json, matches)
-    
-    return updated_json, changes
 
+    # Create the change report as a formatted string
+    report_lines = [
+        "Heading Normalization Report:",
+        "-" * 50,
+        f"Timestamp: {datetime.now().isoformat()}",
+        f"File: {log_path}",
+        "-" * 50
+    ]
+    for change in changes:
+        report_lines.append(f"Original: {change['original']} ({change['original_type']})")
+        report_lines.append(f"Replaced with: {change['replaced_with']} ({change['matched_type']})")
+        report_lines.append(f"Similarity score: {change['similarity']:.2f}")
+        report_lines.append("-" * 50)
+
+    report_text = "\n".join(report_lines)
+
+    # Append the report to the log file
+    with open(log_path, "a") as log_file:
+        log_file.write(report_text + "\n\n")
+
+    return updated_json, changes
