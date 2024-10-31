@@ -46,3 +46,4 @@ except requests.RequestException as e:
 
 # Handle the response (e.g., print or process)
 print(response.json())
+
