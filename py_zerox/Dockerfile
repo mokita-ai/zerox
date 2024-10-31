@@ -19,8 +19,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the application files
 COPY main.py .
 COPY prompt.py .
-COPY latex_to_json.py .
 COPY pyzerox ./pyzerox
+COPY utils ./utils
+COPY evaluation_metrics ./evaluation_metrics
+COPY metric_data_examples ./metric_data_examples
 
 # Expose the port your app runs on
 EXPOSE 80

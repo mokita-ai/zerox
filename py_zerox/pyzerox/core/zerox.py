@@ -190,12 +190,11 @@ async def zerox(
                         for i, content in enumerate(aggregated_markdown)
                     ]
 
-        # return ZeroxOutput(
-        #     completion_time=completion_time,
-        #     file_name=file_name,
-        #     input_tokens=input_token_count,
-        #     output_tokens=output_token_count,
-        #     pages=formatted_pages,
-        # )
+        return ZeroxOutput(
+            completion_time=completion_time,
+            file_name=file_name,
+            input_tokens=input_token_count,
+            output_tokens=output_token_count,
+            pages=formatted_pages,
+        )
     
-        return "\n\n".join(aggregated_markdown)

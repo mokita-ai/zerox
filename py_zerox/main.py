@@ -125,8 +125,13 @@ async def metrics_evaluation(request: MetricsEvaluationRequest):
 
     for file_location in metric_data_files.iterdir():
         if file_location.suffix == ".pdf":
-            predicted_latex = await zerox(file_path=str(file_location), model=model, output_dir="./output_test",
+            result  = await zerox(file_path=str(file_location), model=model, output_dir="./output_test",
                                           custom_system_prompt=prompt )
+
+            predicted_latex = ""
+            for page in result.pages:
+                predicted_latex += page.content + '\n'
+                        
 
             GT_latex_file = file_location.with_suffix(".tex")
             with open(GT_latex_file) as f:

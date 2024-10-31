@@ -1,9 +1,6 @@
 
 
-import json
 from TexSoup import TexSoup as TS
-import os
-from datetime import datetime
 from utils.common import *
 
 def table_signiture(soup):
@@ -204,14 +201,14 @@ def tex_file_to_json(file_path = None, tex_data = None, log_path="logs.txt"):
     json_data = tex_soup_to_json(tex_soup)
     
 
-    # Prepare log entry as text
-    log_text = (
-        "TeX File to JSON Conversion Log\n"
-        f"Timestamp: {datetime.now().isoformat()}\n"
-        "-" * 50 + "\n "
-         "converted json: "
-        + str(json_data)
-    )
+    # # Prepare log entry as text
+    # log_text = (
+    #     "TeX File to JSON Conversion Log\n"
+    #     f"Timestamp: {datetime.now().isoformat()}\n"
+    #     "-" * 50 + "\n "
+    #      "converted json: "
+    #     + str(json_data)
+    # )
 
     # # Append the log entry to the specified log file path
     # with open(log_path, "a") as log_file:
