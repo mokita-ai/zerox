@@ -24,7 +24,6 @@ def table_signiture(soup):
     # tabular_text = re.sub(r"\\\\\s*SPACE_TOKEN\s*&", r"\\ &", tabular_text)
 
 
-
     soup = TS(tabular_text)
 
     cells = []
