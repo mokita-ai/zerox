@@ -17,8 +17,14 @@ def table_signiture(soup):
     
     tabular_text = str(soup.contents[tabular_index])
 
-    # tabular_text =  re.sub(re.escape("&"), "SPACE_TOKEN&SPACE_TOKEN", tabular_text)
-    # tabular_text = remove_unnecessary_space_token(tabular_text)
+    tabular_text =  re.sub(re.escape("&"), "SPACE_TOKEN&SPACE_TOKEN", tabular_text)
+    tabular_text = remove_unnecessary_space_token(tabular_text)
+
+
+    # ##save tex_data and latex .tex in a file
+    # with open("testing/o.tex", 'w') as f:
+    #     f.write(tabular_text)
+
 
 
 
@@ -86,7 +92,7 @@ def table_signiture(soup):
     n_rows = i + 1
     
 
-    cells_grid = [['' for _ in range(n_columns+3)] for _ in range(n_rows+3)]
+    cells_grid = [['' for _ in range(n_columns+1)] for _ in range(n_rows+1)]
 
     for (row, col), value in vis.items():
         cells_grid[row][col] =  restore_special_chars(value)
@@ -194,9 +200,9 @@ def tex_file_to_json(file_path = None, tex_data = None, log_path="logs.txt"):
     tex_data = replace_special_chars(tex_data)
     tex_data = make_sure_one_document(tex_data)
 
-    # print(tex_data)
 
-    # Parse the TeX content to JSON structure
+
+
     tex_soup = TS(tex_data)
     json_data = tex_soup_to_json(tex_soup)
     

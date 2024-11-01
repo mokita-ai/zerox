@@ -21,14 +21,25 @@ def remove_unnecessary_space_token(text):
 
 
 def replace_special_chars(text):
-    text = re.sub(r'\\$', 'DOLLAR', text)
-    text = re.sub(r'\$', 'DOLLAR', text)
-    text = re.sub(r'\\%', 'PERCENT', text)
+    # text = re.sub(r'\$', 'DOLLAR', text)
+    # text = re.sub(r'\$', 'DOLLAR', text)
+    # Replace all occurrences of \$ and $ with DOLLAR_TOKEN
+
+    text = re.sub(r'\\\$', 'DOLLAR_TOKEN', text)
+    text = re.sub(r'\$', 'DOLLAR_TOKEN', text)
+
+    text = re.sub(r'\\\%', 'PERCENT', text)
     text = re.sub(r'\%', 'PERCENT', text)
-    text = re.sub(r'\\&', 'AMPERSAND', text)
-    text = re.sub(r'\&', 'AMPERSAND', text)
-    text = re.sub(r'\\#', 'HASH', text)
-    text = re.sub(r'\#', 'HASH', text)
+
+
+
+
+
+    # text = re.sub(r'\%', 'PERCENT', text)
+    # text = re.sub(r'\\&', 'AMPERSAND', text)
+    # text = re.sub(r'\&', 'AMPERSAND', text)
+    # text = re.sub(r'\#', 'HASH', text)
+    # text = re.sub(r'\\#', 'HASH', text)
 
 
 
@@ -37,10 +48,10 @@ def replace_special_chars(text):
     return text
 
 def restore_special_chars(text):
-    text = re.sub(r'DOLLAR', '$', text)
+    text = re.sub(r'DOLLAR_TOKEN', '$', text)
     text = re.sub(r'PERCENT', '%', text)
-    text = re.sub(r'AMPERSAND', '&', text)
-    text = re.sub(r'HASH', '#', text)
+    # text = re.sub(r'AMPERSAND', '&', text)
+    # text = re.sub(r'HASH', '#', text)
     text = re.sub(r'SPACE_TOKEN', '', text)   
     return text
 
@@ -56,7 +67,4 @@ def make_sure_one_document(text):
     text = re.sub(r'\\pagestyle{.*}', '', text)
     text = re.sub(r'\\bibliographystyle{.*}', '', text)
     
-
-    
-
     return '\\begin{document}\n'  + text + '\n\\end{document}'
