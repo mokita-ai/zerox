@@ -6,9 +6,8 @@ from typing import Tuple, Dict, Set
 import json
 
 # Configure logging
-logging.basicConfig(filename='logs.txt', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='./logs.txt', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
-
 class RelationType:
     PARENT_CHILD = "parent_child"
     SIBLING = "sibling"
@@ -41,6 +40,7 @@ def extract_relations(hierarchy: Dict) -> Dict[str, Set[Tuple[str, str]]]:
     """
     Extract parent-child and unidirectional sibling relations from a heading hierarchy.
     Relations are stored using node names. Includes relations from the root document node.
+    Skip processing children of table nodes.
     """
     parent_child_relations = set()
     sibling_relations = set()
@@ -63,10 +63,14 @@ def extract_relations(hierarchy: Dict) -> Dict[str, Set[Tuple[str, str]]]:
             raise
     
     def process_node(node: Dict):
-        """Process a single node and its children"""
+        """Process a single node and its children, skipping table children"""
         try:
             validate_node(node)
             current_name = node['name']
+            
+            # Skip processing children if node is a table
+            if node['type'] == 'table':
+                return
             
             if 'children' in node and node['children']:
                 children = node['children']
@@ -119,7 +123,7 @@ def extract_relations(hierarchy: Dict) -> Dict[str, Set[Tuple[str, str]]]:
     }
 
 def build_node_info_map(hierarchy: Dict) -> Dict[str, NodeInfo]:
-    """Build a mapping of node names to their information"""
+    """Build a mapping of node names to their information, skipping table children"""
     node_map = {}
     
     # Add root node to the map if it has name and type
@@ -132,6 +136,11 @@ def build_node_info_map(hierarchy: Dict) -> Dict[str, NodeInfo]:
         try:
             validate_node(node)
             node_map[node['name']] = NodeInfo(node['name'], node['type'])
+            
+            # Skip processing children if node is a table
+            if node['type'] == 'table':
+                return
+                
             if 'children' in node and node['children']:
                 for child in node['children']:
                     process_node(child)
@@ -144,10 +153,6 @@ def build_node_info_map(hierarchy: Dict) -> Dict[str, NodeInfo]:
             process_node(node)
     
     return node_map
-
-
-
-
 
 
 def calculate_metrics_by_type(gt_relations: Set[Tuple[int, int]], 
@@ -180,69 +185,67 @@ def calculate_metrics_by_type(gt_relations: Set[Tuple[int, int]],
         }
     }
 
-
-def log_relation(relation: Tuple[int, int], node_map: Dict[int, NodeInfo]):
-    """Log a relation with both IDs and names."""
+def print_relation(relation: Tuple[int, int], node_map: Dict[int, NodeInfo]):
+    """Print a relation with both IDs and names."""
     try:
         source = node_map[relation[0]]
         target = node_map[relation[1]]
-        logger.info(f"  {source} → {target}")
+        print(f"  {source} → {target}")
     except KeyError as e:
-        logger.error(f"Error: Could not find node with ID {e} in node map")
+        print(f"Error: Could not find node with ID {e} in node map")
 
-def log_scores(metrics: Dict[str, Dict[str, float]]):
-    """Log scores for all relation types."""
-    logger.info("\n=== EVALUATION SCORES ===\n")
+def print_scores(metrics: Dict[str, Dict[str, float]]):
+    """Print scores for all relation types."""
+    print("\n=== EVALUATION SCORES ===\n")
     
     for relation_type in [RelationType.PARENT_CHILD, RelationType.SIBLING, RelationType.COMBINED]:
-        logger.info(f"\n{relation_type.upper()} SCORES:")
-        logger.info("-" * (len(relation_type) + 8))
+        print(f"\n{relation_type.upper()} SCORES:")
+        print("-" * (len(relation_type) + 8))
         for metric, value in metrics[relation_type].items():
             if metric != 'details':
-                logger.info(f"{metric}: {value:.3f}")
+                print(f"{metric}: {value:.3f}")
 
-def log_relation_analysis(gt_relations: Dict[str, Set[Tuple[int, int]]], 
+def print_relation_analysis(gt_relations: Dict[str, Set[Tuple[int, int]]], 
                           pred_relations: Dict[str, Set[Tuple[int, int]]], 
                           metrics: Dict[str, Dict[str, float]],
                           gt_node_map: Dict[int, NodeInfo],
                           pred_node_map: Dict[int, NodeInfo]):
-    """Log detailed analysis of relations and metrics."""
-    logger.info("\n=== DETAILED RELATION ANALYSIS ===\n")
+    """Print detailed analysis of relations and metrics."""
+    print("\n=== DETAILED RELATION ANALYSIS ===\n")
     
     for relation_type in [RelationType.PARENT_CHILD, RelationType.SIBLING, RelationType.COMBINED]:
-        logger.info(f"\n{relation_type.upper()} RELATIONS:")
-        logger.info("=" * (len(relation_type) + 10))
+        print(f"\n{relation_type.upper()} RELATIONS:")
+        print("=" * (len(relation_type) + 10))
         
         if relation_type != RelationType.COMBINED:
-            logger.info("\nGround Truth Relations:")
-            logger.info("-" * 20)
+            print("\nGround Truth Relations:")
+            print("-" * 20)
             for relation in sorted(gt_relations[relation_type]):
-                log_relation(relation, gt_node_map)
+                print_relation(relation, gt_node_map)
             
-            logger.info("\nPredicted Relations:")
-            logger.info("-" * 19)
+            print("\nPredicted Relations:")
+            print("-" * 19)
             for relation in sorted(pred_relations[relation_type]):
-                log_relation(relation, pred_node_map)
+                print_relation(relation, pred_node_map)
         
         details = metrics[relation_type]['details']
         
-        logger.info("\nCorrect Predictions (True Positives):")
-        logger.info("-" * 35)
+        print("\nCorrect Predictions (True Positives):")
+        print("-" * 35)
         for relation in sorted(details['true_positives']):
-            log_relation(relation, gt_node_map)
+            print_relation(relation, gt_node_map)
         
-        logger.info("\nMissed Relations (False Negatives):")
-        logger.info("-" * 33)
+        print("\nMissed Relations (False Negatives):")
+        print("-" * 33)
         for relation in sorted(details['false_negatives']):
-            log_relation(relation, gt_node_map)
+            print_relation(relation, gt_node_map)
         
-        logger.info("\nIncorrect Predictions (False Positives):")
-        logger.info("-" * 37)
+        print("\nIncorrect Predictions (False Positives):")
+        print("-" * 37)
         for relation in sorted(details['false_positives']):
-            log_relation(relation, pred_node_map)
+            print_relation(relation, pred_node_map)
         
-        logger.info("\n" + "="*50)
-
+        print("\n" + "="*50)
 
 def evaluate_hierarchy(gt_json, pred_json) -> Dict[str, Dict[str, float]]:
     """
@@ -285,10 +288,10 @@ def evaluate_hierarchy(gt_json, pred_json) -> Dict[str, Dict[str, float]]:
         combined_pred = pred_relations[RelationType.PARENT_CHILD].union(pred_relations[RelationType.SIBLING])
         metrics[RelationType.COMBINED] = calculate_metrics_by_type(combined_gt, combined_pred)
         
-        # Log scores
-        log_scores(metrics)
-        
-        log_relation_analysis(gt_relations, pred_relations, metrics, gt_node_map, pred_node_map)
+        # Print scores and analysis
+        print_scores(metrics)
+        print(metrics)
+        print_relation_analysis(gt_relations, pred_relations, metrics, gt_node_map, pred_node_map)
         
         # Prepare return value with only main metrics, excluding 'details'
         summary_metrics = {
@@ -299,14 +302,14 @@ def evaluate_hierarchy(gt_json, pred_json) -> Dict[str, Dict[str, float]]:
         return summary_metrics
     
     except FileNotFoundError as e:
-        logger.error(f"File not found: {e}")
+        print(f"File not found: {e}")
         raise
     except json.JSONDecodeError as e:
-        logger.error(f"Invalid JSON format: {e}")
+        print(f"Invalid JSON format: {e}")
         raise
     except ValueError as e:
-        logger.error(f"Validation error: {e}")
+        print(f"Validation error: {e}")
         raise
     except Exception as e:
-        logger.error(f"Unexpected error: {e}")
+        print(f"Unexpected error: {e}")
         raise
