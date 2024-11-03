@@ -92,7 +92,7 @@ def table_signiture(soup):
     n_rows = i + 1
     
 
-    cells_grid = [['' for _ in range(n_columns+1)] for _ in range(n_rows+1)]
+    cells_grid = [['' for _ in range(n_columns)] for _ in range(n_rows)]
 
     for (row, col), value in vis.items():
         cells_grid[row][col] =  restore_special_chars(value)
@@ -172,7 +172,7 @@ def tex_soup_to_json(tex_content):
                 name = [' '.join(row) for row in children]
                 name = ' '.join(name)
                 ## to avoid the children of the table to be added to the children of the leaf node
-                children = [] 
+                # children = [] 
 
                 
 
@@ -200,7 +200,9 @@ def tex_file_to_json(file_path = None, tex_data = None, log_path="logs.txt"):
     tex_data = replace_special_chars(tex_data)
     tex_data = make_sure_one_document(tex_data)
 
+    tex_data = re.sub(r'\\(section|subsection|subsubsection|paragraph|subparagraph)\*', r'\\\1', tex_data)
 
+    # tex_data = re.sub(r'\[a-zA-Z]+\*\{.*?\}', '', tex_data)
 
 
     tex_soup = TS(tex_data)
