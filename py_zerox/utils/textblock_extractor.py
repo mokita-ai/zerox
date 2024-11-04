@@ -1,114 +1,85 @@
 from datetime import datetime
 
 
-def extract_text(data, current_heading=None, result=None, log_path="logs.txt", log_text=None):
+def extract_text(data, current_path=None, result=None):
     """
-    Recursively extracts text from a nested data structure, grouping text by headings, and logs all extractions in a single entry.
-
+    Recursively extracts text and tables from a nested data structure, grouping them by their paths.
+    Text nodes with the same path are concatenated, tables with the same path are concatenated.
+    Text and tables are kept separate even if they share the same path.
+    
     Args:
-        data (dict): The input data with nested elements.
-        current_heading (str, optional): Tracks the current heading as we navigate through nested elements.
-        result (dict, optional): Stores the extracted text grouped by headings.
-        log_path (str, optional): The path to save the log file in text format (default is 'logs.txt').
-        log_text (list, optional): Accumulates log entries for a single function run.
-
+        data (dict): The nested data structure to process
+        current_path (list): The current path in the tree (list of section names)
+        result (dict): Dictionary to store results with paths as keys
+    
     Returns:
-        dict: A dictionary with headings as keys and concatenated text as values.
+        dict: Dictionary with paths as keys and text/tables as values. 
+              Text paths end with ":text" and table paths end with ":table"
     """
-    # Initialize result and log_text if not already provided (only on the initial call)
     if result is None:
         result = {}
-    if log_text is None:
-        log_text = [
-            f"Extract Text Log - Timestamp: {datetime.now().isoformat()}",
-            "-" * 50
-        ]
-
-    # Check if the current node has children and iterate through them
+    
+    if current_path is None:
+        current_path = []
+    
+    # Get the current node's name if it exists and isn't a text/table
+    if "name" in data and data["type"] not in ["text", "table"]:
+        current_path = current_path + [data["name"]]
+    
+    # If we find a text or table node, add it to the result
+    if data["type"] in ["text", "table"]:
+        # Create path string with type indicator
+        path_key = " > ".join(current_path) + f":{data['type']}"
+        
+        # Add or concatenate the content based on type
+        if path_key in result:
+            # For text, concatenate strings
+            if data["type"] == "text":
+                result[path_key] = result[path_key] + "\n" + data["name"]
+            # For tables, concatenate with a separator
+            else:  # table type
+                result[path_key] = result[path_key] + "\n=====\n" + data["name"]
+        else:
+            result[path_key] = data["name"]
+            
+        return result
+    
+    # Process children if they exist
     if "children" in data:
         for child in data["children"]:
-            # If the child is a heading (e.g., section, subsection, etc.)
-            if child["type"] in ["document", "section", "subsection", "subsubsection", "paragraph", "subparagraph", "itemize", "enumerate"]:
-                # Update the current heading name
-                new_heading = child["name"]
-                log_text.append(f"Processing heading: {new_heading}")
-                extract_text(child, new_heading, result, log_path, log_text)
-                
-            # If the child is of type "text," concatenate it to the current heading's text
-            elif child["type"] == "text" and current_heading is not None:
-                text = child["name"]
-                if current_heading in result:
-                    result[current_heading] += text
-                else:
-                    result[current_heading] = text
-                # log_text.append(f"Extracted text under heading '{current_heading}': {text}")
-                    
-            # Recursively process the remaining children
-            else:
-                extract_text(child, current_heading, result, log_path, log_text)
+            extract_text(child, current_path, result)
     
-    # Only write to the log file on the initial call (when the function completes all recursive calls)
-    # if current_heading is None:
-    #     log_text.append("-" * 50 + "\n\n")
-    #     with open(log_path, "a") as log_file:
-    #         log_file.write("\n".join(log_text))
-
     return result
 
-
-
-def find_and_matching_values(dict1, dict2, log_path="logs.txt"):
+def find_and_matching_values(dict1, dict2):
     """
-    Finds matching values between two dictionaries based on their keys and logs the results.
-
+    Finds matching values between two dictionaries based on their keys, using the order of keys from dict1.
+    
     Parameters:
     ----------
     dict1 : dict
-        The first dictionary to compare.
+        The ground truth dictionary to compare.
     dict2 : dict
         The second dictionary to compare.
-    log_path : str, optional
-        The path to save the log file in text format (default is 'logs.txt').
-
+    
     Returns:
     -------
     matching_values : list of tuples
-        A list of tuples containing matching, missing, and unique values between the two dictionaries.
-    
-    Example Usage:
-    --------------
-    matching_values = find_and_log_matching_values(dict1, dict2, "path/to/logs.txt")
+        A list of tuples containing matching, missing, and unique values between the two dictionaries,
+        ordered according to the keys in dict1.
     """
-
     matching_values = []
 
-    # Find common keys and add corresponding values from both dictionaries
-    common_keys = dict1.keys() & dict2.keys()
-    for key in common_keys:
-        matching_values.append((dict1[key], dict2[key]))
+    # Process each key in dict1 and gather matching or missing values from dict2
+    for key in dict1:
+        if key in dict2:
+            matching_values.append((dict1[key], dict2[key]))  # Matching values
+        else:
+            matching_values.append((dict1[key], ""))  # Missing in dict2
+    
+    # Add values from dict2 with keys missing in dict1, preserving the original order of dict2 for these keys
+    for key in dict2:
+        if key not in dict1:
+            matching_values.append(("", dict2[key]))
 
-    # Add values from dict1 with missing keys in dict2
-    for key in (dict1.keys() - dict2.keys()):
-        matching_values.append((dict1[key], ""))
-
-    # Add values from dict2 with missing keys in dict1
-    for key in (dict2.keys() - dict1.keys()):
-        matching_values.append(("", dict2[key]))
-
-    # Log matching values to file
-    log_text = (
-        "Matching Values Log\n"
-        f"Timestamp: {datetime.now().isoformat()}\n"
-        "-" * 50 + "\n"
-        "Matching Values:\n"
-    )
-    for pair in matching_values:
-        log_text += f"{pair}\n"
-    log_text += "-" * 50 + "\n\n"
-
-    # Append the log to the specified log file path
-    with open(log_path, "a") as log_file:
-        log_file.write(log_text)
-
-    # print(matching_values)
     return matching_values
