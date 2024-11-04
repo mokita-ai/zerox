@@ -11,18 +11,55 @@ MAX_TEXT_LENGTH = 1500000
 
 
 def remove_unnecessary_space_token(text):
-    # Step 1: Remove SPACE_TOKEN in "text } SPACE_TOKEN & text"
-    pattern1 = r"(\})\s*SPACE_TOKEN\s*&"
-    replacement1 = r"\1 &"
+    # Join TEXT_TAGS and SPANING_CELLS for regex patterns
+    text_tags_pattern = '|'.join(TEXT_TAGS)
+    spaning_cells_pattern = '|'.join(SPANING_CELLS)
+    
+    # Patterns for TEXT_TAGS
+    # Pattern 1: \textbf{...} SPACE_TOKEN &
+    pattern1 = re.compile(
+        rf'(\\(?:{text_tags_pattern})\{{.*?\}})\s*SPACE_TOKEN\s*&'
+    )
+    replacement1 = r'\1 &'
     text = re.sub(pattern1, replacement1, text)
-
-    # Step 2: Remove SPACE_TOKEN in "text & SPACE_TOKEN \ text" only if not followed by another \
-    pattern2 = r"(&)\s*SPACE_TOKEN\s*\\(?!\\)"
-    replacement2 = r"\1 \\"
+    
+    # Pattern 2: \textbf{...} & SPACE_TOKEN \\
+    pattern2 = re.compile(
+        rf'(\\(?:{text_tags_pattern})\{{.*?\}})\s*&\s*SPACE_TOKEN\s*\\'
+    )
+    replacement2 = r'\1 & \\'
     text = re.sub(pattern2, replacement2, text)
-
+    
+    # Pattern 3: & SPACE_TOKEN \textbf{...}
+    pattern3 = re.compile(
+        rf'&\s*SPACE_TOKEN\s*(\\(?:{text_tags_pattern})\{{.*?\}})'
+    )
+    replacement3 = r'& \1'
+    text = re.sub(pattern3, replacement3, text)
+    
+    # Updated patterns for SPANING_CELLS
+    # Pattern 4: \multirow{...}{...}{...} SPACE_TOKEN &
+    pattern4 = re.compile(
+        rf'(\\(?:{spaning_cells_pattern})\{{.*?\}}\{{.*?\}}\{{.*?\}})\s*SPACE_TOKEN\s*&'
+    )
+    replacement4 = r'\1 &'
+    text = re.sub(pattern4, replacement4, text)
+    
+    # Pattern 5: \multirow{...}{...}{...} & SPACE_TOKEN \\
+    pattern5 = re.compile(
+        rf'(\\(?:{spaning_cells_pattern})\{{.*?\}}\{{.*?\}}\{{.*?\}})\s*&\s*SPACE_TOKEN\s*\\'
+    )
+    replacement5 = r'\1 & \\'
+    text = re.sub(pattern5, replacement5, text)
+    
+    # Pattern 6: & SPACE_TOKEN \multirow{...}{...}{...}
+    pattern6 = re.compile(
+        rf'&\s*SPACE_TOKEN\s*(\\(?:{spaning_cells_pattern})\{{.*?\}}\{{.*?\}}\{{.*?\}})'
+    )
+    replacement6 = r'& \1'
+    text = re.sub(pattern6, replacement6, text)
+    
     return text
-
 
 def remove_latex_drawing_commands(latex_string):
     latex_drawing_commands = [

@@ -24,6 +24,7 @@ def table_signiture(soup):
     # tabular_content_text = remove_latex_drawing_commands(tabular_content_text)
     tabular_content_text = remove_unnecessary_space_token(tabular_content_text) 
 
+
     # print(tabular_content_text)
     soup = TS(tabular_content_text)
 
@@ -129,7 +130,10 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
 
     for element in document_content:
         if isinstance(element, TexNode) and element.name in TEXT_TAGS:
-            element = element.contents[0]
+            if len(element.contents) == 1:
+                element = element.contents[0]
+            else:
+                element = ""
             
         if isinstance(element, str) :
             text_length = len(element)
@@ -176,9 +180,13 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
         elif element.name in LEAF_NODES:
             children = []
             if element.name != 'table': ##itimize and enumerate
-                for item in element.contents:                    
-                    if len(item.contents) == 1:
-                        value = text_end_point(item.contents[0])
+                for item in element.contents:                       
+                    if isinstance(item, str) or (isinstance(item, TexNode) and len(item.contents) == 1):
+                        if isinstance(item, TexNode):
+                            item = item.contents[0]
+
+
+                        value = text_end_point(item)
 
                         text_node = {
                             'id': str(uuid.uuid4()),
@@ -198,7 +206,7 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                         custom_type = 'item'
                         level = node_stack[-1]['level'] + 2 
 
-                        if isinstance(document_content[0], TexNode) and document_content[0].name in TEXT_TAGS:
+                        if len(document_content) and isinstance(document_content[0], TexNode) and document_content[0].name in TEXT_TAGS:
                             custom_value = text_end_point(document_content[0])
                             document_content = document_content[1:]
 
@@ -249,7 +257,7 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
     return node_stack[0]
 
 
-def tex_file_to_json(file_path = None, tex_data = None, log_path="logs.txt"):
+def tex_file_to_json(file_path = None, tex_data = None, log_path="logs.txt", page = 0):
     if tex_data is None:
         with open(file_path) as file:
             tex_data = file.read()
@@ -259,11 +267,17 @@ def tex_file_to_json(file_path = None, tex_data = None, log_path="logs.txt"):
 
     tex_data = re.sub(r'\\(section|subsection|subsubsection|paragraph|subparagraph)\*', r'\\\1', tex_data)
 
-    # tex_data = re.sub(r'\[a-zA-Z]+\*\{.*?\}', '', tex_data)
 
 
-    tex_soup = TS(tex_data)
-    json_data = tex_soup_to_json(tex_soup)
+    try:
+        tex_soup = TS(tex_data)
+    except Exception as e:
+        raise  Exception("The model prodeced non compilable latex code")
+
+    try:
+        json_data = tex_soup_to_json(tex_soup, page=page)
+    except Exception as e:  
+        raise  Exception("Error during latex to json parsing")
     
 
     # # Prepare log entry as text

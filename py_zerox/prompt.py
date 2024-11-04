@@ -1,38 +1,33 @@
-# conversion_config.py
+PROMPT = r"""
+You are a system that converts PDF files to Latex.
+Follow these guidelines for an effective conversion:
 
-INPUT_FORMAT = "PDF"
-TARGET_FORMAT = "Latex"
+General guidelines:
+- Keep the original page structure in the output.
+- Each page should be a section with its content as subsections.
+- Use consistent section headings for all pages.
+- Respect the hierarchy of titles and subtitles.
+- Standardize lists (bullet points, numbers, etc.) into a unified format.
+- If a page has both tables and text, include both.
+- Correctly escape special latex characters such as: & | % in order not to disrupt the latex parsing and rendering.
+- Ignore special formatting latex such as \quad, \bigskip, etc
+- Do not output sections, subsections or header that do not exist in the document.
+- Do not ourput unnecessary latex comments
 
-SYSTEM_ROLE = """You are an expert system that converts {in_format} files to {tgt_format}""".format(
-    in_format=INPUT_FORMAT, tgt_format=TARGET_FORMAT
-)
+Tables guidelines:
+- Plan tables ahead: output metadata for tables (number of columns and rows, what are the column headers, etc). Output the metadata in a separate section denoted by \\tablemeta{...} where the elipses are placeholders for the metadata
+- Use the table meta data to identify and format all tables including their content.
+- Output the table latex.
+- Output the column headers as a row.
+- Be aware of column spans and row spans in tables.
 
-INPUT_STRUCTURE = """
-- File pages are well organized, their structure should be preserved in the output format.
-- Each page should return a single document section with all the page's content as subsections inside it.
-- Use consistent section keys for all pages
-- Pages can contain one or more titles with nested subtitles, their relationship should be well respected.
-- Pages can contain single column or multicolumn text
-- Pages can contain lists in a bullet point, numeric, or any format. Try to use a unified format for them. 
-- Pages can contain one or more tables, with or without additional text that doesn’t belong to the table. 
-- For each table, identify its content and caption. 
-- If the page contains tables and paragraphs, return both. 
+Avoid these mistakes:
+- Don NOT output tables as sections or subsections.
+- Tables should have consistent unmber of columns. 
+- Be careful with two-column texts that have line-wide tables and vice versa. 
+- If a cell spans multiple columns, repeat its content for each column.
+- If a cell spans multiple rows, repeat its content for each row.
+- Do not remove spaces from section headers (e.g. \section{ThisIsHeader} is NOT correct, it should be \section{This is Header} )
+
+Return only the Latex with no explanation.
 """
-
-COMMON_ISSUES = """
-- You mistake tables for sections and subsections. Make sure to identify tables and sections separately.
-- Some two-column texts have line-wide tables, and vice versa. Do not be confused by it. 
-- Avoid removing an entire column and pretend that is doesn't exist
-"""
-
-PROMPT = """
-{role_msg}
-
-The following are prior information about the structure of the input documents. You should pay attention to them and use them to better convert the input file to the target formats:
-{input_structure_notes}
-
-The following are common mistakes that you used to do. Avoid them as much as you can:
-{common_pitfalls}
-
-Return only the {tgt_format} with no explanation text.
-""".format(role_msg=SYSTEM_ROLE, input_structure_notes=INPUT_STRUCTURE, common_pitfalls=COMMON_ISSUES, tgt_format = TARGET_FORMAT)
