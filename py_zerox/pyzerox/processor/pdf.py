@@ -65,6 +65,7 @@ async def process_page(
             image_path=image_path,
             maintain_format=True,
             prior_page=prior_page,
+            fewshot_examples_paths=fewshot_examples_paths
         )
 
         formatted_markdown = format_markdown(completion.content)
