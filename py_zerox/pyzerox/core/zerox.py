@@ -2,7 +2,7 @@ import os
 import aioshutil as async_shutil
 import tempfile
 import warnings
-from typing import List, Optional, Union, Iterable
+from typing import List, Optional, Union, Iterable, Tuple
 from datetime import datetime
 import aiofiles
 import aiofiles.os as async_os
@@ -32,6 +32,7 @@ async def zerox(
     temp_dir: Optional[str] = None,
     custom_system_prompt: Optional[str] = None,
     select_pages: Optional[Union[int, Iterable[int]]] = None,
+    fewshot_examples_paths= Optional[Iterable[Tuple[os.PathLike, os.PathLike]]],
     **kwargs
 ) -> ZeroxOutput:
     """
@@ -154,6 +155,7 @@ async def zerox(
                 input_token_count,
                 output_token_count,
                 prior_page,
+                fewshot_examples_paths=fewshot_examples_paths
             )
 
             aggregated_markdown = [result[0] for result in results if isinstance(result[0], str)]

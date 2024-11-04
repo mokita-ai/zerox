@@ -21,7 +21,6 @@ from utils.textblock_extractor import find_and_matching_values
 load_dotenv()
 
 
-
 # Apply nest_asyncio
 nest_asyncio.apply()
 
@@ -68,8 +67,15 @@ class PageTextResponse(BaseModel):
 
 # Asynchronous function to extract text from PDF pages
 async def extract_pages_from_pdf(file_location: str, pages: List[int]) -> List[PageTextResponse]:
+    
+    
+    fs_examples = [(
+        "/home/azureuser/cloudfiles/code/work/mokita-code/zerox/py_zerox/data/fewshot_examples/example1.png",
+        "/home/azureuser/cloudfiles/code/work/mokita-code/zerox/py_zerox/data/fewshot_examples/example1.tex"
+    )]
+    
     result = await zerox(file_path=file_location, model=model,
-                         custom_system_prompt=PROMPT, select_pages=pages)
+                         custom_system_prompt=PROMPT, select_pages=pages, fewshot_examples_paths=fs_examples)
 
     # Parse each page result to a Pydantic model
     pages_parsed = [

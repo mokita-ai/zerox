@@ -1,7 +1,7 @@
 import logging
 import os
 import asyncio
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Iterable
 from pdf2image import convert_from_path
 
 # Package Imports
@@ -41,6 +41,7 @@ async def process_page(
     output_token_count: int = 0,
     prior_page: str = "",
     semaphore: Optional[asyncio.Semaphore] = None,
+    fewshot_examples_paths: Optional[Iterable[Tuple[os.PathLike, os.PathLike]]] = None
 ) -> Tuple[str, int, int, str]:
     """Process a single page of a PDF"""
 
@@ -86,6 +87,7 @@ async def process_pages_in_batches(
     input_token_count: int = 0,
     output_token_count: int = 0,
     prior_page: str = "",
+    fewshot_examples_paths: Iterable[Tuple[os.PathLike, os.PathLike]]=None
 ):
     # Create a semaphore to limit the number of concurrent tasks
     semaphore = asyncio.Semaphore(concurrency)
@@ -100,6 +102,7 @@ async def process_pages_in_batches(
             output_token_count,
             prior_page,
             semaphore,
+            fewshot_examples_paths
         )
         for image in images
     ]
