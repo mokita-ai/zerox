@@ -1,43 +1,37 @@
 
-
+from TexSoup.data import TexNode
 from TexSoup import TexSoup as TS
 from utils.common import *
+import uuid
 
 def table_signiture(soup):
-    tabular_index = -1 ## the index of the tag tabular
+    tabular_index = -1 ## the index of the tag tabular the we huant for
     content_count = len(soup.contents)
 
     for i in range(content_count):
         if not isinstance(soup.contents[i], str) and soup.contents[i].name == 'tabular':
-            tabular_index = i
+            tabular_index = i ## we found the tabular tag
             break
 
     if tabular_index == -1:
         raise Exception("not a valid table")
     
-    tabular_text = str(soup.contents[tabular_index])
+    tabular_content_text = str(soup.contents[tabular_index])
+    tabular_content_text =  re.sub(re.escape("&"), "SPACE_TOKEN&SPACE_TOKEN", tabular_content_text) ## to handle empty table cells
 
-    tabular_text =  re.sub(re.escape("&"), "SPACE_TOKEN&SPACE_TOKEN", tabular_text)
-    tabular_text = remove_unnecessary_space_token(tabular_text)
-
-
-    # ##save tex_data and latex .tex in a file
-    # with open("testing/o.tex", 'w') as f:
-    #     f.write(tabular_text)
-
-
-
-
-    soup = TS(tabular_text)
-
-    cells = []
     
+    tabular_content_text = re.sub(r'\{\}', r'{SPACE_TOKEN}', tabular_content_text)  ##to handle empty {}
+    tabular_content_text = remove_unnecessary_space_token(tabular_content_text) 
+
+
+    soup = TS(tabular_content_text)
+    cells = []
 
     column_string = soup.contents[0].contents[0] ## for example "|c|c|c|" or "ccc"
     stripped_string = column_string.replace('|', '').replace(' ', '')
 
     # Count the remaining characters
-    n_columns = len(stripped_string)
+    n_columns = len(stripped_string) ## is 3 in the example
 
     i, j =  0, 0
     vis = {}
@@ -45,18 +39,15 @@ def table_signiture(soup):
         span = None
 
         if not isinstance(element, str) and  isinstance(element.contents, list) and len(element.contents):
-            if element.name in ['multirow', 'multicolumn']:
+            if element.name in ['multirow', 'multicolumn']: ##spaning cells 
                 span = element.name, int(element.contents[0])
-                if(len(element.contents) < 3):
-                    element = ""
-                else:
-                    element = element.contents[2]
+                element = element.contents[2]
 
                 if not isinstance(element, str):
                     element = element.contents[0]
 
             else:
-                if element.name != 'textbf':
+                if element.name not in TEXT_TAGS:
                     continue
 
                 element = element.contents[0]
@@ -95,40 +86,45 @@ def table_signiture(soup):
     cells_grid = [['' for _ in range(n_columns)] for _ in range(n_rows)]
 
     for (row, col), value in vis.items():
-        cells_grid[row][col] =  restore_special_chars(value)
+        cells_grid[row][col] =  text_end_point(value)
         
     return cells_grid
 
-def tex_soup_to_json(tex_content):
-    doc_index = 0
-    content_count = len(tex_content.contents)
-    
-    for i in range(content_count):
-        if not isinstance(tex_content.contents[i], str) and tex_content.contents[i].name == 'document':
-            doc_index = i
-            break
+def tex_soup_to_json(tex_content = None, document_content = None, custom_value = 'document', custom_type = 'document', level = 0):
+    if document_content  == None:
+        doc_index = 0
+        content_count = len(tex_content.contents)
+        
+        for i in range(content_count):
+            if not isinstance(tex_content.contents[i], str) and tex_content.contents[i].name == 'document':
+                doc_index = i
+                break
 
-    document_content = tex_content.contents[doc_index]
-    node_id = 0
-    node_stack = [{'id': node_id, 'name': 'document', 'level': 0, 'type': 'document', 'children': []}]
-    node_id += 1
+        document_content = tex_content.contents[doc_index]
+
+
+ 
+    node_stack = [{'id': str(uuid.uuid4()), 'value': custom_value , 'level': level, 'type': custom_type, 'children': []}]
+
 
     for element in document_content:
-        if isinstance(element, str):
-            # Truncate text to fit within MAX_TEXT_LENGTH
+        if isinstance(element, TexNode) and element.name in TEXT_TAGS:
+            element = element.contents[0]
+            
+        if isinstance(element, str) :
             text_length = len(element)
-            truncated_text = element[:min(MAX_TEXT_LENGTH, text_length)]
+            truncated_text = element[:min(MAX_TEXT_LENGTH, text_length)]# Truncate text to fit within MAX_TEXT_LENGTH
             
             # Create a new node with the text as a hierarchy element
             text_node = {
-                'id': node_id,
+                'id': str(uuid.uuid4()),
                 'level': node_stack[-1]['level'] + 1,
-                'name': restore_special_chars (truncated_text),
+                'value': text_end_point (truncated_text),
                 'type': 'text',
                 'children': []
             }
             node_stack[-1]['children'].append(text_node)
-            node_id += 1
+  
 
         elif element.name in HIERARCHY:
             element_depth = HIERARCHY.index(element.name)
@@ -138,39 +134,68 @@ def tex_soup_to_json(tex_content):
 
             if element_depth - 1 == HIERARCHY.index(node_stack[-1]['type']):
                 new_node = {
-                    'id': node_id,
+                    'id': str(uuid.uuid4()),
                     'level': node_stack[-1]['level'] + 1,
-                    'name': element.contents[0] if element.contents else '',
+                    'value':  text_end_point(element.contents[0]) if element.contents else '',
                     'type': element.name,
                     'children': []
                 }
                 node_stack[-1]['children'].append(new_node)
                 node_stack.append(new_node)
-                node_id += 1
+    
             elif len(node_stack) > 1:
-                raise Exception("Document is not structured with proper hierarchy")
+                print("Document have orphane text")
+                ##TODO: handle the orphane text
+                continue
+                # raise Exception("Document is not structured with proper hierarchy")
         
         elif element.name in LEAF_NODES:
             
             children = []
-            if element.name != 'table':
-                # edit the count of the children and their level
-                for item in element.contents:
-                    text_node = {
-                        'id': node_id,
-                        'level': node_stack[-1]['level'] + 2, ##
-                        'name': restore_special_chars(item.contents[0]) ,
-                        'type': 'text',
-                        'children': []
-                                }
-                    children.append(text_node)                    
-                    node_id+=1##  
+            if element.name != 'table': ##itimize and enumerate
+                for item in element.contents:                    
+                    if len(item.contents) == 1:
+                        name = text_end_point(item.contents[0])
+
+                        text_node = {
+                            'id': str(uuid.uuid4()),
+                            'level': node_stack[-1]['level'] + 2, ##
+                            'value': name,
+                            'type': 'text',
+                            'children': []
+                        }
+                        children.append(text_node)                    
+        
+
+                    else:
+                        document_content = item.contents
+                        custom_value = 'item'
+                        custom_type = 'item'
+                        level = node_stack[-1]['level'] + 2 
+
+                        if isinstance(document_content[0], TexNode) and document_content[0].name in TEXT_TAGS:
+                            custom_value = text_end_point(document_content[0])
+                            document_content = document_content[1:]
+
+
+
+                        item_node = tex_soup_to_json(document_content = document_content, custom_value = custom_value, custom_type =  custom_type, level = level)
+
+                        ##TODO
+                        children.append(item_node)
+
+                        # print("Document have itimize complex")
+                        # name = 'CANNOT_PARSE'
+
+
+                    
 
                 name = element.name                  
             else: 
                 children = table_signiture(element) 
                 name = [' '.join(row) for row in children]
                 name = ' '.join(name)
+
                 ## to avoid the children of the table to be added to the children of the leaf node
                 # children = [] 
 
@@ -178,16 +203,16 @@ def tex_soup_to_json(tex_content):
 
 
             leaf_node = {
-                'id': node_id,
+                'id': str(uuid.uuid4()),
                 'level': node_stack[-1]['level'] + 1,
-                'name': name,
+                'value': name,
                 'type': element.name,
                 'children': children
             }
         
         
             node_stack[-1]['children'].append(leaf_node)
-            node_id += 1
+       
 
     return node_stack[0]
 

@@ -3,6 +3,7 @@ import re
 
 HIERARCHY = ['document', 'section', 'subsection', 'subsubsection', 'paragraph', 'subparagraph']
 LEAF_NODES = ['itemize', 'table' , 'enumerate']
+TEXT_TAGS =  ['textbf', 'textit', 'texttt', 'textsc', 'textsf', 'underline', 'emph']
 MAX_TEXT_LENGTH = 1500000
 
 
@@ -47,7 +48,13 @@ def replace_special_chars(text):
 
     return text
 
-def restore_special_chars(text):
+def text_end_point(text):
+    if not isinstance(text, str):
+        if text.name not in TEXT_TAGS or len(text.contents) != 1:
+            raise Exception('text_end_point: text is not a string')
+        
+        text = text.contents[0]
+
     text = re.sub(r'DOLLAR_TOKEN', '$', text)
     text = re.sub(r'PERCENT', '%', text)
     # text = re.sub(r'AMPERSAND', '&', text)
