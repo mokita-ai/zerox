@@ -5,6 +5,8 @@ HIERARCHY = ['document', 'section', 'subsection', 'subsubsection', 'paragraph', 
 LEAF_NODES = ['itemize', 'table' , 'enumerate']
 TEXT_TAGS =  ['textbf', 'textit', 'texttt', 'textsc', 'textsf', 'underline', 'emph', 'thead']
 SPANING_CELLS =   ['multirow', 'multicolumn']
+TABLE_DRAWING_TAGS = ['hline', 'cline', 'cmidrule', 'toprule', 'midrule', 'bottomrule']
+
 MAX_TEXT_LENGTH = 1500000
 
 
@@ -21,6 +23,21 @@ def remove_unnecessary_space_token(text):
 
     return text
 
+
+def remove_latex_drawing_commands(latex_string):
+    latex_drawing_commands = [
+        r'\\hline',
+        r'\\cline\{[0-9]+-[0-9]+\}',
+        r'\\cmidrule\(lr\)\{[0-9]+-[0-9]+\}',
+        r'\\toprule',
+        r'\\midrule',
+        r'\\bottomrule',
+    ]
+
+    for command in latex_drawing_commands:
+        pattern = re.compile(command)
+        latex_string = re.sub(pattern, '', latex_string)
+    return latex_string
 
 def replace_special_chars(text):
     # text = re.sub(r'\$', 'DOLLAR', text)

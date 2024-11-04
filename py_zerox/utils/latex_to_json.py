@@ -21,9 +21,10 @@ def table_signiture(soup):
 
     
     tabular_content_text = re.sub(r'\{\}', r'{SPACE_TOKEN}', tabular_content_text)  ##to handle empty {}
+    # tabular_content_text = remove_latex_drawing_commands(tabular_content_text)
     tabular_content_text = remove_unnecessary_space_token(tabular_content_text) 
 
-
+    # print(tabular_content_text)
     soup = TS(tabular_content_text)
 
 
@@ -60,6 +61,7 @@ def table_signiture(soup):
         
         for cell in str(element).split('&'):
             striped = cell.strip()
+
             if (len(striped.replace('\\', ""))):
                 while (i, j) in vis:
                     j+=1
@@ -176,12 +178,12 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
             if element.name != 'table': ##itimize and enumerate
                 for item in element.contents:                    
                     if len(item.contents) == 1:
-                        name = text_end_point(item.contents[0])
+                        value = text_end_point(item.contents[0])
 
                         text_node = {
                             'id': str(uuid.uuid4()),
                             'type': 'text',
-                            'value': name,
+                            'value': value,
                             'level': node_stack[-1]['level'] + 2, ##
                             'bbox':  [],
                             'page': page,
@@ -213,7 +215,7 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
 
                     
 
-                name = element.name                  
+                value = element.name                  
             else: 
                 children = table_signiture(element) 
                 value = ""
