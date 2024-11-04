@@ -90,7 +90,7 @@ def table_signiture(soup):
         
     return cells_grid
 
-def tex_soup_to_json(tex_content = None, document_content = None, custom_value = 'document', custom_type = 'document', level = 0):
+def tex_soup_to_json(tex_content = None, document_content = None, custom_value = 'document', custom_type = 'document', level = 0, page = 0):
     if document_content  == None:
         doc_index = 0
         content_count = len(tex_content.contents)
@@ -104,7 +104,16 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
 
 
  
-    node_stack = [{'id': str(uuid.uuid4()), 'value': custom_value , 'level': level, 'type': custom_type, 'children': []}]
+    node_stack = [{
+            'id': str(uuid.uuid4()), 
+            'type': custom_type, 
+            'value': custom_value , 
+            'level': level, 
+            'bbox':  [], 
+            'page': page, 
+            'children': []
+        }
+    ]
 
 
     for element in document_content:
@@ -118,9 +127,11 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
             # Create a new node with the text as a hierarchy element
             text_node = {
                 'id': str(uuid.uuid4()),
-                'level': node_stack[-1]['level'] + 1,
-                'value': text_end_point (truncated_text),
                 'type': 'text',
+                'value': text_end_point (truncated_text),
+                'level': node_stack[-1]['level'] + 1,
+                'bbox':  [],
+                'page': page,
                 'children': []
             }
             node_stack[-1]['children'].append(text_node)
@@ -132,25 +143,26 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
             while element_depth <= HIERARCHY.index(node_stack[-1]['type']) and len(node_stack) > 1:
                 node_stack.pop()
 
-            if element_depth - 1 == HIERARCHY.index(node_stack[-1]['type']):
-                new_node = {
-                    'id': str(uuid.uuid4()),
-                    'level': node_stack[-1]['level'] + 1,
-                    'value':  text_end_point(element.contents[0]) if element.contents else '',
-                    'type': element.name,
-                    'children': []
-                }
-                node_stack[-1]['children'].append(new_node)
-                node_stack.append(new_node)
-    
-            elif len(node_stack) > 1:
-                print("Document have orphane text")
-                ##TODO: handle the orphane text
-                continue
-                # raise Exception("Document is not structured with proper hierarchy")
+            # if element_depth - 1 == HIERARCHY.index(node_stack[-1]['type']):
+            new_node = {
+                'id': str(uuid.uuid4()),
+                'type': element.name,
+                'value':  text_end_point(element.contents[0]) if element.contents else '',
+                'level': node_stack[-1]['level'] + 1,
+                'bbox':  [],
+                'page': page,
+                'children': []
+            }
+            node_stack[-1]['children'].append(new_node)
+            node_stack.append(new_node)
+
+            # elif len(node_stack) > 1:
+            #     print("Document have orphane text")
+            #     ##TODO: handle the orphane text
+            #     continue
+            #     # raise Exception("Document is not structured with proper hierarchy")
         
         elif element.name in LEAF_NODES:
-            
             children = []
             if element.name != 'table': ##itimize and enumerate
                 for item in element.contents:                    
@@ -159,9 +171,11 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
 
                         text_node = {
                             'id': str(uuid.uuid4()),
-                            'level': node_stack[-1]['level'] + 2, ##
-                            'value': name,
                             'type': 'text',
+                            'value': name,
+                            'level': node_stack[-1]['level'] + 2, ##
+                            'bbox':  [],
+                            'page': page,
                             'children': []
                         }
                         children.append(text_node)                    
@@ -204,9 +218,11 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
 
             leaf_node = {
                 'id': str(uuid.uuid4()),
-                'level': node_stack[-1]['level'] + 1,
-                'value': name,
                 'type': element.name,
+                'value': name,
+                'level': node_stack[-1]['level'] + 1,
+                'bbox':  [],
+                'page': page,
                 'children': children
             }
         
