@@ -1,7 +1,7 @@
 # conversion_config.py
 
 INPUT_FORMAT = "PDF"
-TARGET_FORMAT = "Latex"
+TARGET_FORMAT = "latex"
 
 SYSTEM_ROLE = """You are an expert system that converts {in_format} files to {tgt_format}""".format(
     in_format=INPUT_FORMAT, tgt_format=TARGET_FORMAT
