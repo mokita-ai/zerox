@@ -3,7 +3,8 @@ import re
 
 HIERARCHY = ['document', 'section', 'subsection', 'subsubsection', 'paragraph', 'subparagraph']
 LEAF_NODES = ['itemize', 'table' , 'enumerate']
-TEXT_TAGS =  ['textbf', 'textit', 'texttt', 'textsc', 'textsf', 'underline', 'emph']
+TEXT_TAGS =  ['textbf', 'textit', 'texttt', 'textsc', 'textsf', 'underline', 'emph', 'thead']
+SPANING_CELLS =   ['multirow', 'multicolumn']
 MAX_TEXT_LENGTH = 1500000
 
 
@@ -60,6 +61,9 @@ def text_end_point(text):
     # text = re.sub(r'AMPERSAND', '&', text)
     # text = re.sub(r'HASH', '#', text)
     text = re.sub(r'SPACE_TOKEN', '', text)   
+    ##strip the text
+    text = text.strip()
+
     return text
 
 

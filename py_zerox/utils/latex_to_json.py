@@ -25,7 +25,7 @@ def table_signiture(soup):
 
 
     soup = TS(tabular_content_text)
-    cells = []
+
 
     column_string = soup.contents[0].contents[0] ## for example "|c|c|c|" or "ccc"
     stripped_string = column_string.replace('|', '').replace(' ', '')
@@ -37,19 +37,22 @@ def table_signiture(soup):
     vis = {}
     for element in soup.contents[0].contents:
         span = None
+        isHeader = False
 
-        if not isinstance(element, str) and  isinstance(element.contents, list) and len(element.contents):
-            if element.name in ['multirow', 'multicolumn']: ##spaning cells 
+        if isinstance(element, TexNode) and len(element.contents):
+            if element.name in SPANING_CELLS: 
                 span = element.name, int(element.contents[0])
                 element = element.contents[2]
 
                 if not isinstance(element, str):
-                    element = element.contents[0]
-
+                   element = element.contents[0]
             else:
                 if element.name not in TEXT_TAGS:
                     continue
 
+                if element.name == 'thead':
+                    isHeader = True
+        
                 element = element.contents[0]
         else:    
             if '&' not in element:
@@ -58,37 +61,43 @@ def table_signiture(soup):
         for cell in str(element).split('&'):
             striped = cell.strip()
             if (len(striped.replace('\\', ""))):
-
-
                 while (i, j) in vis:
                     j+=1
-
                     if(j == n_columns):
                         j = 0
-                        i+=1 
+                        i += 1  
 
-                vis[(i, j)] = striped
+                vis[(i, j)] = {"type" : "cell", "value": text_end_point(striped)}
+
+                if isHeader:
+                    vis[(i, j)]["isHeader"] = True
 
                 if(span != None):
                     typee, num = span
 
                     if typee == 'multirow':
+                        vis[(i, j)]['rowspan'] = num
                         for x in range(i + 1, i + num):
                             vis[(x, j)] = ''
                     else:
+                        vis[(i, j)]['colspan'] = num
                         for y in range(j + 1, j + num):
                             vis[(i, y)] = ''
-                cells.append(striped)
+                # cells.append(striped)
 
     n_rows = i + 1
     
 
-    cells_grid = [['' for _ in range(n_columns)] for _ in range(n_rows)]
+    table_rows = [ {"type": "row", "value":"", "children": []} for _ in range(n_rows)]
 
     for (row, col), value in vis.items():
-        cells_grid[row][col] =  text_end_point(value)
+        if not (row < n_rows and col < n_columns):
+            raise Exception("Table is not well formed")
         
-    return cells_grid
+        if value != '':
+            table_rows[row]["children"].append(value)
+        
+    return table_rows
 
 def tex_soup_to_json(tex_content = None, document_content = None, custom_value = 'document', custom_type = 'document', level = 0, page = 0):
     if document_content  == None:
@@ -207,9 +216,14 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                 name = element.name                  
             else: 
                 children = table_signiture(element) 
-                name = [' '.join(row) for row in children]
-                name = ' '.join(name)
+                value = ""
+                for row in children:
+                    for cell in row['children']:
+                        value += cell['value'] + ' '
 
+                ##TODO
+                # name = [' '.join(row) for row in children]
+                # name = ' '.join(name)
                 ## to avoid the children of the table to be added to the children of the leaf node
                 # children = [] 
 
@@ -219,7 +233,7 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
             leaf_node = {
                 'id': str(uuid.uuid4()),
                 'type': element.name,
-                'value': name,
+                'value': value,
                 'level': node_stack[-1]['level'] + 1,
                 'bbox':  [],
                 'page': page,
