@@ -1,5 +1,6 @@
 
 import re
+from pathlib import Path
 
 HIERARCHY = ['document', 'section', 'subsection', 'subsubsection', 'paragraph', 'subparagraph']
 LEAF_NODES = ['itemize', 'table' , 'enumerate']
@@ -133,3 +134,25 @@ def make_sure_one_document(text):
     text = re.sub(r'\\bibliographystyle{.*}', '', text)
     
     return '\\begin{document}\n'  + text + '\n\\end{document}'
+
+def prepare_fs_examples_pathes():
+    fs_examples = []
+    
+    ##list all folders in data/fewshot_examples folder
+    fewshot_examples_folder = Path("data/fewshot_examples")
+
+    ##if the path does not exist return empty list
+    if not fewshot_examples_folder.exists():
+        return fs_examples
+
+    for folder in fewshot_examples_folder.iterdir():
+        #assert there is only one .png and one .tex file in the folder
+        png_files = list(folder.glob("*.png"))
+        tex_files = list(folder.glob("*.tex"))
+
+
+        assert (len(png_files) == 1 and len(tex_files) == 1)
+
+
+        fs_examples.append((png_files[0].as_posix(), tex_files[0].as_posix()))
+    return fs_examples

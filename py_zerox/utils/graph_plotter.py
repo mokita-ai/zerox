@@ -11,7 +11,7 @@ def add_edges(graph, node, text_limit, parent=None):
     
     # Create node name based on type and name, or string if it's a leaf
     node_label = ('Text:\n\n' + node) if isinstance(node, str) else (
-        smol[node['type']] if node['type'] in smol else node['type']) + ':\n\n' + node['name']
+        smol[node['type']] if node['type'] in smol else node['type']) + ':\n\n' + node['value']
     
     # Use the unique ID for graph connectivity
     node_id = str(node['id']) if not isinstance(node, str) else node
@@ -27,8 +27,9 @@ def add_edges(graph, node, text_limit, parent=None):
         graph.add_edge(parent, node_id)
     
     # Recursively add edges for children if the node is a dictionary
-    if isinstance(node, dict) and 'children' in node:
+    if isinstance(node, dict) and 'children' in node and node['type'] != 'table' :
         for child in node['children']:
+
             add_edges(graph, child, text_limit = text_limit,parent =  node_id)
 
 def draw_dict(dictt, text_limit):

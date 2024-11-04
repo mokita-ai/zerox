@@ -23,7 +23,7 @@ class NodeInfo:
 
 def validate_node(node: Dict) -> bool:
     """Validate that a node has all required fields and correct types"""
-    required_fields = {'name': str, 'type': str}
+    required_fields = {'value': str, 'type': str}
     
     for field, expected_type in required_fields.items():
         if field not in node:
@@ -54,7 +54,7 @@ def extract_relations(hierarchy: Dict) -> Dict[str, Set[Tuple[str, str]]]:
             for node in siblings:
                 validate_node(node)
             
-            sibling_names = [node['name'] for node in siblings]
+            sibling_names = [node['value'] for node in siblings]
             for i in range(len(sibling_names)):
                 for j in range(i + 1, len(sibling_names)):
                     sibling_relations.add((sibling_names[i], sibling_names[j]))
@@ -66,7 +66,7 @@ def extract_relations(hierarchy: Dict) -> Dict[str, Set[Tuple[str, str]]]:
         """Process a single node and its children, skipping table children"""
         try:
             validate_node(node)
-            current_name = node['name']
+            current_name = node['value']
             
             # Skip processing children if node is a table
             if node['type'] == 'table':
@@ -77,7 +77,7 @@ def extract_relations(hierarchy: Dict) -> Dict[str, Set[Tuple[str, str]]]:
                 # Process parent-child relations
                 for child in children:
                     validate_node(child)
-                    parent_child_relations.add((current_name, child['name']))
+                    parent_child_relations.add((current_name, child['value']))
                     process_node(child)
                 # Process sibling relations among children
                 process_siblings(children)
@@ -90,9 +90,9 @@ def extract_relations(hierarchy: Dict) -> Dict[str, Set[Tuple[str, str]]]:
         raise ValueError(f"Hierarchy must be a dictionary, got {type(hierarchy)}")
     
     # Validate root node
-    if 'name' not in hierarchy or 'type' not in hierarchy:
+    if 'value' not in hierarchy or 'type' not in hierarchy:
         # If root doesn't have name/type, assume it's a document root
-        hierarchy['name'] = 'document'
+        hierarchy['value'] = 'document'
         hierarchy['type'] = 'root'
     
     validate_node(hierarchy)
@@ -108,7 +108,7 @@ def extract_relations(hierarchy: Dict) -> Dict[str, Set[Tuple[str, str]]]:
     # Process root's relations with its immediate children
     for child in root_children:
         validate_node(child)
-        parent_child_relations.add((hierarchy['name'], child['name']))
+        parent_child_relations.add((hierarchy['value'], child['value']))
     
     # Process siblings at root level
     process_siblings(root_children)
@@ -127,15 +127,15 @@ def build_node_info_map(hierarchy: Dict) -> Dict[str, NodeInfo]:
     node_map = {}
     
     # Add root node to the map if it has name and type
-    if 'name' in hierarchy and 'type' in hierarchy:
-        node_map[hierarchy['name']] = NodeInfo(hierarchy['name'], hierarchy['type'])
+    if 'value' in hierarchy and 'type' in hierarchy:
+        node_map[hierarchy['value']] = NodeInfo(hierarchy['value'], hierarchy['type'])
     elif 'children' in hierarchy:  # Add default document root if not specified
         node_map['document'] = NodeInfo('document', 'root')
     
     def process_node(node: Dict):
         try:
             validate_node(node)
-            node_map[node['name']] = NodeInfo(node['name'], node['type'])
+            node_map[node['value']] = NodeInfo(node['value'], node['type'])
             
             # Skip processing children if node is a table
             if node['type'] == 'table':

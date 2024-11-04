@@ -42,17 +42,17 @@ def find_matching_headings(pred_json, gt_json, similarity_threshold=0.75):
         best_similarity = similarity_threshold
         
         for gt_heading in gt_headings:
-            similarity = calculate_similarity(pred_heading['name'], gt_heading['name'])
+            similarity = calculate_similarity(pred_heading['value'], gt_heading['value'])
             if similarity > best_similarity:
                 best_similarity = similarity
                 best_match = gt_heading
         
         if best_match:
             matches.append((pred_heading, best_match))
-            if pred_heading['name'] != best_match['name']:
+            if pred_heading['value'] != best_match['value']:
                 changes.append({
-                    'original': pred_heading['name'],
-                    'replaced_with': best_match['name'],
+                    'original': pred_heading['value'],
+                    'replaced_with': best_match['value'],
                     'similarity': best_similarity,
                     'original_type': pred_heading['type'],
                     'matched_type': best_match['type']
@@ -67,7 +67,7 @@ def update_json_headings(json_data, matches):
     def update_node(node):
         for match_pred, match_gt in matches:
             if isinstance(node, dict) and node.get('id') == match_pred['id']:
-                node['name'] = match_gt['name']
+                node['value'] = match_gt['value']
         
         if isinstance(node, dict) and 'children' in node:
             for child in node['children']:

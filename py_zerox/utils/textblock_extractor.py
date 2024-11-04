@@ -23,8 +23,8 @@ def extract_text(data, current_path=None, result=None):
         current_path = []
     
     # Get the current node's name if it exists and isn't a text/table
-    if "name" in data and data["type"] not in ["text", "table"]:
-        current_path = current_path + [data["name"]]
+    if "value" in data and data["type"] not in ["text", "table"]:
+        current_path = current_path + [data["value"]]
     
     # If we find a text or table node, add it to the result
     if data["type"] in ["text", "table"]:
@@ -35,12 +35,12 @@ def extract_text(data, current_path=None, result=None):
         if path_key in result:
             # For text, concatenate strings
             if data["type"] == "text":
-                result[path_key] = result[path_key] + "\n" + data["name"]
+                result[path_key] = result[path_key] + "\n" + data["value"]
             # For tables, concatenate with a separator
             else:  # table type
-                result[path_key] = result[path_key] + "\n=====\n" + data["name"]
+                result[path_key] = result[path_key] + "\n=====\n" + data["value"]
         else:
-            result[path_key] = data["name"]
+            result[path_key] = data["value"]
             
         return result
     
