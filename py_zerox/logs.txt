@@ -1,0 +1,14 @@
+2024-11-04 15:57:33,002 - INFO - 
+LiteLLM completion() model= gpt-4o-mini; provider = azure
+2024-11-04 15:57:33,317 - INFO - HTTP Request: POST https://mokita-azure-openai-service-eastus-1.openai.azure.com//openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2024-11-04 15:57:33,332 - INFO - Wrapper: Completed Call, calling success_handler
+2024-11-04 15:57:34,236 - INFO - 
+LiteLLM completion() model= gpt-4o-mini; provider = azure
+2024-11-04 15:57:42,291 - INFO - HTTP Request: POST https://mokita-azure-openai-service-eastus-1.openai.azure.com//openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2024-11-04 15:59:28,476 - INFO - 
+LiteLLM completion() model= gpt-4o-mini; provider = azure
+2024-11-04 15:59:28,805 - INFO - HTTP Request: POST https://mokita-azure-openai-service-eastus-1.openai.azure.com//openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2024-11-04 15:59:28,848 - INFO - Wrapper: Completed Call, calling success_handler
+2024-11-04 15:59:29,054 - INFO - 
+LiteLLM completion() model= gpt-4o-mini; provider = azure
+2024-11-04 15:59:37,945 - INFO - HTTP Request: POST https://mokita-azure-openai-service-eastus-1.openai.azure.com//openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"

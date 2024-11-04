@@ -76,6 +76,7 @@ class litellmmodel(BaseModel):
         image_path: str,
         maintain_format: bool,
         prior_page: str,
+        fewshot_examples_paths: Any = None
     ) -> CompletionResponse:
         """LitellM completion for image to markdown conversion.
 
@@ -92,6 +93,7 @@ class litellmmodel(BaseModel):
             image_path=image_path,
             maintain_format=maintain_format,
             prior_page=prior_page,
+            fewshot_examples_paths= fewshot_examples_paths
         )
 
         try:
@@ -113,6 +115,7 @@ class litellmmodel(BaseModel):
         image_path: str,
         maintain_format: bool,
         prior_page: str,
+        fewshot_examples_paths: Any = None
     ) -> List[Dict[str, Any]]:
         """Prepares the messages to send to the LiteLLM Completion API.
 
@@ -140,6 +143,37 @@ class litellmmodel(BaseModel):
                     "content": f'Markdown must maintain consistent formatting with the following page: \n\n """{prior_page}"""',
                 },
             )
+            
+        
+        if fewshot_examples_paths:
+                        
+            for fs_example in fewshot_examples_paths:
+                
+                
+                example_img_path, example_groundtruth_path = fs_example
+                
+                assert os.path.exists(example_img_path), f"Fewshot example image `{example_img_path}` was not found"
+                assert os.path.exists(example_groundtruth_path), f"Fewshot example ground truth file `{example_groundtruth_path}` was not found"
+                
+                base64_image = await encode_image_to_base64(example_img_path)
+                # TODO: add a utility common file with ut.ReadFile support
+                example_groundtruth_latex = '\n'.join(open(example_groundtruth_path, "r") .readlines())
+                
+                messages.extend([
+                    {
+                        "role": "user",
+                        "content":  [
+                            {
+                                "type": "image_url",
+                                "image_url": {"url": f"data:image/png;base64,{base64_image}"},
+                            },
+                        ],
+                    }, 
+                    {
+                        "role": "assistant",
+                        "content": example_groundtruth_latex
+                    }
+                ])
 
         # Add Image to request
         base64_image = await encode_image_to_base64(image_path)
