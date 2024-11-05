@@ -82,7 +82,7 @@ import copy
 from datetime import datetime
 import os
 
-def normalize_headings(pred_json, gt_json, log_path="logs.txt"):
+def normalize_headings(pred_json, gt_json):
     """
     Normalize headings in predicted JSON based on ground truth, logging changes to a text file.
 
@@ -115,9 +115,6 @@ def normalize_headings(pred_json, gt_json, log_path="logs.txt"):
     report_lines = [
         "Heading Normalization Report:",
         "-" * 50,
-        f"Timestamp: {datetime.now().isoformat()}",
-        f"File: {log_path}",
-        "-" * 50
     ]
     for change in changes:
         report_lines.append(f"Original: {change['original']} ({change['original_type']})")
@@ -126,9 +123,6 @@ def normalize_headings(pred_json, gt_json, log_path="logs.txt"):
         report_lines.append("-" * 50)
 
     report_text = "\n".join(report_lines)
-
-    # Append the report to the log file
-    with open(log_path, "a") as log_file:
-        log_file.write(report_text + "\n\n")
+    print(report_text)
 
     return updated_json, changes
