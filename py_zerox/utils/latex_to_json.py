@@ -7,7 +7,7 @@ import uuid
 def table_signiture(table_soup = None, tabular_content_text = None):
     if tabular_content_text == None:
         tabular_index = -1 ## the index of the tag tabular the we huant for
-        content_count = len(soup.contents)
+        content_count = len(table_soup.contents)
 
         for i in range(content_count):
             if not isinstance(table_soup.contents[i], str) and table_soup.contents[i].name == 'tabular':
