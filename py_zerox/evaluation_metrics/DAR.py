@@ -220,29 +220,29 @@ def print_relation_analysis(gt_relations: Dict[str, Set[Tuple[int, int]]],
         if relation_type != RelationType.COMBINED:
             print("\nGround Truth Relations:")
             print("-" * 20)
-            for relation in sorted(gt_relations[relation_type]):
+            for relation in gt_relations[relation_type]:
                 print_relation(relation, gt_node_map)
             
             print("\nPredicted Relations:")
             print("-" * 19)
-            for relation in sorted(pred_relations[relation_type]):
+            for relation in pred_relations[relation_type]:
                 print_relation(relation, pred_node_map)
         
         details = metrics[relation_type]['details']
         
         print("\nCorrect Predictions (True Positives):")
         print("-" * 35)
-        for relation in sorted(details['true_positives']):
+        for relation in details['true_positives']:
             print_relation(relation, gt_node_map)
         
         print("\nMissed Relations (False Negatives):")
         print("-" * 33)
-        for relation in sorted(details['false_negatives']):
+        for relation in details['false_negatives']:
             print_relation(relation, gt_node_map)
         
         print("\nIncorrect Predictions (False Positives):")
         print("-" * 37)
-        for relation in sorted(details['false_positives']):
+        for relation in details['false_positives']:
             print_relation(relation, pred_node_map)
         
         print("\n" + "="*50)
@@ -290,7 +290,6 @@ def evaluate_hierarchy(gt_json, pred_json) -> Dict[str, Dict[str, float]]:
         
         # Print scores and analysis
         print_scores(metrics)
-        print(metrics)
         print_relation_analysis(gt_relations, pred_relations, metrics, gt_node_map, pred_node_map)
         
         # Prepare return value with only main metrics, excluding 'details'
