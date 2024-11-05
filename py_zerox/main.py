@@ -18,6 +18,7 @@ from utils.heading_normalizer import  normalize_headings
 from dotenv import load_dotenv
 from utils.textblock_extractor import extract_text
 from utils.textblock_extractor import find_and_matching_values
+from utils.common import prepare_fs_examples_pathes
 load_dotenv()
 
 
@@ -74,22 +75,7 @@ class PageTextResponse(BaseModel):
             data["error"] = str(e)  # Capture the error message in the response
         return data
 
-async def prepare_fs_examples_pathes():
-    fs_examples = []
-    
-    ##list all folders in data/fewshot_examples folder
-    fewshot_examples_folder = Path("data/fewshot_examples")
-    for folder in fewshot_examples_folder.iterdir():
-        #assert there is only one .png and one .tex file in the folder
-        png_files = list(folder.glob("*.png"))
-        tex_files = list(folder.glob("*.tex"))
 
-
-        assert (len(png_files) == 1 and len(tex_files) == 1)
-
-
-        fs_examples.append((png_files[0].as_posix(), tex_files[0].as_posix()))
-    return fs_examples
 
 # Asynchronous function to parse text from PDF pages
 async def parse_pages_from_pdf(
@@ -98,7 +84,7 @@ async def parse_pages_from_pdf(
     model: str, 
     **kwargs  # Expect unpacked keyword arguments
 ) -> List[PageTextResponse]:  
-    fs_examples = await prepare_fs_examples_pathes()
+    fs_examples =  prepare_fs_examples_pathes()
     
     result = await zerox(
         file_path=file_location, 
@@ -106,7 +92,7 @@ async def parse_pages_from_pdf(
         custom_system_prompt=PROMPT, 
         select_pages=pages, 
         fewshot_examples_paths=fs_examples,
-        **kwargs  # Unpack the dictionary as keyword arguments
+        # **kwargs  # Unpack the dictionary as keyword arguments
     )
 
     

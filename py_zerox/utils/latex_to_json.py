@@ -4,19 +4,21 @@ from TexSoup import TexSoup as TS
 from utils.common import *
 import uuid
 
-def table_signiture(soup):
-    tabular_index = -1 ## the index of the tag tabular the we huant for
-    content_count = len(soup.contents)
+def table_signiture(table_soup = None, tabular_content_text = None):
+    if tabular_content_text == None:
+        tabular_index = -1 ## the index of the tag tabular the we huant for
+        content_count = len(soup.contents)
 
-    for i in range(content_count):
-        if not isinstance(soup.contents[i], str) and soup.contents[i].name == 'tabular':
-            tabular_index = i ## we found the tabular tag
-            break
+        for i in range(content_count):
+            if not isinstance(table_soup.contents[i], str) and table_soup.contents[i].name == 'tabular':
+                tabular_index = i ## we found the tabular tag
+                break
 
-    if tabular_index == -1:
-        raise Exception("not a valid table")
-    
-    tabular_content_text = str(soup.contents[tabular_index])
+        if tabular_index == -1:
+            raise Exception("not a valid table")
+        
+        tabular_content_text = str(table_soup.contents[tabular_index])
+
     tabular_content_text =  re.sub(re.escape("&"), "SPACE_TOKEN&SPACE_TOKEN", tabular_content_text) ## to handle empty table cells
 
     
@@ -149,7 +151,11 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                 'page': page,
                 'children': []
             }
-            node_stack[-1]['children'].append(text_node)
+
+            if len(node_stack[-1]['children']) > 0 and node_stack[-1]['children'][-1]['type'] == 'text' and not node_stack[-1]['children'][-1]['value'].rstrip().endswith('\n'):   
+                node_stack[-1]['children'][-1]['value'] += ' ' + text_end_point(truncated_text)
+            else:
+                node_stack[-1]['children'].append(text_node)
   
 
         elif element.name in HIERARCHY:
@@ -179,7 +185,7 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
         
         elif element.name in LEAF_NODES:
             children = []
-            if element.name != 'table': ##itimize and enumerate
+            if element.name in ['itemize', 'enumerate']:
                 for item in element.contents:                       
                     if isinstance(item, str) or (isinstance(item, TexNode) and len(item.contents) == 1):
                         if isinstance(item, TexNode):
@@ -197,7 +203,11 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                             'page': page,
                             'children': []
                         }
-                        children.append(text_node)                    
+
+                        if len(children) > 0 and children[-1]['type'] == 'text' and not children[-1]['value'].rstrip().endswith('\n'):   
+                            children[-1]['value'] += ' ' + text_end_point(truncated_text)
+                        else:
+                            children.append(text_node)
         
 
                     else:
@@ -224,8 +234,12 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                     
 
                 value = element.name                  
-            else: 
-                children = table_signiture(element) 
+            else: ##table and tabular
+                if element.name == 'table':
+                    children = table_signiture(table_soup = element) 
+                elif element.name == 'tabular':
+                    children = table_signiture(tabular_content_text = str(element))
+
                 value = ""
                 for row in children:
                     for cell in row['children']:
@@ -242,7 +256,7 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
 
             leaf_node = {
                 'id': str(uuid.uuid4()),
-                'type': element.name,
+                'type': 'table',
                 'value': value,
                 'level': node_stack[-1]['level'] + 1,
                 'bbox':  [],

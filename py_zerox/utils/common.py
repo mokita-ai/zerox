@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 
 HIERARCHY = ['document', 'section', 'subsection', 'subsubsection', 'paragraph', 'subparagraph']
-LEAF_NODES = ['itemize', 'table' , 'enumerate']
+LEAF_NODES = ['itemize', 'enumerate', 'table', 'tabular']
 TEXT_TAGS =  ['textbf', 'textit', 'texttt', 'textsc', 'textsf', 'underline', 'emph', 'thead']
 SPANING_CELLS =   ['multirow', 'multicolumn']
 TABLE_DRAWING_TAGS = ['hline', 'cline', 'cmidrule', 'toprule', 'midrule', 'bottomrule']

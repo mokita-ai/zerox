@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y poppler-utils && apt-get clean
 # Set the working directory
 WORKDIR /dir
 
+
+
 # Clone TexSoup repository and install it, then navigate back to /dir
 RUN git clone https://github.com/alvinwan/TexSoup.git && \
     cd TexSoup && \
@@ -21,6 +23,7 @@ COPY main.py .
 COPY prompt.py .
 COPY pyzerox ./pyzerox
 COPY utils ./utils
+COPY data ./data
 COPY evaluation_metrics ./evaluation_metrics
 COPY metric_data_examples ./metric_data_examples
 
