@@ -41,3 +41,4 @@ class ZeroxOutput:
     input_tokens: int
     output_tokens: int
     pages: List[Page]
+    # accumlated_markdown: str

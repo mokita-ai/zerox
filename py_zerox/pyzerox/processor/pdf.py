@@ -59,7 +59,7 @@ async def process_page(
                 prior_page,
             )
 
-    image_path = os.path.join(temp_directory, image)
+    image_paths = [ os.path.join(temp_directory, img)  for img in image ]
     if prior_image != "":
         prior_image_path = os.path.join(temp_directory, prior_image)
     else:
@@ -67,15 +67,13 @@ async def process_page(
     # Get the completion from LiteLLM
     try:
         completion = await model.completion(
-            image_path=image_path,
+            image_paths=image_paths,
             maintain_format=True,
             prior_page=prior_page,
             prior_page_path=prior_image_path,
             fewshot_examples_paths=fewshot_examples_paths
         )
 
-        # Post-process the completion
-        # postprocessed_markdown = await model.post_process_completion(completion, image_path)    
 
 
         formatted_markdown = format_markdown(completion.content)
@@ -84,7 +82,8 @@ async def process_page(
         prior_page = formatted_markdown
 
         if postprocessing_propmt:
-            formatted_markdown = await model.cleaning_postprocessing(formatted_markdown , postprocessing_propmt )
+            formatted_markdown = await model.cleaning_postprocessing(formatted_markdown , postprocessing_propmt)
+
 
 
         return formatted_markdown, input_token_count, output_token_count, prior_page
@@ -124,3 +123,4 @@ async def process_pages_in_batches(
 
     # Wait for all tasks to complete
     return await asyncio.gather(*tasks)
+

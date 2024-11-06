@@ -16,4 +16,5 @@ __all__ = [
     "process_page",
     "process_pages_in_batches",
     "create_selected_pages_pdf",
+    # "latex_accumlator",
 ]

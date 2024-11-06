@@ -15,6 +15,7 @@ from ..processor import (
     process_page,
     process_pages_in_batches,
     create_selected_pages_pdf,
+    # latex_accumlator
 )
 from ..errors import FileUnavailable
 from ..constants.messages import Messages
@@ -34,6 +35,7 @@ async def zerox(
     postprocessing_propmt: Optional[str] = None,
     select_pages: Optional[Union[int, Iterable[int]]] = None,
     fewshot_examples_paths: Optional[Iterable[Tuple[os.PathLike, os.PathLike]]] = None,
+    # latex_accumlator: Optional[bool] = False,
     **kwargs
 ) -> ZeroxOutput:
     """
@@ -135,21 +137,19 @@ async def zerox(
         images = await convert_pdf_to_images(local_path=local_path, temp_dir=temp_directory)
         prior_image = ""
         if maintain_format:
-            for image in images:
-                result, input_token_count, output_token_count, prior_page = await process_page(
-                    image,
-                    vision_model,
-                    temp_directory,
-                    input_token_count,
-                    output_token_count,
-                    prior_page,
-                    prior_image,
-                    fewshot_examples_paths=fewshot_examples_paths,
-                    postprocessing_propmt=postprocessing_propmt
-                )
-                prior_image = image
-                if result:
-                    aggregated_markdown.append(result)
+            result, input_token_count, output_token_count, prior_page = await process_page(
+                images,
+                vision_model,
+                temp_directory,
+                input_token_count,
+                output_token_count,
+                prior_page,
+                prior_image,
+                fewshot_examples_paths=fewshot_examples_paths,
+                postprocessing_propmt=postprocessing_propmt
+            )
+            if result:
+                aggregated_markdown.append(result)
             
 
 
@@ -171,7 +171,9 @@ async def zerox(
             output_token_count += sum([result[2] for result in results])
 
 
-        # if post_process:
+        # if latex_accumlator:
+        #     accumlated_markdown = await latex_accumlator(aggregated_markdown , images)
+
 
 
         # Write the aggregated markdown to a file
@@ -208,5 +210,6 @@ async def zerox(
             input_tokens=input_token_count,
             output_tokens=output_token_count,
             pages=formatted_pages,
-        )
+            # accumlated_markdown=accumlated_markdown
+        ) 
     
