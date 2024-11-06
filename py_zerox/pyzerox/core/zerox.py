@@ -31,8 +31,9 @@ async def zerox(
     output_dir: Optional[str] = None,
     temp_dir: Optional[str] = None,
     custom_system_prompt: Optional[str] = None,
+    postprocessing_propmt: Optional[str] = None,
     select_pages: Optional[Union[int, Iterable[int]]] = None,
-    fewshot_examples_paths= Optional[Iterable[Tuple[os.PathLike, os.PathLike]]],
+    fewshot_examples_paths: Optional[Iterable[Tuple[os.PathLike, os.PathLike]]] = None,
     **kwargs
 ) -> ZeroxOutput:
     """
@@ -132,7 +133,7 @@ async def zerox(
 
         # Convert the file to a series of images, below function returns a list of image paths in page order
         images = await convert_pdf_to_images(local_path=local_path, temp_dir=temp_directory)
-
+        prior_image = ""
         if maintain_format:
             for image in images:
                 result, input_token_count, output_token_count, prior_page = await process_page(
@@ -142,10 +143,16 @@ async def zerox(
                     input_token_count,
                     output_token_count,
                     prior_page,
+                    prior_image,
+                    fewshot_examples_paths=fewshot_examples_paths,
+                    postprocessing_propmt=postprocessing_propmt
                 )
-
+                prior_image = image
                 if result:
                     aggregated_markdown.append(result)
+            
+
+
         else:
             results = await process_pages_in_batches(
                 images,
@@ -159,10 +166,13 @@ async def zerox(
             )
 
             aggregated_markdown = [result[0] for result in results if isinstance(result[0], str)]
-
             ## add token usage
             input_token_count += sum([result[1] for result in results])
             output_token_count += sum([result[2] for result in results])
+
+
+        # if post_process:
+
 
         # Write the aggregated markdown to a file
         if output_dir:

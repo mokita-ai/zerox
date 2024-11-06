@@ -40,6 +40,8 @@ async def process_page(
     input_token_count: int = 0,
     output_token_count: int = 0,
     prior_page: str = "",
+    prior_image: str = "",
+    postprocessing_propmt: Optional[str] = None,
     semaphore: Optional[asyncio.Semaphore] = None,
     fewshot_examples_paths: Optional[Iterable[Tuple[os.PathLike, os.PathLike]]] = None
 ) -> Tuple[str, int, int, str]:
@@ -58,20 +60,32 @@ async def process_page(
             )
 
     image_path = os.path.join(temp_directory, image)
-
+    if prior_image != "":
+        prior_image_path = os.path.join(temp_directory, prior_image)
+    else:
+        prior_image_path = None
     # Get the completion from LiteLLM
     try:
         completion = await model.completion(
             image_path=image_path,
             maintain_format=True,
             prior_page=prior_page,
+            prior_page_path=prior_image_path,
             fewshot_examples_paths=fewshot_examples_paths
         )
+
+        # Post-process the completion
+        # postprocessed_markdown = await model.post_process_completion(completion, image_path)    
+
 
         formatted_markdown = format_markdown(completion.content)
         input_token_count += completion.input_tokens
         output_token_count += completion.output_tokens
         prior_page = formatted_markdown
+
+        if postprocessing_propmt:
+            formatted_markdown = await model.cleaning_postprocessing(formatted_markdown , postprocessing_propmt )
+
 
         return formatted_markdown, input_token_count, output_token_count, prior_page
 

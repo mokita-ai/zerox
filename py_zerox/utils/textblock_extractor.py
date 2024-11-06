@@ -27,7 +27,7 @@ def extract_text(data, current_path=None, result=None):
         current_path = current_path + [data["value"]]
     
     # If we find a text or table node, add it to the result
-    if data["type"] in ["text", "table"]:
+    if data["type"] in ["text"]:
         # Create path string with type indicator
         path_key = " > ".join(current_path) + f":{data['type']}"
         
