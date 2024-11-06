@@ -5,10 +5,6 @@ from pyzerox import zerox
 import asyncio
 
 
-os.environ['AZURE_API_KEY']='0f392a5abe5e4e1eb41ecddddea0781e'
-os.environ['AZURE_API_BASE']='https://mokita-azure-openai-service-eastus-1.openai.azure.com/'
-os.environ['AZURE_API_VERSION']='2024-02-15-preview'
- 
 # Add the parent directory to the system path to access 'utils'
 parent_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
 os.chdir(parent_dir)
