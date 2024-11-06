@@ -1,7 +1,7 @@
 import logging
 import os
 import asyncio
-from typing import List, Optional, Tuple, Iterable
+from typing import List, Optional, Tuple, Iterable, Union
 from pdf2image import convert_from_path
 
 # Package Imports
@@ -34,7 +34,7 @@ async def convert_pdf_to_images(local_path: str, temp_dir: str) -> List[str]:
 
 
 async def process_page(
-    image: str,
+    image: Union[str|List[str]],
     model: litellmmodel,
     temp_directory: str = "",
     input_token_count: int = 0,
@@ -74,8 +74,6 @@ async def process_page(
             fewshot_examples_paths=fewshot_examples_paths
         )
 
-
-
         formatted_markdown = format_markdown(completion.content)
         input_token_count += completion.input_tokens
         output_token_count += completion.output_tokens
@@ -109,7 +107,7 @@ async def process_pages_in_batches(
     # Process each page in parallel
     tasks = [
         process_page(
-            image,
+            images,
             model,
             temp_directory,
             input_token_count,
@@ -118,7 +116,6 @@ async def process_pages_in_batches(
             semaphore,
             fewshot_examples_paths
         )
-        for image in images
     ]
 
     # Wait for all tasks to complete
