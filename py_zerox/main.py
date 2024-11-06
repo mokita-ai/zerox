@@ -1,7 +1,7 @@
-from fastapi import FastAPI, UploadFile, HTTPException, Query
+from fastapi import FastAPI, UploadFile, HTTPException, Query, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Union
 from pathlib import Path
 import uuid
 import os
@@ -11,7 +11,7 @@ import nest_asyncio
 from evaluation_metrics.text_similarity import calculate_rouge_metrics
 from evaluation_metrics.text_similarity import calculate_bleu_metrics
 from pyzerox import zerox
-from prompt import PROMPT
+from prompt import PROMPT, POST_PROCESSING_PROMP
 from utils.latex_to_json import tex_file_to_json
 from evaluation_metrics.DAR import evaluate_hierarchy
 from utils.heading_normalizer import  normalize_headings
@@ -51,73 +51,63 @@ app.add_middleware(
 def app_root():
     return {"message": "Hello world"}
 
-# Define Pydantic model for the response
-
-# Define Pydantic model for the response
-class PageTextResponse(BaseModel):
-    page_number: int
-    latex: Optional[str]
-
-    @property
-    def as_dict(self) -> dict:
-        try:
-            return tex_file_to_json(tex_data=self.latex, page=self.page_number)
-        except Exception as e:
-            # Catch and raise the error so it can be captured in the endpoint
-            raise RuntimeError(f"Error converting LaTeX to JSON on page {self.page_number}: {str(e)}")
-
-    def to_dict(self) -> dict:
-        # Include both page data and as_dict representation in the output
-        data = self.dict()
-        try:
-            data["as_dict"] = self.as_dict
-        except RuntimeError as e:
-            data["error"] = str(e)  # Capture the error message in the response
-        return data
 
 
 
 # Asynchronous function to parse text from PDF pages
-async def parse_pages_from_pdf(
+async def pdf_to_latx(
     file_location: str, 
     pages: List[int],
     model: str, 
     **kwargs  # Expect unpacked keyword arguments
-) -> List[PageTextResponse]:  
-    fs_examples =  prepare_fs_examples_pathes()
+) -> str:
     
+    fs_examples = prepare_fs_examples_pathes()
+
+
     result = await zerox(
         file_path=file_location, 
         model= "azure/" + model,
-        custom_system_prompt=PROMPT, 
+        custom_system_prompt = PROMPT, 
+        postprocessing_propmt = POST_PROCESSING_PROMP,
+        maintain_format=True,
         select_pages=pages, 
         fewshot_examples_paths=fs_examples,
-        # **kwargs  # Unpack the dictionary as keyword arguments
+        **kwargs  # Unpack the dictionary as keyword arguments
     )
-
     
-    # Parse each page result to a Pydantic model
-    pages_parsed = [
-        PageTextResponse(
-            page_number=page.page,
-            latex=page.content
-        ) for page in result.pages
-    ]
-    return pages_parsed
+   
+    return result.pages[0].content
 
 # Endpoint to parse specified pages from uploaded PDF file
 @app.post("/parse-pages")
 async def parse_pages(
-    file: UploadFile, 
-    pages: List[int] = Query(...),
-    model: str = Query("gpt-4o-mini", description=" 'gpt-4o-mini' or 'gpt-4o'"),
-    temperature: float = Query(0.01, description="Temperature for generation"),
-    top_p: float = Query(0.9, description="Top-p for nucleus sampling"),
-    frequency_penalty: float = Query(1.3, description="Frequency penalty"),
-    seed: int = Query(0, description="Seed for reproducibility")
+    pdf_file: UploadFile, 
+    tex_ground_truth: Union[UploadFile, str] = File(None),
+    start_page: int = Query(...),
+    end_page: int = Query(...),
+    # pages: List[int] = Query(...),
+    # model: str = Query("gpt-4o-mini", description=" 'gpt-4o-mini' or 'gpt-4o'"),
+    # temperature: float = Query(0, description="Temperature for generation"),
+    # top_p: float = Query(1, description="Top-p for nucleus sampling"),
+    # seed: int = Query(42, description="Seed for reproducibility")
 ):
-    if file.content_type != "application/pdf":
+    # Check if the PDF file is actually a PDF
+    if pdf_file.content_type != "application/pdf":
         raise HTTPException(status_code=400, detail="Please upload a PDF file!")
+
+    model = 'gpt-4o'
+    # Check if the LaTeX file, if provided, is actually a .tex file
+    if isinstance(tex_ground_truth, str):
+        tex_ground_truth = None
+
+    if tex_ground_truth :
+        if tex_ground_truth.content_type != "application/x-tex" and not tex_ground_truth.filename.endswith(".tex"):
+            raise HTTPException(status_code=400, detail="Please upload a valid .tex file for the ground truth!")
+        
+        # Read the LaTeX file content into the variable
+        ground_truth_latex = await tex_ground_truth.read()
+        ground_truth_latex = ground_truth_latex.decode("utf-8")
 
     # Generate a random filename for the PDF in a temporary directory
     temp_dir = Path("temp")  # Adjusted to local temp path
@@ -126,37 +116,78 @@ async def parse_pages(
     
     # Create a dictionary for generation parameters
     args = {
-        "temperature": temperature,
-        "top_p": top_p,
-        "frequency_penalty": frequency_penalty,
-        "seed": seed
+        "temperature": 0,
+        "top_p": 1,
+        "seed": 42
     }
 
-    # Save the uploaded file
+    pages = range(start_page, end_page + 1)
+
     try:
         with open(file_location, "wb") as f:
-            content = await file.read()
+            content = await pdf_file.read()
             f.write(content)
 
-        # Parse the pages
-        pages_data = await parse_pages_from_pdf(
+        pred_latex_code = await pdf_to_latx(
             file_location.as_posix(), 
             pages, 
             model,
-            **args  # Unpack args as keyword arguments
+            **args  
         )
+
+        pred_json = tex_file_to_json(tex_data=pred_latex_code)
 
     except Exception as e:
         # Capture the error and return the message in the response
-        raise HTTPException(status_code=500, detail=f"Error processing the PDF document: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error parsing the PDF document: {str(e)}")
     
     finally:
         # Ensure the file is removed
         if file_location.exists():
             os.remove(file_location)
 
-    # Return a list of dictionaries with both the `text` and any `error` representations
-    return [page.to_dict() for page in pages_data]
+    if not tex_ground_truth:
+        return pred_json
+    
+
+    try:
+        ground_truth_json = tex_file_to_json(tex_data=ground_truth_latex)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error parsing the ground truth: {str(e)}")
+    
+
+
+    updated_pred_json, _ = normalize_headings(pred_json, ground_truth_json)
+
+  
+
+    # Get the list of dictionaries with headings and concatenated text
+    pred_text_map = extract_text(updated_pred_json)
+    GT_text_map = extract_text(ground_truth_json)
+
+    matching_values = find_and_matching_values(pred_text_map, GT_text_map)
+
+
+    rouge_values = calculate_rouge_metrics(matching_values)
+    bleu_values = calculate_bleu_metrics(matching_values)
+
+
+
+    try:
+        metrics = evaluate_hierarchy(ground_truth_json, updated_pred_json )
+    except Exception as e:
+        print(f"Error during evaluation: {e}")
+
+
+
+    metrics = {
+        "rouge_values": rouge_values,
+        "bleu_values": bleu_values,
+        "hierarchy_metrics": metrics
+    }
+                
+     
+    return {"predicted_json": pred_json, "metrics": metrics}
 
 
 # class MetricsEvaluationRequest(BaseModel):

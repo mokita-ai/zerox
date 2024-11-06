@@ -34,7 +34,7 @@ async def convert_pdf_to_images(local_path: str, temp_dir: str) -> List[str]:
 
 
 async def process_page(
-    image: Union[str|List[str]],
+    image: Union[str, List[str]],
     model: litellmmodel,
     temp_directory: str = "",
     input_token_count: int = 0,
@@ -77,14 +77,19 @@ async def process_page(
         formatted_markdown = format_markdown(completion.content)
         input_token_count += completion.input_tokens
         output_token_count += completion.output_tokens
-        prior_page = formatted_markdown
+        # prior_page = formatted_markdown
 
+        # with open("beforePP.tex", "w") as f:
+        #     f.write(formatted_markdown)  
         if postprocessing_propmt:
             formatted_markdown = await model.cleaning_postprocessing(formatted_markdown , postprocessing_propmt)
 
+        # with open("afterPP.tex", "w") as f:
+        #     f.write(formatted_markdown)
 
 
-        return formatted_markdown, input_token_count, output_token_count, prior_page
+
+        return formatted_markdown, input_token_count, output_token_count, None# prior_page
 
     except Exception as error:
         logging.error(f"{Messages.FAILED_TO_PROCESS_IMAGE} Error:{error}")
