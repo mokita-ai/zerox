@@ -24,12 +24,12 @@ def remove_unnecessary_space_token(text):
     replacement1 = r'\1 &'
     text = re.sub(pattern1, replacement1, text)
     
-    # Pattern 2: \textbf{...} & SPACE_TOKEN \\
-    pattern2 = re.compile(
-        rf'(\\(?:{text_tags_pattern})\{{.*?\}})\s*&\s*SPACE_TOKEN\s*\\'
-    )
-    replacement2 = r'\1 & \\'
-    text = re.sub(pattern2, replacement2, text)
+    # # # Pattern 2: \textbf{...} & SPACE_TOKEN \\
+    # # pattern2 = re.compile(
+    # #     rf'(\\(?:{text_tags_pattern})\{{.*?\}})\s*&\s*SPACE_TOKEN\s*\\'
+    # # )
+    # replacement2 = r'\1 & \\'
+    # text = re.sub(pattern2, replacement2, text)
     
     # Pattern 3: & SPACE_TOKEN \textbf{...}
     pattern3 = re.compile(
@@ -46,12 +46,12 @@ def remove_unnecessary_space_token(text):
     replacement4 = r'\1 &'
     text = re.sub(pattern4, replacement4, text)
     
-    # Pattern 5: \multirow{...}{...}{...} & SPACE_TOKEN \\
-    pattern5 = re.compile(
-        rf'(\\(?:{spaning_cells_pattern})\{{.*?\}}\{{.*?\}}\{{.*?\}})\s*&\s*SPACE_TOKEN\s*\\'
-    )
-    replacement5 = r'\1 & \\'
-    text = re.sub(pattern5, replacement5, text)
+    # # Pattern 5: \multirow{...}{...}{...} & SPACE_TOKEN \\
+    # pattern5 = re.compile(
+    #     rf'(\\(?:{spaning_cells_pattern})\{{.*?\}}\{{.*?\}}\{{.*?\}})\s*&\s*SPACE_TOKEN\s*\\'
+    # )
+    # replacement5 = r'\1 & \\'
+    # text = re.sub(pattern5, replacement5, text)
     
     # Pattern 6: & SPACE_TOKEN \multirow{...}{...}{...}
     pattern6 = re.compile(

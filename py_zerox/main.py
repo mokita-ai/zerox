@@ -83,7 +83,7 @@ async def pdf_to_latx(
 @app.post("/parse-pages")
 async def parse_pages(
     pdf_file: UploadFile, 
-    tex_ground_truth: Union[UploadFile, str] = File(None),
+    ground_truth_file: Union[UploadFile, str] = File(None),
     start_page: int = Query(...),
     end_page: int = Query(...),
     # pages: List[int] = Query(...),
@@ -98,16 +98,24 @@ async def parse_pages(
 
     model = 'gpt-4o'
     # Check if the LaTeX file, if provided, is actually a .tex file
-    if isinstance(tex_ground_truth, str):
-        tex_ground_truth = None
+    if isinstance(ground_truth_file, str):
+        ground_truth_file = None
 
-    if tex_ground_truth :
-        if tex_ground_truth.content_type != "application/x-tex" and not tex_ground_truth.filename.endswith(".tex"):
-            raise HTTPException(status_code=400, detail="Please upload a valid .tex file for the ground truth!")
+    if ground_truth_file :
+        if not ground_truth_file.filename.endswith(".json"):
+            raise HTTPException(status_code=400, detail="Please upload a valid .json file for the ground truth!")
         
-        # Read the LaTeX file content into the variable
-        ground_truth_latex = await tex_ground_truth.read()
-        ground_truth_latex = ground_truth_latex.decode("utf-8")
+        # Read the JSON file content into the variable
+        ground_truth_bytes = await ground_truth_file.read()
+        ground_truth_string = ground_truth_bytes.decode("utf-8")
+
+        # Convert the string to a dictionary
+        try:
+            ground_truth_json = json.loads(ground_truth_string)
+        except json.JSONDecodeError:
+            raise HTTPException(status_code=400, detail="Invalid JSON format in the uploaded file!")
+
+
 
     # Generate a random filename for the PDF in a temporary directory
     temp_dir = Path("temp")  # Adjusted to local temp path
@@ -146,15 +154,11 @@ async def parse_pages(
         if file_location.exists():
             os.remove(file_location)
 
-    if not tex_ground_truth:
+    if not ground_truth_file:
         return pred_json
     
 
-    try:
-        ground_truth_json = tex_file_to_json(tex_data=ground_truth_latex)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error parsing the ground truth: {str(e)}")
-    
+
 
 
     updated_pred_json, _ = normalize_headings(pred_json, ground_truth_json)
