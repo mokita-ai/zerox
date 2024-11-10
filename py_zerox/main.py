@@ -98,17 +98,17 @@ async def parse_pages(
 
     model = 'gpt-4o'
     # Check if the LaTeX file, if provided, is actually a .tex file
-    if isinstance(ground_truth_file, str):
-        ground_truth_file = None
+    if isinstance(ground_truth_tex_file, str):
+        ground_truth_tex_file = None
 
-    if ground_truth_file :
-        if not ground_truth_file.filename.endswith(".tex"):
+    if ground_truth_tex_file :
+        if not ground_truth_tex_file.filename.endswith(".tex"):
             raise HTTPException(status_code=400, detail="Please upload a valid .tex file for the ground truth!")
 
 
         
         # Read the JSON file content into the variable
-        ground_truth_bytes = await ground_truth_file.read()
+        ground_truth_bytes = await ground_truth_tex_file.read()
         ground_truth_string = ground_truth_bytes.decode("utf-8")
 
         # Convert the string to a dictionary
