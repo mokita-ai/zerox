@@ -8,7 +8,6 @@ TEXT_TAGS =  ['textbf', 'textit', 'texttt', 'textsc', 'textsf', 'underline', 'em
 SPANING_CELLS =   ['multirow', 'multicolumn']
 TABLE_DRAWING_TAGS = ['hline', 'cline', 'cmidrule', 'toprule', 'midrule', 'bottomrule']
 
-MAX_TEXT_LENGTH = 1500000
 
 
 def remove_unnecessary_space_token(text):
@@ -24,12 +23,12 @@ def remove_unnecessary_space_token(text):
     replacement1 = r'\1 &'
     text = re.sub(pattern1, replacement1, text)
     
-    # Pattern 2: \textbf{...} & SPACE_TOKEN \\
-    pattern2 = re.compile(
-        rf'(\\(?:{text_tags_pattern})\{{.*?\}})\s*&\s*SPACE_TOKEN\s*\\'
-    )
-    replacement2 = r'\1 & \\'
-    text = re.sub(pattern2, replacement2, text)
+    # # # Pattern 2: \textbf{...} & SPACE_TOKEN \\
+    # # pattern2 = re.compile(
+    # #     rf'(\\(?:{text_tags_pattern})\{{.*?\}})\s*&\s*SPACE_TOKEN\s*\\'
+    # # )
+    # replacement2 = r'\1 & \\'
+    # text = re.sub(pattern2, replacement2, text)
     
     # Pattern 3: & SPACE_TOKEN \textbf{...}
     pattern3 = re.compile(
@@ -46,12 +45,12 @@ def remove_unnecessary_space_token(text):
     replacement4 = r'\1 &'
     text = re.sub(pattern4, replacement4, text)
     
-    # Pattern 5: \multirow{...}{...}{...} & SPACE_TOKEN \\
-    pattern5 = re.compile(
-        rf'(\\(?:{spaning_cells_pattern})\{{.*?\}}\{{.*?\}}\{{.*?\}})\s*&\s*SPACE_TOKEN\s*\\'
-    )
-    replacement5 = r'\1 & \\'
-    text = re.sub(pattern5, replacement5, text)
+    # # Pattern 5: \multirow{...}{...}{...} & SPACE_TOKEN \\
+    # pattern5 = re.compile(
+    #     rf'(\\(?:{spaning_cells_pattern})\{{.*?\}}\{{.*?\}}\{{.*?\}})\s*&\s*SPACE_TOKEN\s*\\'
+    # )
+    # replacement5 = r'\1 & \\'
+    # text = re.sub(pattern5, replacement5, text)
     
     # Pattern 6: & SPACE_TOKEN \multirow{...}{...}{...}
     pattern6 = re.compile(
@@ -104,6 +103,21 @@ def replace_special_chars(text):
 
     return text
 
+def custom_strip(text):
+    # Remove trailing spaces
+    text = re.sub(r"[ ]+$", "", text)
+
+
+    # Remove leading spaces and newlines
+    text = text.lstrip(" ") 
+    text = text.lstrip("\n")
+
+    # Reduce multiple trailing newlines to a single newline
+    text = re.sub(r"\n\s*$", "\n", text)
+
+    return text 
+
+
 def text_end_point(text):
     if not isinstance(text, str):
         if text.name not in TEXT_TAGS or len(text.contents) != 1:
@@ -117,7 +131,8 @@ def text_end_point(text):
     # text = re.sub(r'HASH', '#', text)
     text = re.sub(r'SPACE_TOKEN', '', text)   
     ##strip the text
-    text = text.strip()
+    text = custom_strip(text)
+
 
     return text
 

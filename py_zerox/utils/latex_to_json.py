@@ -20,12 +20,9 @@ def table_signiture(table_soup = None, tabular_content_text = None):
         tabular_content_text = str(table_soup.contents[tabular_index])
 
     tabular_content_text =  re.sub(re.escape("&"), "SPACE_TOKEN&SPACE_TOKEN", tabular_content_text) ## to handle empty table cells
-
-    
     tabular_content_text = re.sub(r'\{\}', r'{SPACE_TOKEN}', tabular_content_text)  ##to handle empty {}
     # tabular_content_text = remove_latex_drawing_commands(tabular_content_text)
     tabular_content_text = remove_unnecessary_space_token(tabular_content_text) 
-
 
     # print(tabular_content_text)
     soup = TS(tabular_content_text)
@@ -42,7 +39,6 @@ def table_signiture(table_soup = None, tabular_content_text = None):
     for element in soup.contents[0].contents:
         span = None
         isHeader = False
-
         if isinstance(element, TexNode) and len(element.contents):
             if element.name in SPANING_CELLS: 
                 span = element.name, int(element.contents[0])
@@ -61,7 +57,6 @@ def table_signiture(table_soup = None, tabular_content_text = None):
         else:    
             if '&' not in element:
                 continue
-        
         for cell in str(element).split('&'):
             striped = cell.strip()
 
@@ -72,7 +67,7 @@ def table_signiture(table_soup = None, tabular_content_text = None):
                         j = 0
                         i += 1  
 
-                vis[(i, j)] = {"type" : "cell", "value": text_end_point(striped)}
+                vis[(i, j)] = {"type" : "cell", "value": striped}
 
                 if isHeader:
                     vis[(i, j)]["isHeader"] = True
@@ -83,11 +78,11 @@ def table_signiture(table_soup = None, tabular_content_text = None):
                     if typee == 'multirow':
                         vis[(i, j)]['rowspan'] = num
                         for x in range(i + 1, i + num):
-                            vis[(x, j)] = ''
+                            vis[(x, j)] = 'TABLE_CELL_OCCUPIED'
                     else:
                         vis[(i, j)]['colspan'] = num
                         for y in range(j + 1, j + num):
-                            vis[(i, y)] = ''
+                            vis[(i, y)] = 'TABLE_CELL_OCCUPIED'
                 # cells.append(striped)
 
     n_rows = i + 1
@@ -99,7 +94,8 @@ def table_signiture(table_soup = None, tabular_content_text = None):
         if not (row < n_rows and col < n_columns):
             raise Exception("Table is not well formed")
         
-        if value != '':
+        if value != 'TABLE_CELL_OCCUPIED':
+            value['value'] = text_end_point(value['value'])
             table_rows[row]["children"].append(value)
         
     return table_rows
@@ -138,14 +134,12 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                 element = ""
             
         if isinstance(element, str) :
-            text_length = len(element)
-            truncated_text = element[:min(MAX_TEXT_LENGTH, text_length)]# Truncate text to fit within MAX_TEXT_LENGTH
             
             # Create a new node with the text as a hierarchy element
             text_node = {
                 'id': str(uuid.uuid4()),
                 'type': 'text',
-                'value': text_end_point (truncated_text),
+                'value': text_end_point (element),
                 'level': node_stack[-1]['level'] + 1,
                 'bbox':  [],
                 'page': page,
@@ -153,7 +147,7 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
             }
 
             if len(node_stack[-1]['children']) > 0 and node_stack[-1]['children'][-1]['type'] == 'text' and not node_stack[-1]['children'][-1]['value'].rstrip().endswith('\n'):   
-                node_stack[-1]['children'][-1]['value'] += ' ' + text_end_point(truncated_text)
+                node_stack[-1]['children'][-1]['value'] += ' ' + text_end_point(element)
             else:
                 node_stack[-1]['children'].append(text_node)
   
@@ -186,13 +180,15 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
         elif element.name in LEAF_NODES:
             children = []
             if element.name in ['itemize', 'enumerate']:
-                for item in element.contents:                       
+
+                for item in element.contents:  
                     if isinstance(item, str) or (isinstance(item, TexNode) and len(item.contents) == 1):
                         if isinstance(item, TexNode):
                             item = item.contents[0]
 
-
+                        # print(repr (item) )
                         value = text_end_point(item)
+                        # print(repr (value) )
 
                         text_node = {
                             'id': str(uuid.uuid4()),
@@ -204,8 +200,9 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                             'children': []
                         }
 
-                        if len(children) > 0 and children[-1]['type'] == 'text' and not children[-1]['value'].rstrip().endswith('\n'):   
-                            children[-1]['value'] += ' ' + text_end_point(truncated_text)
+                        if len(children) > 0 and children[-1]['type'] == 'text' and not children[-1]['value'].endswith('\n'): 
+
+                            children[-1]['value'] += ' ' + text_end_point(value)
                         else:
                             children.append(text_node)
         
@@ -245,26 +242,22 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                     for cell in row['children']:
                         value += cell['value'] + ' '
 
-                ##TODO
-                # name = [' '.join(row) for row in children]
-                # name = ' '.join(name)
-                ## to avoid the children of the table to be added to the children of the leaf node
-                # children = [] 
 
                 
-
+            name = element.name 
+            if element.name == 'tabular':
+                name = 'table'
 
             leaf_node = {
                 'id': str(uuid.uuid4()),
-                'type': 'table',
+                'type': name,
                 'value': value,
                 'level': node_stack[-1]['level'] + 1,
                 'bbox':  [],
                 'page': page,
                 'children': children
             }
-        
-        
+                
             node_stack[-1]['children'].append(leaf_node)
        
 

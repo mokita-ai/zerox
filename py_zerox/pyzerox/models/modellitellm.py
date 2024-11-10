@@ -134,11 +134,10 @@ class litellmmodel(BaseModel):
             fewshot_examples_paths= fewshot_examples_paths
         )
         
-        print(messages)
 
         try:
             response = await litellm.acompletion(model=self.model, messages=messages, **self.kwargs)
-            ## completion response
+
             response = CompletionResponse(
                     content=response["choices"][0]["message"]["content"],
                     input_tokens=response["usage"]["prompt_tokens"],
@@ -185,27 +184,27 @@ class litellmmodel(BaseModel):
         else:
             base64_image = None
 
-        if maintain_format and prior_page:
-             messages.extend([
-                    {
-                        "role": "user",
-                        "content":  f""" The prior pages' Latex of all the document is: {prior_page} and the prior page image is """        
-                    },
-                    {
-                        "role": "user",
-                        "content":  [
-                            {
-                                "type": "image_url",
-                                "image_url": {"url": f"data:image/png;base64,{base64_image}"},
-                            },
-                        ],
-                    },
+        # if maintain_format and prior_page:
+        #      messages.extend([
+        #             {
+        #                 "role": "user",
+        #                 "content":  f""" The prior pages' Latex of all the document is: {prior_page} and the prior page image is """        
+        #             },
+        #             {
+        #                 "role": "user",
+        #                 "content":  [
+        #                     {
+        #                         "type": "image_url",
+        #                         "image_url": {"url": f"data:image/png;base64,{base64_image}"},
+        #                     },
+        #                 ],
+        #             },
 
-                     {
-                        "role": "user",
-                        "content":  f"""Now generating the full new latex of all the document after the next image"""        
-                    },
-            ])
+        #              {
+        #                 "role": "user",
+        #                 "content":  f"""Now generating the full new latex of all the document after the next image"""        
+        #             },
+        #     ])
 
 
 
@@ -241,8 +240,6 @@ class litellmmodel(BaseModel):
 
         if isinstance(image_paths, str):
             image_paths = [image_paths]
-        print("Paths:")
-        print(image_paths)
         content_images_encoded = [  ]
         for img_path in image_paths:
             base64_image = await encode_image_to_base64(img_path)

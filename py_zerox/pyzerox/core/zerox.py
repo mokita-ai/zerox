@@ -35,9 +35,10 @@ async def zerox(
     postprocessing_propmt: Optional[str] = None,
     select_pages: Optional[Union[int, Iterable[int]]] = None,
     fewshot_examples_paths: Optional[Iterable[Tuple[os.PathLike, os.PathLike]]] = None,
-    # latex_accumlator: Optional[bool] = False,
     **kwargs
 ) -> ZeroxOutput:
+
+
     """
     API to perform OCR to markdown using Vision models.
     Please setup the environment variables for the model and model provider before using this API. Refer: https://docs.litellm.ai/docs/providers
@@ -75,7 +76,7 @@ async def zerox(
     # File Path Validators
     if not file_path:
         raise FileUnavailable()
-    
+
     # Create an instance of the litellm model interface
     vision_model = litellmmodel(model=model,**kwargs)
 
@@ -153,21 +154,22 @@ async def zerox(
 
 
         else:
-            results = await process_pages_in_batches(
-                images,
-                concurrency,
-                vision_model,
-                temp_directory,
-                input_token_count,
-                output_token_count,
-                prior_page,
-                fewshot_examples_paths=fewshot_examples_paths
-            )
+            pass
+            # results = await process_pages_in_batches(
+            #     images,
+            #     concurrency,
+            #     vision_model,
+            #     temp_directory,
+            #     input_token_count,
+            #     output_token_count,
+            #     prior_page,
+            #     fewshot_examples_paths=fewshot_examples_paths
+            # )
 
-            aggregated_markdown = [result[0] for result in results if isinstance(result[0], str)]
-            ## add token usage
-            input_token_count += sum([result[1] for result in results])
-            output_token_count += sum([result[2] for result in results])
+            # aggregated_markdown = [result[0] for result in results if isinstance(result[0], str)]
+            # ## add token usage
+            # input_token_count += sum([result[1] for result in results])
+            # output_token_count += sum([result[2] for result in results])
 
 
         # if latex_accumlator:
