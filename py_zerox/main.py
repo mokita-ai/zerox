@@ -156,7 +156,7 @@ async def parse_pages(
         if file_location.exists():
             os.remove(file_location)
 
-    if not ground_truth_file:
+    if not ground_truth_tex_file:
         return pred_json
     
 
