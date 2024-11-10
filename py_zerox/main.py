@@ -83,7 +83,7 @@ async def pdf_to_latx(
 @app.post("/parse-pages")
 async def parse_pages(
     pdf_file: UploadFile, 
-    ground_truth_file: Union[UploadFile, str] = File(None),
+    ground_truth_tex_file: Union[UploadFile, str] = File(None),
     start_page: int = Query(...),
     end_page: int = Query(...),
     # pages: List[int] = Query(...),
@@ -102,8 +102,10 @@ async def parse_pages(
         ground_truth_file = None
 
     if ground_truth_file :
-        if not ground_truth_file.filename.endswith(".json"):
-            raise HTTPException(status_code=400, detail="Please upload a valid .json file for the ground truth!")
+        if not ground_truth_file.filename.endswith(".tex"):
+            raise HTTPException(status_code=400, detail="Please upload a valid .tex file for the ground truth!")
+
+
         
         # Read the JSON file content into the variable
         ground_truth_bytes = await ground_truth_file.read()
@@ -111,9 +113,9 @@ async def parse_pages(
 
         # Convert the string to a dictionary
         try:
-            ground_truth_json = json.loads(ground_truth_string)
+            ground_truth_json = tex_file_to_json(tex_data=ground_truth_string)
         except json.JSONDecodeError:
-            raise HTTPException(status_code=400, detail="Invalid JSON format in the uploaded file!")
+            raise HTTPException(status_code=400, detail="erorr in parsing the ground truth file to json")
 
 
 
@@ -191,7 +193,7 @@ async def parse_pages(
     }
                 
      
-    return {"predicted_json": pred_json, "metrics": metrics}
+    return {'ground_truth_latex': ground_truth_string, 'ground_truth_json': ground_truth_json, 'predicted_latex': pred_latex_code, "predicted_json": pred_json, "metrics": metrics}
 
 
 # class MetricsEvaluationRequest(BaseModel):
