@@ -8,7 +8,6 @@ TEXT_TAGS =  ['textbf', 'textit', 'texttt', 'textsc', 'textsf', 'underline', 'em
 SPANING_CELLS =   ['multirow', 'multicolumn']
 TABLE_DRAWING_TAGS = ['hline', 'cline', 'cmidrule', 'toprule', 'midrule', 'bottomrule']
 
-MAX_TEXT_LENGTH = 1500000
 
 
 def remove_unnecessary_space_token(text):
@@ -104,6 +103,21 @@ def replace_special_chars(text):
 
     return text
 
+def custom_strip(text):
+    # Remove trailing spaces
+    text = re.sub(r"[ ]+$", "", text)
+
+
+    # Remove leading spaces and newlines
+    text = text.lstrip(" ") 
+    text = text.lstrip("\n")
+
+    # Reduce multiple trailing newlines to a single newline
+    text = re.sub(r"\n\s*$", "\n", text)
+
+    return text 
+
+
 def text_end_point(text):
     if not isinstance(text, str):
         if text.name not in TEXT_TAGS or len(text.contents) != 1:
@@ -117,7 +131,8 @@ def text_end_point(text):
     # text = re.sub(r'HASH', '#', text)
     text = re.sub(r'SPACE_TOKEN', '', text)   
     ##strip the text
-    text = text.strip()
+    text = custom_strip(text)
+
 
     return text
 

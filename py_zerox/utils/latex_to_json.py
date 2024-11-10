@@ -134,14 +134,12 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                 element = ""
             
         if isinstance(element, str) :
-            text_length = len(element)
-            truncated_text = element[:min(MAX_TEXT_LENGTH, text_length)]# Truncate text to fit within MAX_TEXT_LENGTH
             
             # Create a new node with the text as a hierarchy element
             text_node = {
                 'id': str(uuid.uuid4()),
                 'type': 'text',
-                'value': text_end_point (truncated_text),
+                'value': text_end_point (element),
                 'level': node_stack[-1]['level'] + 1,
                 'bbox':  [],
                 'page': page,
@@ -149,7 +147,7 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
             }
 
             if len(node_stack[-1]['children']) > 0 and node_stack[-1]['children'][-1]['type'] == 'text' and not node_stack[-1]['children'][-1]['value'].rstrip().endswith('\n'):   
-                node_stack[-1]['children'][-1]['value'] += ' ' + text_end_point(truncated_text)
+                node_stack[-1]['children'][-1]['value'] += ' ' + text_end_point(element)
             else:
                 node_stack[-1]['children'].append(text_node)
   
@@ -182,13 +180,15 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
         elif element.name in LEAF_NODES:
             children = []
             if element.name in ['itemize', 'enumerate']:
-                for item in element.contents:                       
+
+                for item in element.contents:  
                     if isinstance(item, str) or (isinstance(item, TexNode) and len(item.contents) == 1):
                         if isinstance(item, TexNode):
                             item = item.contents[0]
 
-
+                        # print(repr (item) )
                         value = text_end_point(item)
+                        # print(repr (value) )
 
                         text_node = {
                             'id': str(uuid.uuid4()),
@@ -200,8 +200,9 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                             'children': []
                         }
 
-                        if len(children) > 0 and children[-1]['type'] == 'text' and not children[-1]['value'].rstrip().endswith('\n'):   
-                            children[-1]['value'] += ' ' + text_end_point(truncated_text)
+                        if len(children) > 0 and children[-1]['type'] == 'text' and not children[-1]['value'].endswith('\n'): 
+
+                            children[-1]['value'] += ' ' + text_end_point(value)
                         else:
                             children.append(text_node)
         
@@ -241,11 +242,6 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                     for cell in row['children']:
                         value += cell['value'] + ' '
 
-                ##TODO
-                # name = [' '.join(row) for row in children]
-                # name = ' '.join(name)
-                ## to avoid the children of the table to be added to the children of the leaf node
-                # children = [] 
 
                 
             name = element.name 
@@ -261,8 +257,7 @@ def tex_soup_to_json(tex_content = None, document_content = None, custom_value =
                 'page': page,
                 'children': children
             }
-        
-        
+                
             node_stack[-1]['children'].append(leaf_node)
        
 
