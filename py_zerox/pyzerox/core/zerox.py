@@ -149,8 +149,7 @@ async def zerox(
                 fewshot_examples_paths=fewshot_examples_paths,
                 postprocessing_propmt=postprocessing_propmt
             )
-            if result:
-                aggregated_markdown.append(result)
+            aggregated_markdown = [result]
             
 
 
@@ -195,6 +194,7 @@ async def zerox(
         # Adjusting the formatted_pages logic to account for select_pages to output the correct page numbers
         if select_pages is not None:
             # Map aggregated markdown to the selected pages
+            print(len(select_pages) , len(aggregated_markdown) , "--------------")  
             formatted_pages = [
                         Page(content=content, page=select_pages[i], content_length=len(content))
                         for i, content in enumerate(aggregated_markdown)
