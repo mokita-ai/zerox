@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, HTTPException, Query, File
 from fastapi.middleware.cors import CORSMiddleware
+from pyzerox.models import litellmmodel
 from pydantic import BaseModel
 from typing import List, Optional, Union
 from pathlib import Path
@@ -86,20 +87,25 @@ async def parse_pages(
     ground_truth_tex_file: Union[UploadFile, str] = File(None),
     start_page: int = Query(...),
     end_page: int = Query(...),
-    # pages: List[int] = Query(...),
-    # model: str = Query("gpt-4o-mini", description=" 'gpt-4o-mini' or 'gpt-4o'"),
-    # temperature: float = Query(0, description="Temperature for generation"),
-    # top_p: float = Query(1, description="Top-p for nucleus sampling"),
-    # seed: int = Query(42, description="Seed for reproducibility")
+    postprocess_gt: Optional[bool] = Query(False)
 ):
     # Check if the PDF file is actually a PDF
     if pdf_file.content_type != "application/pdf":
         raise HTTPException(status_code=400, detail="Please upload a PDF file!")
 
     model = 'gpt-4o'
-    # Check if the LaTeX file, if provided, is actually a .tex file
+
+    args = {
+        "temperature": 0,
+        "top_p": 1,
+        "seed": 42
+    }
+
+
     if isinstance(ground_truth_tex_file, str):
         ground_truth_tex_file = None
+
+
 
     if ground_truth_tex_file :
         if not ground_truth_tex_file.filename.endswith(".tex"):
@@ -110,6 +116,11 @@ async def parse_pages(
         # Read the JSON file content into the variable
         ground_truth_bytes = await ground_truth_tex_file.read()
         ground_truth_string = ground_truth_bytes.decode("utf-8")
+
+        if postprocess_gt:
+            pp_model = litellmmodel(model='azure/' + model,**args)
+            ground_truth_string = await pp_model.cleaning_postprocessing(ground_truth_string , POST_PROCESSING_PROMP )
+
 
         # Convert the string to a dictionary
         try:
@@ -123,13 +134,8 @@ async def parse_pages(
     temp_dir = Path("temp")  # Adjusted to local temp path
     temp_dir.mkdir(parents=True, exist_ok=True)
     file_location = temp_dir / f"{uuid.uuid4().hex}.pdf"
+
     
-    # Create a dictionary for generation parameters
-    args = {
-        "temperature": 0,
-        "top_p": 1,
-        "seed": 42
-    }
 
     pages = range(start_page, end_page + 1)
 
