@@ -12,6 +12,12 @@ def calculate_rouge_metrics(matching_values):
         dict: Dictionary containing the micro ROUGE-L scores for each pair, 
               the macro ROUGE-L score, and the micro-average ROUGE-L score.
     """
+    if not matching_values:
+        return {
+            "micro_scores_per_pair": [],
+            "macro_rouge_l": 0.0,
+            "micro_average_rouge_l": 0.0
+        }
     # Initialize ROUGE scorer for LCS (Longest Common Subsequence)
     scorer = rouge_scorer.RougeScorer(['rougeL'], use_stemmer=False)
 
@@ -55,6 +61,12 @@ def calculate_bleu_metrics(matching_values):
     Returns:
         dict: Dictionary containing the BLEU scores for each pair and the average BLEU score.
     """
+
+    if not matching_values:
+        return {
+            "bleu_scores_per_pair": [],
+            "average_bleu": 0.0
+        }
     # Initialize smoothing function
     smoothie = SmoothingFunction().method4
 

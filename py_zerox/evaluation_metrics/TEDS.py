@@ -148,4 +148,16 @@ class TEDS_JSON:
         for child in tree.children:
             count += self.count_nodes(child)
         return count
+    
+
+
+    
+def evaluate_teds(tables_pairs , structure_only=True):
+    scores = []
+    for gt , pred in tables_pairs:
+        score = TEDS_JSON(structure_only)(pred, gt)
+        scores.append(score)
+    return scores
+
+
 

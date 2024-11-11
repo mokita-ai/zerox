@@ -206,7 +206,7 @@ def calculate_metrics_by_type(gt_relations: List[Tuple[int, int]],
         }
     }
 
-def evaluate_hierarchy(gt_json, pred_json) -> Dict[str, Dict[str, float]]:
+def evaluate_hierarchy(gt_json, pred_json , print_details = True) -> Dict[str, Dict[str, float]]:
     """
     Evaluate predicted heading hierarchy against ground truth using different relation types.
     Returns a dictionary with calculated metrics excluding detailed analysis.
@@ -244,8 +244,9 @@ def evaluate_hierarchy(gt_json, pred_json) -> Dict[str, Dict[str, float]]:
         metrics[RelationType.COMBINED] = calculate_metrics_by_type(combined_gt, combined_pred)
         
         # Print scores and analysis
-        print_scores(metrics)
-        print_relation_analysis(gt_relations, pred_relations, metrics)
+        if print_details:
+            print_scores(metrics)
+            print_relation_analysis(gt_relations, pred_relations, metrics)
         
         # Prepare return value with only main metrics, excluding 'details'
         summary_metrics = {
