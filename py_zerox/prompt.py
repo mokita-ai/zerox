@@ -32,6 +32,7 @@ Avoid these mistakes:
 Return only the Latex with no explanation.
 """
 
+
 POST_PROCESSING_PROMP = """
 -Identify any table-like structures in the LaTeX code that lack a \begin{tabular} tag. Convert these structures to tables and with the tag \begin{tabular}{(and inside is only the charceters r, l, c, |)}, ensuring there’s only an only set of curly braces after \begin{tabular}, and that the braces contain only the alignment options l, r, or c. Exclude any other tabular attributes.
 
@@ -42,4 +43,49 @@ POST_PROCESSING_PROMP = """
 -Remove all HTML tags: Strip out any HTML tags present in the LaTeX code to prevent conflicts or unintended formatting.
 
 -Identify and remove all optional tags within square brackets [...] from LaTeX commands, so that each tag contains only its essential structure.
+
+-For tabular structures:
+    1. Analyze the Table Structure:
+    - Examine the table, including the tabular environment, column definitions, row entries, and any \\multicolumn commands.
+    - Count the columns defined in the tabular environment and verify that each row contains the same number of columns.
+
+    2. Correct the Column Specification:
+    - Adjust the column structure in the tabular environment (|l|r|r|...) to match the number of columns in the rows. Count each row’s columns by counting & symbols plus \\multicolumn spans.
+    - Ensure that each row has the correct number of columns, as specified in the tabular environment.
+
+    3. Fix \\multicolumn Span Issues:
+    - Check each row to ensure the total number of columns remains consistent, even when \\multicolumn commands are used. The combined \\multicolumn spans and individual columns should match the column count in the tabular environment.
+    - If a row has fewer columns than specified, either:
+        - Increase the \\multicolumn spans to cover more columns, or
+        - Add empty columns (&) at the end of the row to reach the required column count.
+
+        Example Fix for \\multicolumn Mismatch:
+            Consider this row:
+            & \multicolumn{2}{|c|}{Text} & \multicolumn{2}{|c|}{text} \\
+            ### Issue
+
+            If the table has **seven columns** defined in the `tabular` environment, this row does not meet that requirement. The `\multicolumn{2}{|c|}{...}` commands each cover **two columns**, totaling **four columns**. Combined with the single column represented by the initial `&`, this row only covers **five columns** instead of the required seven.
+
+            ### Solution options:
+            Here are two ways to fix this you must chose one of them:
+
+            1. **Increase the `\multicolumn` spans**: 
+
+                If we want the grouped headers to span more columns, adjust each `\multicolumn` to cover three columns instead of two:
+
+                & \multicolumn{3}{|c|}{Text} & \multicolumn{3}{|c|}{text} \\
+
+                Now, the initial `&` (1 column) plus two `\multicolumn{3}{|c|}{...}` spans (3 columns each) total **seven columns**, matching the column count.
+
+            2. **Add empty columns**:
+
+                If the spans should stay as two columns each, add two empty columns (e.g., `&`) to complete the row count:
+
+                & \multicolumn{2}{|c|}{Text} & \multicolumn{2}{|c|}{Text} & & \\
+
+                Now, the row has **seven columns**: 1 column for the initial `&`, two `\multicolumn{2}{|c|}{...}` spans, plus two empty columns (`& &`). This ensures a consistent column count across all rows.
+
+    4. Verify the Table Structure again by counting the columns in each row and comparing them to the tabular environment’s column definition after the fixes.
+        Ensure that the table structure is consistent and that all rows have the correct number of columns and if not repeat the process.:
 """
+

@@ -42,7 +42,11 @@ def table_signiture(table_soup = None, tabular_content_text = None):
         if isinstance(element, TexNode) and len(element.contents):
             if element.name in SPANING_CELLS: 
                 span = element.name, int(element.contents[0])
-                element = element.contents[2]
+
+                if len(element.contents) == 3:
+                    element = element.contents[2]
+                else:
+                    element = ""
 
                 if not isinstance(element, str):
                    element = element.contents[0]
