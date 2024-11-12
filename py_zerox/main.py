@@ -20,26 +20,20 @@ from utils.heading_normalizer import  normalize_headings
 from dotenv import load_dotenv
 from utils.block_extractor import extract_text
 from utils.block_extractor import find_and_matching_values
-from utils.common import prepare_fs_examples_pathes
+from utils.common import prepare_fs_examples_pathes, sanitize_json
 load_dotenv()
 
 
 nest_asyncio.apply()
 
 required_env_vars = ["AZURE_API_KEY", "AZURE_API_BASE", "AZURE_API_VERSION"]
+
 for var in required_env_vars:
     if not os.getenv(var):
         raise RuntimeError(f"Environment variable {var} is required but not set.")
 
 
 
-def sanitize_metrics(data):
-    if isinstance(data, dict):
-        return {k: sanitize_metrics(v) for k, v in data.items()}
-    elif isinstance(data, float):
-        return data if math.isfinite(data) else 0.0  # Replace NaN or inf with 0.0
-    else:
-        return data
 
 
 
@@ -85,6 +79,8 @@ async def pdf_to_latx(
     
    
     return result.pages[0].content
+
+    
 @app.post("/parse-pages")
 async def parse_pages(
     pdf_file: UploadFile, 
@@ -206,7 +202,7 @@ async def parse_pages(
         "hierarchy_metrics": metrics
     }
 
-    metrics =  sanitize_metrics(metrics)
+    metrics =  sanitize_json(metrics)
      
      
     return {'ground_truth_latex': ground_truth_string, 'ground_truth_json': ground_truth_json, 'predicted_latex': pred_latex_code, "predicted_json": pred_json, "metrics": metrics}
