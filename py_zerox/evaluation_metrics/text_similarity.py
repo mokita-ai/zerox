@@ -1,7 +1,7 @@
 from rouge_score import rouge_scorer
 import numpy as np
 
-def calculate_rouge_metrics(matching_values):
+def calculate_rouge_metrics(matching_values , full_text_pair):
     """
     Calculate macro and micro ROUGE-L scores for a list of (reference, hypothesis) tuples.
 
@@ -34,9 +34,7 @@ def calculate_rouge_metrics(matching_values):
     micro_rouge_l = round(np.mean(micro_scores), 2)
 
     # Calculate macro ROUGE-L by concatenating all reference and hypothesis texts
-    all_ref = " ".join([ref for ref, _ in matching_values])
-    all_hyp = " ".join([hyp for _, hyp in matching_values])
-    macro_scores = scorer.score(all_ref, all_hyp)
+    macro_scores = scorer.score( full_text_pair[0], full_text_pair[1])
     macro_rouge_l = round(macro_scores['rougeL'].fmeasure, 2)
 
     # Return the results in a dictionary

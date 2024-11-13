@@ -46,7 +46,7 @@ def extract_text(data, current_path=None, text_result=None, table_result=None):
     return text_result, table_result
 
 
-def find_and_matching_values(dict1, dict2):
+def find_and_matching_values(dict1, dict2 , text = True):
     """
     Finds matching values between two dictionaries based on their keys, using the order of keys from dict1.
     
@@ -70,12 +70,12 @@ def find_and_matching_values(dict1, dict2):
         if key in dict2:
             matching_values.append((dict1[key], dict2[key]))  # Matching values
         else:
-            matching_values.append((dict1[key], ""))  # Missing in dict2
+            matching_values.append((dict1[key], "" if text else [""]))  # Missing in dict2
     
     # Add values from dict2 with keys missing in dict1, preserving the original order of dict2 for these keys
     for key in dict2:
         if key not in dict1:
-            matching_values.append(("", dict2[key]))
+            matching_values.append(("" if text else [""], dict2[key]))  # Missing in dict1
 
     return matching_values
 
@@ -112,3 +112,17 @@ def create_table_pairs(tables_matching_values):
             all_pairs.append((gt, pred))
     
     return all_pairs
+
+
+def full_text_pair(GT_dict_text , pred_dict_text):
+    # concatenate all values for all keys in pred_dict_text
+    pred_full_text = ""
+    for key in pred_dict_text.keys():
+        pred_full_text += pred_dict_text[key]
+    
+    GT_full_text = ""
+    for key in GT_dict_text.keys():
+        GT_full_text += GT_dict_text[key]
+    
+    full_text_pair = (GT_full_text , pred_full_text)
+    return full_text_pair

@@ -1,12 +1,9 @@
-import argparse
 from collections import deque
 from typing import List, Optional, Tuple
 
 from apted import APTED, Config
 from apted.helpers import Tree
 from Levenshtein import distance
-from lxml import etree, html
-from lxml.html import HtmlElement
 
 from typing import Optional, List, Tuple, Dict
 from collections import deque
@@ -152,12 +149,21 @@ class TEDS_JSON:
 
 
     
-def evaluate_teds(tables_pairs , structure_only=True):
+def evaluate_teds(tables_pairs):
+    structure_only_scores = []
     scores = []
     for gt , pred in tables_pairs:
-        score = TEDS_JSON(structure_only)(pred, gt)
+        structure_only_score = TEDS_JSON(structure_only=True)(pred, gt)
+        score = TEDS_JSON(structure_only=False)(pred, gt)
         scores.append(score)
-    return scores
+        structure_only_scores.append(structure_only_score)
+
+    if len(scores) == 0:
+        return {"scores":scores , "structure_only_scores": structure_only_scores , "structure_only_scores_avg": 0 , "scores_avg": 0}
+
+    avg_scores = sum(scores) / len(scores)
+    avg_structure_only_scores = sum(structure_only_scores) / len(structure_only_scores)
+    return {"scores":scores , "structure_only_scores": structure_only_scores , "structure_only_scores_avg": avg_structure_only_scores , "scores_avg": avg_scores}
 
 
 
