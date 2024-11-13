@@ -85,8 +85,8 @@ async def zerox(
         vision_model.system_prompt = custom_system_prompt
 
     # Check if both maintain_format and select_pages are provided
-    if maintain_format and select_pages is not None:
-        warnings.warn(Messages.MAINTAIN_FORMAT_SELECTED_PAGES_WARNING)
+    # if maintain_format and select_pages is not None:
+    #     warnings.warn(Messages.MAINTAIN_FORMAT_SELECTED_PAGES_WARNING)
 
     # If select_pages is a single integer, convert it to a list for consistency
     if isinstance(select_pages, int):
@@ -137,24 +137,24 @@ async def zerox(
         # Convert the file to a series of images, below function returns a list of image paths in page order
         images = await convert_pdf_to_images(local_path=local_path, temp_dir=temp_directory)
         prior_image = ""
-        if maintain_format:
-            result, input_token_count, output_token_count, prior_page = await process_page(
-                images,
-                vision_model,
-                temp_directory,
-                input_token_count,
-                output_token_count,
-                prior_page,
-                prior_image,
-                fewshot_examples_paths=fewshot_examples_paths,
-                postprocessing_propmt=postprocessing_propmt
-            )
-            aggregated_markdown = [result]
-            
+       
+        result, input_token_count, output_token_count, prior_page = await process_page(
+            images,
+            vision_model,
+            temp_directory,
+            input_token_count,
+            output_token_count,
+            prior_page,
+            prior_image,
+            fewshot_examples_paths=fewshot_examples_paths,
+            postprocessing_propmt=postprocessing_propmt
+        )
+        aggregated_markdown = [result]
+        
 
 
-        else:
-            pass
+        # else:
+        #     pass
             # results = await process_pages_in_batches(
             #     images,
             #     concurrency,

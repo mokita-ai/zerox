@@ -1,6 +1,7 @@
 
 import re
 from pathlib import Path
+import math
 
 HIERARCHY = ['document', 'section', 'subsection', 'subsubsection', 'paragraph', 'subparagraph']
 LEAF_NODES = ['itemize', 'enumerate', 'table', 'tabular']
@@ -116,6 +117,14 @@ def custom_strip(text):
     text = re.sub(r"\n\s*$", "\n", text)
 
     return text 
+
+def sanitize_json(data):
+    if isinstance(data, dict):
+        return {k: sanitize_json(v) for k, v in data.items()}
+    elif isinstance(data, float):
+        return data if math.isfinite(data) else 0.0  # Replace NaN or inf with 0.0
+    else:
+        return data
 
 
 def text_end_point(text):
